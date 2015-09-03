@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    style="@style/item_default_list">
+
+    <labex.feevale.br.looky.view.custom.RoundedImageView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:src="@drawable/default_avatar"
+        android:id="@+id/anotherUserPictureRoundedImage"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="New Text"
+        android:id="@+id/anotherUserTextView"
+        style="@style/list_text_knowledge_style_bold_16"
+        android:gravity="start"
+        android:layout_alignParentTop="true"
+        android:layout_toRightOf="@+id/anotherUserPictureRoundedImage"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentEnd="true" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="match_parent"
+        android:text="New Text"
+        android:id="@+id/requestHelpLabelTextView"
+        style="@style/list_text_knowledge_style_tiny_14"
+        android:layout_below="@+id/anotherUserTextView"
+        android:layout_toRightOf="@+id/anotherUserPictureRoundedImage"
+        android:layout_alignBottom="@+id/anotherUserPictureRoundedImage"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentEnd="true" />
+
+
+</RelativeLayout>

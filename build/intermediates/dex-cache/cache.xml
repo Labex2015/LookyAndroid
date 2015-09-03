@@ -1,0 +1,110 @@
+<?xml version="1.0" encoding="utf-8"?>
+<items version="2" >
+
+    <item
+        jar="/home/grimmjowjack/Documents/Projetos/Looky/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/22.2.0/classes.jar"
+        jumboMode="false"
+        revision="21.1.2"
+        sha1="73753982da6bde518f3a4c6b372749981d14d1a0">
+        <dex dex="/home/grimmjowjack/Documents/Projetos/Looky/app/build/intermediates/pre-dexed/debug/classes-d16f8d570f8b5e8911802d1481ce01e17d39e4c2.jar" />
+    </item>
+    <item
+        jar="/home/grimmjowjack/Documents/Projetos/Looky/app/libs/jackson-mapper-asl-1.9.7.jar"
+        jumboMode="false"
+        revision="21.1.2"
+        sha1="3bc2efad5ceb9e24e44f731d4282b5df3ea6d23f">
+        <dex dex="/home/grimmjowjack/Documents/Projetos/Looky/app/build/intermediates/pre-dexed/debug/jackson-mapper-asl-1.9.7-1d93ffe47995be27dbb7fb52d7c786c709d1d811.jar" />
+    </item>
+    <item
+        jar="/home/grimmjowjack/Android/Sdk/extras/android/m2repository/com/android/support/support-annotations/22.2.0/support-annotations-22.2.0.jar"
+        jumboMode="false"
+        revision="21.1.2"
+        sha1="66b42a1f3eb7676070b7ef7f14b603483aecbee1">
+        <dex dex="/home/grimmjowjack/Documents/Projetos/Looky/app/build/intermediates/pre-dexed/debug/support-annotations-22.2.0-3ff0327bcbf3941d04fa3a075ba37c7f95675ff5.jar" />
+    </item>
+    <item
+        jar="/home/grimmjowjack/Documents/Projetos/Looky/app/build/intermediates/exploded-aar/com.google.android.gms/play-services/4.0.30/classes.jar"
+        jumboMode="false"
+        revision="21.1.2"
+        sha1="cebe8e4a3a469c4623addcca1dc571407ff3a08e">
+        <dex dex="/home/grimmjowjack/Documents/Projetos/Looky/app/build/intermediates/pre-dexed/debug/classes-edd470e638cdf5184d0bd483fc33afdfa424c3da.jar" />
+    </item>
+    <item
+        jar="/home/grimmjowjack/.gradle/caches/modules-2/files-2.1/org.jdom/jdom2/2.0.5/2001db51c131e555bafdb77fc52af6a9408c505e/jdom2-2.0.5.jar"
+        jumboMode="false"
+        revision="21.1.2"
+        sha1="2001db51c131e555bafdb77fc52af6a9408c505e">
+        <dex dex="/home/grimmjowjack/Documents/Projetos/Looky/app/build/intermediates/pre-dexed/debug/jdom2-2.0.5-1eab0c2c2155cc8034197ec7ed1b532701a6bbc8.jar" />
+    </item>
+    <item
+        jar="/home/grimmjowjack/Documents/Projetos/Looky/app/build/intermediates/exploded-aar/com.android.support/recyclerview-v7/22.2.0/classes.jar"
+        jumboMode="false"
+        revision="21.1.2"
+        sha1="5b37cf49773f7f17aca9830efd3053b0cac56728">
+        <dex dex="/home/grimmjowjack/Documents/Projetos/Looky/app/build/intermediates/pre-dexed/debug/classes-5975f597ab7c1cdc2469900cc4d003a06c3f6e51.jar" />
+    </item>
+    <item
+        jar="/home/grimmjowjack/Documents/Projetos/Looky/app/build/intermediates/exploded-aar/com.github.satyan/sugar/1.3/classes.jar"
+        jumboMode="false"
+        revision="21.1.2"
+        sha1="07e07903922250dabf50c7d131d6fa069a050305">
+        <dex dex="/home/grimmjowjack/Documents/Projetos/Looky/app/build/intermediates/pre-dexed/debug/classes-230b3159a1728589faa63de0fec31eb4ab0ad02e.jar" />
+    </item>
+    <item
+        jar="/home/grimmjowjack/Documents/Projetos/Looky/app/build/intermediates/exploded-aar/com.android.support/support-v4/22.2.0/libs/internal_impl-22.2.0.jar"
+        jumboMode="false"
+        revision="21.1.2"
+        sha1="57f2ab85c164ff1676ec64dee787981c046fab79">
+        <dex dex="/home/grimmjowjack/Documents/Projetos/Looky/app/build/intermediates/pre-dexed/debug/internal_impl-22.2.0-03025a6d492cc280866f965d2005b679a291643e.jar" />
+    </item>
+    <item
+        jar="/home/grimmjowjack/Documents/Projetos/Looky/app/build/intermediates/exploded-aar/com.android.support/design/22.2.0/classes.jar"
+        jumboMode="false"
+        revision="21.1.2"
+        sha1="fc63b820d54c8a27a3a614bdd93920e0076581c2">
+        <dex dex="/home/grimmjowjack/Documents/Projetos/Looky/app/build/intermediates/pre-dexed/debug/classes-b349f3daf2923abf16c3ce5403744c0d82363e80.jar" />
+    </item>
+    <item
+        jar="/home/grimmjowjack/Documents/Projetos/Looky/app/build/intermediates/exploded-aar/com.android.support/gridlayout-v7/22.0.0/classes.jar"
+        jumboMode="false"
+        revision="21.1.2"
+        sha1="c9e0c6fc22b22b96d0db564cf073ab6f288bb758">
+        <dex dex="/home/grimmjowjack/Documents/Projetos/Looky/app/build/intermediates/pre-dexed/debug/classes-4d4a07f3061ca058ffe9379a6f54df2949a606ad.jar" />
+    </item>
+    <item
+        jar="/home/grimmjowjack/Documents/Projetos/Looky/app/libs/gson-2.2.4.jar"
+        jumboMode="false"
+        revision="21.1.2"
+        sha1="973e832af433b44c3ed11c426f2f390b29f3f3f8">
+        <dex dex="/home/grimmjowjack/Documents/Projetos/Looky/app/build/intermediates/pre-dexed/debug/gson-2.2.4-0befe14bd761c05e4a647cf4d7deb85084bd60b6.jar" />
+    </item>
+    <item
+        jar="/home/grimmjowjack/Documents/Projetos/Looky/app/libs/autobahn-0.5.0.jar"
+        jumboMode="false"
+        revision="21.1.2"
+        sha1="5f62bc6117f905fd37955f6e2ebd3aad68701b60">
+        <dex dex="/home/grimmjowjack/Documents/Projetos/Looky/app/build/intermediates/pre-dexed/debug/autobahn-0.5.0-d11622da361cdec0230b6a2bb9e693020d67e64e.jar" />
+    </item>
+    <item
+        jar="/home/grimmjowjack/Documents/Projetos/Looky/app/build/intermediates/exploded-aar/com.android.support/cardview-v7/22.2.0/classes.jar"
+        jumboMode="false"
+        revision="21.1.2"
+        sha1="97f7e239e86ef994de894818fdd8a71d2e89d6aa">
+        <dex dex="/home/grimmjowjack/Documents/Projetos/Looky/app/build/intermediates/pre-dexed/debug/classes-f4493b6c5b5969b23b52599260577de9c5b8ff3d.jar" />
+    </item>
+    <item
+        jar="/home/grimmjowjack/Documents/Projetos/Looky/app/libs/activeandroid-3.0.jar"
+        jumboMode="false"
+        revision="21.1.2"
+        sha1="8cdfaba830e02c56967e946078b60fc476432f36">
+        <dex dex="/home/grimmjowjack/Documents/Projetos/Looky/app/build/intermediates/pre-dexed/debug/activeandroid-3.0-7ab0c03c7e36e296aab9b97a09d468d8dc293e21.jar" />
+    </item>
+    <item
+        jar="/home/grimmjowjack/Documents/Projetos/Looky/app/build/intermediates/exploded-aar/com.android.support/support-v4/22.2.0/classes.jar"
+        jumboMode="false"
+        revision="21.1.2"
+        sha1="1ee588ff2c4daf7b97c1cbf922a6c7f027285c2f">
+        <dex dex="/home/grimmjowjack/Documents/Projetos/Looky/app/build/intermediates/pre-dexed/debug/classes-2d50cada2a82b3e3c00945eb0a1ca4ebb2836fae.jar" />
+    </item>
+
+</items>

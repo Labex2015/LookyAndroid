@@ -1,0 +1,332 @@
+<resources>
+    <!-- List -->
+    <style name="list_default_style">
+        <item name="android:layout_marginLeft">16dp</item>
+        <item name="android:layout_marginRight">16dp</item>
+        <item name="android:layout_marginTop">16dp</item>
+        <item name="android:dividerHeight">16dp</item>
+        <item name="android:divider">@null</item>
+    </style>
+    <style name="list_knowledge_style">
+        <item name="android:dividerHeight">1px</item>
+        <item name="android:divider">@color/divider_list_default</item>
+        <item name="android:layout_marginLeft">16dp</item>
+        <item name="android:layout_marginRight">16dp</item>
+    </style>
+
+    <style name="list_text_default_style">
+        <item name="android:textSize">14dp</item>
+        <item name="android:fontFamily">sans-serif</item>
+        <item name="android:textColor">@android:color/white</item>
+    </style>
+    <style name="item_default_list">
+        <item name="android:layout_margin">16dp</item>
+        <item name="android:padding">16dp</item>
+        <item name="android:background">@drawable/panel_shape_white</item>
+    </style>
+    <style name="list_text_knowledge_style">
+        <item name="android:textSize">14dp</item>
+        <item name="android:fontFamily">sans-serif</item>
+        <item name="android:textColor">@color/font_reverse</item>
+    </style>
+    <style name="list_text_knowledge_style_bold">
+        <item name="android:textSize">14dp</item>
+        <item name="android:layout_marginTop">8dp</item>
+        <item name="android:fontFamily">sans-serif</item>
+        <item name="android:textStyle">bold</item>
+        <item name="android:gravity">center</item>
+        <item name="android:textColor">@color/font_reverse</item>
+    </style>
+
+    <style name="list_text_knowledge_style_tiny">
+        <item name="android:textSize">16dp</item>
+        <item name="android:gravity">center</item>
+        <item name="android:fontFamily">sans-serif-thin</item>
+        <item name="android:textColor">@color/base_app</item>
+    </style>
+    <!-- Interactions -->
+    <style name="list_text_knowledge_style_bold_16">
+        <item name="android:textSize">16dp</item>
+        <item name="android:paddingLeft">8dp</item>
+        <item name="android:paddingTop">8dp</item>
+        <item name="android:fontFamily">sans-serif</item>
+        <item name="android:textStyle">bold</item>
+        <item name="android:gravity">center</item>
+        <item name="android:textColor">@color/font_reverse</item>
+    </style>
+    <style name="list_text_knowledge_style_tiny_14">
+        <item name="android:textSize">14dp</item>
+        <item name="android:paddingLeft">8dp</item>
+        <item name="android:fontFamily">sans-serif-thin</item>
+        <item name="android:textColor">@color/base_app</item>
+    </style>
+
+    <!-- Autocomplete -->
+    <style name="autocomplete_style_tiny">
+        <item name="android:textSize">14dp</item>
+        <item name="android:singleLine">true</item>
+        <item name="android:layout_margin">0dp</item>
+        <item name="android:divider">@drawable/divider_autocomplete</item>
+        <item name="android:textColor">@color/font_reverse</item>
+        <item name="android:textColorHint">@color/white</item>
+        <item name="android:fontFamily">sans-serif</item>
+        <item name="android:layout_height">40dp</item>
+    </style>
+    <style name="text_autocomplete_style_tiny">
+        <item name="android:textSize">14dp</item>
+        <item name="android:fontFamily">sans-serif-thin</item>
+        <item name="android:textColor">@color/font_reverse</item>
+    </style>
+    <style name="text_autocomplete_style_bold">
+        <item name="android:textSize">14dp</item>
+        <item name="android:fontFamily">sans-serif-thin</item>
+        <item name="android:textColor">@color/font_reverse</item>
+    </style>
+    <style name="item_autocomplete_style">
+        <item name="android:textSize">14dp</item>
+        <item name="android:gravity">center_vertical</item>
+        <item name="android:fontFamily">sans-serif</item>
+        <item name="android:textColor">@color/base_app</item>
+    </style>
+    <style name="item_autocomplete_style_tiny">
+        <item name="android:textSize">14dp</item>
+        <item name="android:fontFamily">sans-serif-thin</item>
+        <item name="android:textColor">@color/base_app</item>
+    </style>
+    <style name="item_autocomplete">
+        <item name="android:padding">8dp</item>
+        <item name="android:layout_height">40dp</item>
+        <item name="android:layout_marginLeft">8dp</item>
+        <item name="android:layout_marginRight">8dp</item>
+    </style>
+
+    <!-- Drawer -->
+
+    <style name="text_drawer_top">
+        <item name="android:fontFamily">sans-serif-medium</item>
+        <item name="android:textColor">@color/white</item>
+        <item name="android:textSize">14sp</item>
+        <item name="android:layout_marginTop">16dp</item>
+        <item name="android:layout_marginBottom">0dp</item>
+    </style>
+
+    <style name="text_drawer_foot">
+        <item name="android:textColor">@color/white</item>
+        <item name="android:fontFamily">sans-serif</item>
+        <item name="android:layout_marginTop">8dp</item>
+        <item name="android:textSize">14sp</item>
+    </style>
+
+    <style name="panel_default">
+        <item name="android:background">@drawable/panel_shape</item>
+        <item name="android:paddingTop">0dp</item>
+        <item name="android:paddingLeft">16dp</item>
+        <item name="android:paddingRight">16dp</item>
+        <item name="android:paddingBottom">16dp</item>
+    </style>
+
+    <!-- Button -->
+    <style name="button_default">
+        <item name="android:background">@color/base_app</item>
+        <item name="android:textColor">@color/white</item>
+        <item name="android:textSize">16dp</item>
+        <item name="android:layout_margin">8dp</item>
+    </style>
+
+    <!-- EditText Multiline -->
+    <style name="edit_text_multi_line_default">
+        <item name="android:gravity">start</item>
+        <item name="android:textColor">@color/base_app</item>
+        <item name="android:textSize">16dp</item>
+        <item name="android:ems">255</item>
+        <item name="android:padding">8dp</item>
+        <item name="android:layout_height">150dp</item>
+        <item name="android:layout_margin">8dp</item>
+        <item name="android:inputType">textMultiLine</item>
+    </style>
+
+    <!-- Button -->
+    <style name="rating_bar_default">
+        <item name="android:stepSize">1</item>
+        <item name="android:max">5</item>
+        <item name="android:layout_gravity">center</item>
+       <!-- <item name="android:progressDrawable">@drawable/star</item>-->
+    </style>
+
+    <!-- TextViews -->
+    <style name="font_form_default">
+        <item name="android:textSize">16dp</item>
+        <item name="android:textStyle">bold</item>
+        <item name="android:textColor">@color/black</item>
+        <item name="android:gravity">center_vertical</item>
+        <item name="android:padding">8dp</item>
+    </style>
+
+    <style name="font_name_top">
+        <item name="android:textSize">18dp</item>
+        <item name="android:textStyle">bold</item>
+        <item name="android:textColor">@color/base_app</item>
+        <item name="android:paddingLeft">16dp</item>
+        <item name="android:paddingRight">16dp</item>
+        <item name="android:paddingTop">5dp</item>
+        <item name="android:paddingBottom">15dp</item>
+    </style>
+
+    <style name="font_name_header">
+        <item name="android:textSize">16dp</item>
+        <item name="android:textStyle">bold</item>
+        <item name="android:textColor">@color/base_app</item>
+        <item name="android:gravity">center_vertical</item>
+        <item name="android:paddingLeft">16dp</item>
+    </style>
+
+    <style name="font_name_header_inverse">
+        <item name="android:paddingTop">8dp</item>
+        <item name="android:textSize">16dp</item>
+        <item name="android:textStyle">bold</item>
+        <item name="android:textColor">@color/font_reverse</item>
+        <item name="android:gravity">center_horizontal</item>
+    </style>
+
+    <style name="font_name_header_inverse_tiny">
+        <item name="android:paddingTop">8dp</item>
+        <item name="android:textSize">16dp</item>
+        <item name="android:fontFamily">sans-serif-thin</item>
+        <item name="android:textColor">@color/font_reverse</item>
+        <item name="android:gravity">center_horizontal</item>
+    </style>
+
+    <style name="font_name_sub_title">
+        <item name="android:textSize">12dp</item>
+        <item name="android:textColor">@color/base_app2</item>
+        <item name="android:gravity">center_horizontal</item>
+    </style>
+
+    <style name="font_name_sub_title_small_bold">
+        <item name="android:textSize">10dp</item>
+        <item name="android:textColor">@color/base_app2</item>
+        <item name="android:gravity">right</item>
+        <item name="android:textStyle">bold</item>
+    </style>
+
+    <style name="font_name_header_black">
+        <item name="android:textSize">16dp</item>
+        <item name="android:textStyle">bold</item>
+        <item name="android:textColor">@color/black</item>
+        <item name="android:gravity">center_vertical</item>
+        <item name="android:paddingLeft">16dp</item>
+    </style>
+
+    <style name="list_panel_dialog">
+        <item name="android:padding">5dp</item>
+        <item name="android:background">@drawable/painel_rectangle</item>
+    </style>
+
+    <style name="text_date_footer">
+        <item name="android:textSize">14dp</item>
+        <item name="android:paddingTop">5dp</item>
+        <item name="android:paddingRight">16dp</item>
+        <item name="android:paddingLeft">16dp</item>
+        <item name="android:paddingBottom">10dp</item>
+    </style>
+
+    <style name="image_item_list">
+        <item name="android:padding">5dp</item>
+        <item name="android:background">@null</item>
+    </style>
+
+    <style name="default_image_item_list">
+        <item name="android:layout_margin">8dp</item>
+        <item name="android:src">@drawable/default_avatar</item>
+    </style>
+
+    <style name="font_name_sub">
+        <item name="android:textSize">14dp</item>
+        <item name="android:color">@color/black</item>
+        <item name="android:textStyle">bold</item>
+        <item name="android:paddingLeft">16dp</item>
+        <item name="android:paddingRight">16dp</item>
+        <item name="android:paddingTop">-10dp</item>
+        <item name="android:paddingBottom">15dp</item>
+    </style>
+
+    <style name="font_text_long_text">
+        <item name="android:textSize">14dp</item>
+        <item name="android:color">@color/black</item>
+        <item name="android:paddingLeft">16dp</item>
+        <item name="android:paddingRight">16dp</item>
+        <item name="android:paddingTop">-10dp</item>
+        <item name="android:paddingBottom">15dp</item>
+    </style>
+
+    <style name="font_text_long_description">
+        <item name="android:textSize">14dp</item>
+        <item name="android:color">@color/black</item>
+        <item name="android:paddingLeft">5dp</item>
+        <item name="android:paddingRight">5dp</item>
+        <item name="android:paddingBottom">5dp</item>
+    </style>
+
+    <style name="close_dialog_button">
+        <item name="android:src">@drawable/btn_plus</item>
+        <item name="android:padding">5dp</item>
+        <item name="android:background">@null</item>
+    </style>
+
+    <style name="font_text_list">
+        <item name="android:textSize">16dp</item>
+        <item name="android:color">@color/black</item>
+        <item name="android:paddingLeft">16dp</item>
+        <item name="android:paddingRight">16dp</item>
+        <item name="android:paddingTop">5dp</item>
+        <item name="android:paddingBottom">5dp</item>
+    </style>
+
+    <style name="edit_text_app">
+        <item name="android:padding">10dp</item>
+        <item name="android:textColor">@color/base_app</item>
+        <item name="android:textColorHint">@color/base_app2</item>
+        <item name="android:background">@color/white</item>
+        <item name="android:layout_margin">8dp</item>
+        <item name="android:singleLine">true</item>
+    </style>
+
+    <style name="TitleTextStyle" parent="android:TextAppearance.Holo.Widget.ActionBar.Title">
+        <item name="android:textColor">@color/white</item>
+    </style>
+
+    <style name="CustomTheme" parent="android:Theme.Light">
+        <item name="android:layout_marginLeft">10dp</item>
+        <item name="android:layout_marginRight">10dp</item>
+        <item name="android:layout_marginTop">5dp</item>
+        <item name="android:layout_marginBottom">5dp</item>
+        <item name="android:background">@drawable/painel_rectangle</item>
+    </style>
+
+    <style name="image_header_default">
+        <item name="android:layout_height">250dp</item>
+        <item name="android:layout_alignParentLeft">true</item>
+        <item name="android:layout_alignParentRight">true</item>
+        <item name="android:src">@drawable/default_avatar</item>
+    </style>
+
+    <style name="spinner_inner_default_style">
+        <item name="android:height">65dp</item>
+        <item name="android:background">@color/white</item>
+    </style>
+
+    <style name="spinner_component_default">
+        <item name="android:layout_margin">8dp</item>
+    </style>
+
+    <style name="star_rating_bar_small">
+        <item name="android:progressDrawable">@drawable/ratingbar_selector_small</item>
+        <item name="android:numStars">5</item>
+        <item name="android:padding">1dp</item>
+    </style>
+
+    <style name="star_rating_bar_smallest" parent="star_rating_bar_small">
+        <item name="android:progressDrawable">@drawable/ratingbar_selector_smallest</item>
+    </style>
+
+</resources>

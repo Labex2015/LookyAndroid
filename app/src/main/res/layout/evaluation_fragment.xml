@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/base_app2">
+
+    <RatingBar
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/ratingAnswer"
+        style="@style/rating_bar_default"
+        android:layout_below="@+id/textView"
+        android:layout_centerHorizontal="true" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/eval_answer_title"
+        style="@style/font_name_top"
+        android:id="@+id/textView"
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="32dp" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/eval_help_title"
+        android:id="@+id/textView2"
+        style="@style/font_name_top"
+        android:layout_marginTop="31dp"
+        android:layout_below="@+id/ratingAnswer"
+        android:layout_centerHorizontal="true" />
+
+    <RatingBar
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/ratingHelp"
+        style="@style/rating_bar_default"
+        android:layout_below="@+id/textView2"
+        android:layout_alignLeft="@+id/ratingAnswer"
+        android:layout_alignStart="@+id/ratingAnswer" />
+
+    <EditText
+        android:layout_width="wrap_content"
+        style="@style/edit_text_multi_line_default"
+        android:hint="@string/eval_comment_hint"
+        android:id="@+id/commentEvalEditText"
+        android:layout_below="@+id/ratingHelp"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:imeOptions="actionDone"/>
+
+    <Button
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/eval_button_save"
+        style="@style/button_default"
+        android:id="@+id/saveEvalButton"
+        android:layout_below="@+id/commentEvalEditText"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true" />
+
+</RelativeLayout>

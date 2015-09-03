@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:orientation="vertical"
+    android:background="@drawable/drawer_background"
+    app:backgroundTint="@color/dark_gray_fonts_app"
+    style="@style/RtlOverlay.Widget.AppCompat.ActionBar.TitleItem">
+
+
+
+    <ImageView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/backgroundImageDrawer"
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true" />
+
+    <labex.feevale.br.looky.view.custom.RoundedImageView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:src="@drawable/default_avatar"
+        android:id="@+id/drawerUserPicture"
+        android:layout_marginLeft="16dp"
+        android:layout_marginTop="16dp"
+        android:layout_gravity="left|bottom"
+        android:layout_alignParentTop="true"
+        android:layout_alignLeft="@+id/backgroundImageDrawer"
+        android:layout_alignStart="@+id/backgroundImageDrawer" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="New Text"
+        style="@style/text_drawer_top"
+        android:id="@+id/usernameDrawerTextView"
+        android:layout_below="@+id/drawerUserPicture"
+        android:layout_alignLeft="@+id/drawerUserPicture"
+        android:layout_alignStart="@+id/drawerUserPicture" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="New Text"
+        style="@style/text_drawer_foot"
+        android:id="@+id/userCourseDrawerTextView"
+        android:layout_below="@+id/usernameDrawerTextView"
+        android:layout_alignLeft="@+id/usernameDrawerTextView"
+        android:layout_alignStart="@+id/usernameDrawerTextView" />
+
+</RelativeLayout>

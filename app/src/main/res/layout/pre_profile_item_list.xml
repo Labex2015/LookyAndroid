@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="horizontal"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@drawable/panel_shape_white"
+    android:minHeight="?android:attr/listPreferredItemHeight">
+
+    <labex.feevale.br.looky.view.custom.RoundedImageView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        style="@style/default_image_item_list"
+        android:id="@+id/preUserPicture"/>
+    <LinearLayout
+        android:orientation="vertical"
+        android:layout_width="fill_parent"
+        android:layout_height="match_parent"
+        android:gravity="center_horizontal">
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            style="@style/list_text_knowledge_style_bold"
+            android:id="@+id/usernamePreTextView"
+            android:text="Name_User"/>
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            style="@style/font_text_long_description"
+            android:gravity="center"
+            android:id="@+id/degreePreTextView"
+            android:text="ciencia_computacao"/>
+
+        <RatingBar
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/ratingPreProfile"
+            style="@style/star_rating_bar_small"
+            android:clickable="false"
+            android:padding="0dp"
+            android:layout_gravity="center"
+            android:focusable="false"
+            android:focusableInTouchMode="false"/>
+    </LinearLayout>
+
+</LinearLayout>

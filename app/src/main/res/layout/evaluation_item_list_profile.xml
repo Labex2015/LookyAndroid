@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:custom="http://schemas.android.com/apk/res/labex.feevale.br.looky"
+    android:orientation="horizontal"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_gravity="center_vertical"
+    android:paddingLeft="8dp"
+    android:paddingRight="10dp">
+
+    <labex.feevale.br.looky.view.custom.RoundedImageView
+        android:layout_width="50dp"
+        android:layout_height="46dp"
+        style="@style/default_image_item_list"
+        custom:rate="2"
+        android:id="@+id/profilePicture" />
+    <RelativeLayout
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_vertical"
+        android:orientation="vertical">
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="JACK_SPARROW"
+            android:id="@+id/evaluationNameItemListProfile"
+            style="@style/list_text_knowledge_style"
+            android:layout_weight="1"
+            android:layout_alignParentTop="true"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentStart="true" />
+        <RatingBar
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:stepSize="1"
+            android:max="5"
+            android:layout_marginRight="2dp"
+            style="@style/star_rating_bar_smallest"
+            android:id="@+id/profileRatingBar"
+            android:layout_gravity="right"
+            android:layout_alignParentTop="true"
+            android:layout_alignParentRight="true"
+            android:layout_alignParentEnd="true"
+            android:layout_alignBottom="@+id/evaluationNameItemListProfile" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/degreeProfileItemTextView"
+            style="@style/item_autocomplete_style_tiny"
+            android:textColor="@color/base_app2"
+            android:background="@null"
+            android:layout_below="@+id/evaluationNameItemListProfile"
+            android:text="DEGREE"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentStart="true" />
+
+    </RelativeLayout>
+
+</LinearLayout>

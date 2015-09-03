@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="horizontal" android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/rectangle">
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="match_parent"
+        style="@style/font_name_header"
+        android:text="@string/evaluation_list_header"
+        android:layout_weight="1" />
+    <ImageButton
+        android:layout_width="wrap_content"
+        android:layout_height="match_parent"
+        android:paddingTop="@dimen/button_images_margin"
+        android:paddingBottom="@dimen/button_images_margin"
+        android:src="@android:drawable/ic_dialog_info"
+        android:background="@null"
+        android:id="@+id/evaluationsHeaderButton"/>
+
+</LinearLayout>

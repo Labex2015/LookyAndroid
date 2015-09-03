@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="170dp"
+    style="@style/panel_default">
+    <TextView
+        style="@style/list_text_knowledge_style_bold"
+        android:layout_width="match_parent"
+        android:layout_height="48dp"
+        android:text="@string/knowledge_form_title" />
+    <AutoCompleteTextView
+        style="@style/autocomplete_style_tiny"
+        android:layout_width="match_parent"
+        android:id="@+id/areaText"
+        android:imeOptions="actionNext"
+        android:ems="25"
+        android:hint="@string/area_hint"/>
+    <AutoCompleteTextView
+        style="@style/autocomplete_style_tiny"
+        android:layout_width="match_parent"
+        android:imeOptions="actionDone"
+        android:id="@+id/subjectText"
+        android:ems="25"
+        android:hint="@string/subject_hint"/>
+
+</LinearLayout>

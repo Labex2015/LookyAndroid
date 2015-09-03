@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="130dp">
+    <EditText
+        android:id="@+id/searchHelpEditText"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="@string/search_help_hint"
+        style="@style/edit_text_app"
+        android:imeOptions="actionSearch"
+        android:queryHint="@string/search_help_hint"
+        android:searchIcon="@android:drawable/ic_search_category_default"/>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+        <Spinner
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/subjectsSearchSpinner"
+            style="@style/spinner_component_default"
+            android:spinnerMode="dropdown">
+        </Spinner>
+    </LinearLayout>
+
+</LinearLayout>

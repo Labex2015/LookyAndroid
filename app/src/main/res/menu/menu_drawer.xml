@@ -1,0 +1,52 @@
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <group android:checkableBehavior="single">
+        <item
+            android:id="@+id/drawer_home"
+            android:checked="true"
+            android:numericShortcut="1"
+            android:icon="@drawable/menu_icon"
+            android:title="@string/home"/>
+
+        <item
+            android:id="@+id/drawer_search_help"
+            android:icon="@drawable/search"
+            android:numericShortcut="2"
+            android:title="@string/search_help"/>
+        <item
+            android:id="@+id/drawer_global"
+            android:numericShortcut="3"
+            android:icon="@drawable/help_icon"
+            android:title="@string/requests"/>
+        <item
+            android:id="@+id/drawer_chat"
+            android:numericShortcut="4"
+            android:icon="@drawable/chat_icon"
+            android:title="@string/interactions"/>
+        <item
+            android:id="@+id/drawer_settings"
+            android:numericShortcut="6"
+            android:icon="@drawable/global_help_icon"
+            android:title="@string/req_help"/>
+        <item
+            android:id="@+id/drawer_profile"
+            android:numericShortcut="7"
+            android:icon="@drawable/profile_icon"
+            android:title="@string/profile"/>
+        <item
+            android:id="@+id/drawer_knowledge"
+            android:numericShortcut="8"
+            android:icon="@drawable/knowledge_icon"
+            android:title="@string/knowledge"/>
+        <item
+            android:id="@+id/drawer_pending_eval"
+            android:numericShortcut="9"
+            android:icon="@drawable/pending_eval"
+            android:title="@string/eval_pending"/>
+        <item
+            android:id="@+id/drawer_about_lab"
+            android:icon="@drawable/info"
+            android:numericShortcut="5"
+            android:title="@string/about_labex"/>
+    </group>
+</menu>

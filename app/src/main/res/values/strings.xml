@@ -1,0 +1,151 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string name="app_name">Looky</string>
+    <string name="hello_world">Hello world!</string>
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+
+    <!--SETTINGS-->
+    <string name="action_close_help">Finalizar ajuda</string>
+    <string name="action_logout">Logout</string>
+    <string name="action_chat_logout">Sair</string>
+    <string name="action_to_home">Home</string>
+
+    <!--DIALOGS-->
+    <string name="FINALIZE_DIALOG">Deseja finalizar a ajuda?</string>
+    <string name="YES">SIM</string>
+    <string name="NO">NÃO</string>
+    <string name="NEW_KNOWLEDGE_TITLE">Novo conhecimento</string>
+    <string name="LOGOUT">Deseja fazer Logout?</string>
+    <string name="LOADING">Carregando...</string>
+
+    <!--NOTIFICATIONS-->
+    <string name="HELP_ACCEPT">Pedido de ajuda aceito!</string>
+    <string name="HELP_DENIED">Pedido de ajuda negado!</string>
+    <string name="HELP_TITLE">PEDIDO DE AJUDA</string>
+
+    <!--BUTTONS-->
+    <string name="help_button">BUSCAR AJUDA</string>
+
+
+
+    <!--LOG ERROR-->
+    <string name="TAG_CONNECTION">CONEXÃO</string>
+    <string name="CONNECTION_ERROR">Sem internet</string>
+
+    <!--ERRORS-->
+    <string name="required_field">Campo Obrigatório</string>
+    <string name="field_not_match">Senha não confere</string>
+    <string name="OPERATION_FAIL">Operação não pode ser realizada.</string>
+    <string name="LIST_EMPTY_USERS_TO_HELP">Hmmm, no momento não há nenhuma pessoa disponível para lhe ajudar!</string>
+
+    <!-- WARNINGS -->
+    <string name="SUCCESS">Ação executada com sucesso.</string>
+
+    <!-- MENU -->
+    <string name="drawer_open">Open navigation drawer</string>
+    <string name="drawer_close">Close navigation drawer</string>
+
+    <!-- List Helpers -->
+    <string name="list_helpers_label_page">Pessoas que podem lhe ajudar:</string>
+    <string name="list_helpers_text_distance_1">Está a </string>
+    <string name="list_helpers_text_distance_2"> metros de você.</string>
+
+    <!-- Request Help -->
+    <string name="request_help_label_page">Digite um conhecimento pelo qual você precisa de ajuda. Exemplo: JAVA.</string>
+    <string name="request_help_dialog">Enviando solicitação.....</string>
+
+    <!-- Login/Register -->
+    <string name="HINT_EMAIL">Email </string>
+    <string name="HINT_PASSWORD">Senha </string>
+    <string name="HINT_PASSWORD2">Repita a Senha </string>
+    <string name="BTN_LOGIN">LOGIN </string>
+    <string name="BTN_NEXT">AVANÇAR </string>
+    <string name="LINK_REGISTER">CADASTRAR </string>
+    <string name="HINT_NAME">Name </string>
+    <string name="LOGIN_FAIL">Dados inválidos, verifique os dados enviados.</string>
+
+    <!-- PROFILE -->
+    <string name="knowledges_list_header">Conhecimentos</string>
+    <string name="evaluation_list_header">Avaliações</string>
+    <string name="score_label_profile">Pontos</string>
+    <string name="dist_label_profile">Distância(m)</string>
+    <string name="helped_label_profile">Ajudou</string>
+    <string name="requested_label_profile">Foi ajudado</string>
+    <string name="load_evaluation_message_progress_dialog">Obtendo avaliações.....</string>
+
+    <string name="knowledge_tab">Conhecimentos</string>
+    <string name="evaluation_tab">Avaliações</string>
+
+
+    <!-- INTERACTIONS -->
+    <string name="no_interactions_message">Nenhuma interação. Que tal procurar alguém para ajudar?</string>
+    <string name="interactions_req_msg_dialog">Listando interações......</string>
+    <string name="interactions_cancel_dialog">Cancelar Interação</string>
+    <string name="interactions_cancel_msg_dialog">Deseja cancelar a interação com #_USER</string>
+
+    <!-- EVALUATIONS -->
+    <string name="eval_help_title">Quão satisfatória foi a ajuda:</string>
+    <string name="eval_answer_title">Avalie a qualidade da resposta:</string>
+
+    <string name="eval_comment_hint">Comentário...</string>
+    <string name="eval_button_save">Encerrar</string>
+
+
+    <string name="eval_finish_title_dialog">Encerrarando interação</string>
+    <string name="eval_finish_message_dialog">Encerrar e enviar?</string>
+
+    <string name="eval_finish_message_end">Interação encerrada.</string>
+    <string name="eval_sent_message_end">Avaliação enviada.</string>
+
+    <string name="eval_sent_message_progress">Enviando avaliação.....</string>
+
+    <!-- REQUEST GLOBAL HELP-->
+    <string name="form_req_global_title">Título:</string>
+    <string name="form_req_global_description">Descrição:</string>
+    <string name="form_req_global_button">Enviar</string>
+
+    <string name="form_req_global_dialog_title">Pedido de ajuda global</string>
+    <string name="form_req_global_dialog_msg">Deseja enviar o pedido?</string>
+    <string name="form_req_global_error_field_req">Campo requirido.</string>
+    <string name="form_req_global_error_field">Digite ao menos #C caracteres.</string>
+
+    <string name="dialog_req_global_title">Pedido de ajuda?</string>
+    <string name="dialog_req_global_message">Percebemos que a ajuda não foi muito boa. Que tal abrir um pedido de ajuda?</string>
+
+
+    <!-- TABS -->
+    <string name="interaction_tab">Interações</string>
+    <string name="search_tab">Ajuda</string>
+    <string name="pending_tab">Pendentes</string>
+
+
+
+    <!-- KNOWLEDGE_USER -->
+
+    <string name="area_hint">Digite uma área de conhecimento</string>
+    <string name="subject_hint">Associe com uma disciplina</string>
+    <string name="knowledge_form_title">ADICIONE SEUS CONHECIMENTOS</string>
+    <string name="knowledge_form_area_required">Campo obrigatório</string>
+
+    <!-- SEARCH HELP -->
+
+    <string name="search_help_hint">Digite o assunto. Ex: Derivadas</string>
+
+    <!-- DRAWER -->
+    <string name="home">Início</string>
+    <string name="search_help">Procurar ajuda</string>
+    <string name="interactions">Interações</string>
+    <string name="requests">Solicitações de Ajuda</string>
+    <string name="req_help">Ajudar</string>
+    <string name="profile">Perfil</string>
+    <string name="knowledge">Conhecimentos</string>
+    <string name="files">Arquivos</string>
+    <string name="eval_pending">Pendências</string>
+    <string name="about_labex">Sobre o Looky</string>
+    <string name="configurations">Configurações</string>
+    <string name="label_empty_text_view">Vincule com uma disciplina....</string>
+
+
+</resources>
+

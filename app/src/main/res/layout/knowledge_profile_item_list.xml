@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    style="@style/item_default_list">
+
+    <TextView
+        style="@style/list_text_knowledge_style_bold"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Knowledge"
+        android:id="@+id/knowledgeAreaTextView"
+        android:layout_weight="1"
+        android:layout_below="@+id/imageView2"
+        android:layout_alignParentStart="true"
+        android:layout_gravity="center" />
+    <TextView
+        style="@style/list_text_knowledge_style_tiny"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text=""
+        android:id="@+id/knowledgeDegreeTextView"
+        android:layout_weight="1"
+        android:layout_below="@+id/knowledgeAreaTextView"
+        android:layout_centerHorizontal="true" />
+
+    <ImageView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:src="@drawable/btn_close"
+        android:id="@+id/removeKnowledgeImageView"
+        android:background="@drawable/mini_circle_shape"
+        style="@style/image_item_list"
+        android:layout_alignParentRight="true"
+        android:layout_marginTop="32dp"
+        android:layout_gravity="center" />
+
+    <ImageView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        style="@style/image_item_list"
+        android:id="@+id/imageView2"
+        android:src="@drawable/medalha"
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true"
+        android:layout_gravity="center" />
+
+</RelativeLayout>

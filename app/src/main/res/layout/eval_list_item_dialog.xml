@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:minHeight="100dp">
+    <LinearLayout
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:id="@+id/linearLayout">
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="New Text"
+        android:id="@+id/evaluatorNameTextView"
+        android:layout_weight="1"
+        style="@style/font_name_top"/>
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/ratingImageView"
+            android:layout_alignBottom="@+id/evaluatorNameTextView"
+            android:src="@drawable/btn_plus"
+            style="@style/image_item_list"/>
+    </LinearLayout>
+
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:text="Medium Text"
+        android:id="@+id/commentDlgTextView"
+        android:layout_above="@+id/dateAvaliationDlgTextView"
+        android:layout_below="@+id/linearLayout"
+        android:layout_weight="1" />
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="New Text"
+        style="@style/text_date_footer"
+        android:id="@+id/dateAvaliationDlgTextView"/>
+</LinearLayout>
