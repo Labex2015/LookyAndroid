@@ -3,6 +3,8 @@ package labex.feevale.br.looky.view.fragments;
 import android.content.Context;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
+import android.support.v7.widget.LinearLayoutManager;
+import android.support.v7.widget.RecyclerView;
 import android.view.KeyEvent;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -10,7 +12,6 @@ import android.view.ViewGroup;
 import android.view.inputmethod.EditorInfo;
 import android.widget.AdapterView;
 import android.widget.EditText;
-import android.widget.ListView;
 import android.widget.Spinner;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -27,7 +28,6 @@ import labex.feevale.br.looky.model.UserProfile;
 import labex.feevale.br.looky.service.RequestHandler;
 import labex.feevale.br.looky.utils.AppVariables;
 import labex.feevale.br.looky.utils.JsonUtils;
-import labex.feevale.br.looky.utils.L;
 import labex.feevale.br.looky.utils.MessageResponse;
 import labex.feevale.br.looky.view.BaseFragment;
 import labex.feevale.br.looky.view.adapters.ResultSearchItemListAdapter;
@@ -36,13 +36,15 @@ import labex.feevale.br.looky.view.adapters.SubjectsSpinnerAdapter;
 /**
  * Created by grimmjowjack on 8/17/15.
  */
-public class SearchHelpFragment extends BaseFragment implements AdapterView.OnItemSelectedListener{
+public class SearchHelpFragment extends BaseFragment implements AdapterView.OnItemSelectedListener, View.OnClickListener{
 
     private EditText searchEditText;
-    private ListView resultList;
     private Spinner spinner;
     private SubjectsSpinnerAdapter spinnerAdapter;
+
+    private RecyclerView resultList;
     private ResultSearchItemListAdapter adapter;
+    private RecyclerView.LayoutManager mLayoutManager;
 
     List<Subject> subjects = new ArrayList<>();
     private Subject defaultSubject;
@@ -63,7 +65,10 @@ public class SearchHelpFragment extends BaseFragment implements AdapterView.OnIt
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState){
         View view = inflater.inflate(R.layout.search_fragment, container, false);
-        resultList = (ListView) view.findViewById(R.id.searchResultList);
+        resultList = (RecyclerView) view.findViewById(R.id.searchResultList);
+        mLayoutManager = new LinearLayoutManager(getActivity());
+        resultList.setLayoutManager(mLayoutManager);
+
         spinner = (Spinner) view.findViewById(R.id.subjectsSearchSpinner);
 
         searchEditText = (EditText) view.findViewById(R.id.searchHelpEditText);
@@ -71,6 +76,8 @@ public class SearchHelpFragment extends BaseFragment implements AdapterView.OnIt
         searchEditText.setOnFocusChangeListener(searchFocusActionListener());
         return view;
     }
+
+
 
 
     @Override
@@ -114,10 +121,9 @@ public class SearchHelpFragment extends BaseFragment implements AdapterView.OnIt
     @Override
     public void onViewCreated(View view, @Nullable Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
-        adapter = new ResultSearchItemListAdapter(getActivity());
+        adapter = new ResultSearchItemListAdapter(getActivity(), this);
         spinnerAdapter = new SubjectsSpinnerAdapter(subjects,getActivity());
 
-        resultList.setOnItemClickListener(adapter);
         resultList.setAdapter(adapter);
         spinner.setAdapter(spinnerAdapter);
         spinner.setOnItemSelectedListener(this);
@@ -132,6 +138,11 @@ public class SearchHelpFragment extends BaseFragment implements AdapterView.OnIt
     @Override
     public void onNothingSelected(AdapterView<?> adapterView) {
         this.searchItem.subject = null;
+    }
+
+    @Override
+    public void onClick(View view) {
+        adapter.loadProfile(resultList.getChildAdapterPosition(view));
     }
 
     public class SearchHelpTask extends RequestHandler<List<UserProfile>>{

@@ -1,20 +1,21 @@
 package labex.feevale.br.looky.dao.model;
 
-import com.orm.SugarRecord;
-
 import java.io.Serializable;
 
-import labex.feevale.br.looky.model.Degree;
+import io.realm.RealmObject;
+import io.realm.annotations.Ignore;
+import io.realm.annotations.PrimaryKey;
+import io.realm.annotations.RealmClass;
 import labex.feevale.br.looky.model.Subject;
 
 /**
  * Created by grimmjowjack on 8/28/15.
  */
-public class SubjectModel extends SugarRecord<SubjectModel> implements Serializable{
+@RealmClass
+public class SubjectModel extends RealmObject {
 
-    private static final long serialVersionUID = -7488144636704756313L;
-
-    private Long _id;
+    @PrimaryKey
+    private long idUser;
     private String name;
     private DegreeModel degree;
 
@@ -22,12 +23,15 @@ public class SubjectModel extends SugarRecord<SubjectModel> implements Serializa
 
     public SubjectModel(Subject subject) {
         this.name = subject.getName();
-        this._id = subject.getId();
-        this.setDegree(subject.getDegree());
+        this.idUser = subject.getId();
     }
 
-    private void setDegree(Degree param) {
-        this.degree = new DegreeModel(param);
+    public long getIdUser() {
+        return idUser;
+    }
+
+    public void setIdUser(long idUser) {
+        this.idUser = idUser;
     }
 
     public String getName() {
@@ -44,13 +48,5 @@ public class SubjectModel extends SugarRecord<SubjectModel> implements Serializa
 
     public void setDegree(DegreeModel degree) {
         this.degree = degree;
-    }
-
-    public Long get_id() {
-        return _id;
-    }
-
-    public void set_id(Long _id) {
-        this._id = _id;
     }
 }

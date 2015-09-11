@@ -9,7 +9,6 @@ import labex.feevale.br.looky.service.RequestHandler;
 import labex.feevale.br.looky.service.utils.CallbackTask;
 import labex.feevale.br.looky.utils.AppVariables;
 import labex.feevale.br.looky.utils.JsonUtils;
-import labex.feevale.br.looky.utils.L;
 import labex.feevale.br.looky.utils.MessageResponse;
 
 /**

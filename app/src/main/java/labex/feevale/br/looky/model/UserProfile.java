@@ -159,4 +159,15 @@ public class UserProfile extends User implements Serializable, Parcelable{
         evaluations = parcel.readArrayList(Evaluation.class.getClassLoader());
         knowledges = parcel.readArrayList(Knowledge.class.getClassLoader());
     }
+
+    public static final Parcelable.Creator<UserProfile> CREATOR
+            = new Parcelable.Creator<UserProfile>() {
+        public UserProfile createFromParcel(Parcel in) {
+            return new UserProfile(in);
+        }
+
+        public UserProfile[] newArray(int size) {
+            return new UserProfile[size];
+        }
+    };
 }

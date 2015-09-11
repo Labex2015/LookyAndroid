@@ -3,44 +3,75 @@ package labex.feevale.br.looky.dao;
 import java.util.ArrayList;
 import java.util.List;
 
+import io.realm.Realm;
+import io.realm.RealmResults;
 import labex.feevale.br.looky.dao.model.DegreeModel;
 import labex.feevale.br.looky.dao.model.SubjectModel;
 import labex.feevale.br.looky.model.Subject;
-import labex.feevale.br.looky.utils.L;
 
 /**
  * Created by grimmjowjack on 8/28/15.
  */
 public class SubjectDao {
 
+    private Realm realm;
+
+    public SubjectDao() {
+
+    }
+
     public Boolean ïsEmpty(){
-        List result = SubjectModel.listAll(SubjectModel.class);
-        return (result == null || result.isEmpty());
+        try {
+            realm = Realm.getDefaultInstance();
+            RealmResults<SubjectModel> results = realm.where(SubjectModel.class)
+                    .findAll();
+            return (results == null || results.isEmpty());
+        }finally {
+            if(realm != null)
+                realm.close();
+        }
     }
     public void saveSubjects(Subject... subjects){
-        SubjectModel sm = null;
-        for(Subject s : subjects){
-            sm = new SubjectModel(s);
-            if(s.getDegree() != null) {
-                List<DegreeModel> resultado = DegreeModel.find(DegreeModel.class, "name = ? ", s.getName());
-                DegreeModel dm = null;
-                if(resultado != null && !resultado.isEmpty()) {
-                    dm = resultado.get(0);
-                }else {
-                    dm = new DegreeModel(s.getDegree());
-                    dm.save();
+        try {
+            realm = Realm.getDefaultInstance();
+            realm.beginTransaction();
+            for (Subject s : subjects) {
+                SubjectModel sm = realm.createObject(SubjectModel.class);
+                sm.setName(s.getName());
+                sm.setIdUser(s.getId());
+
+                if (s.getDegree() != null) {
+                    DegreeModel resultado = realm.where(DegreeModel.class).equalTo("name", s.getDegree().getName()).findFirst();
+                    if (resultado != null) {
+                        sm.setDegree(resultado);
+                    } else {
+                        resultado = realm.createObject(DegreeModel.class);
+                        resultado.setIdDegree(s.getDegree().getId());
+                        resultado.setName(s.getDegree().getName());
+                    }
+                    sm.setDegree(resultado);
                 }
-                sm.setDegree(dm);
+                realm.commitTransaction();
             }
-            sm.save();
+        }finally {
+            if(realm != null)
+                realm.close();
         }
     }
 
     public List<Subject> listAll() {
-        List<Subject> subjects = new ArrayList<>();
-        for(SubjectModel s : SubjectModel.listAll(SubjectModel.class)) {
-            subjects.add(new Subject(s));
+        try {
+            List<Subject> subjects = new ArrayList<>();
+            realm = Realm.getDefaultInstance();
+            RealmResults<SubjectModel> results = realm.where(SubjectModel.class)
+                    .findAll();
+            for (SubjectModel s : results) {
+                subjects.add(new Subject(s));
+            }
+            return subjects;
+        }finally {
+            if(realm != null)
+                realm.close();
         }
-        return subjects;
     }
 }

@@ -17,12 +17,12 @@ public abstract class RequestHandlerTask<Entity> extends RequestHandler implemen
     public Handler handler;
     public Message message = new Message();
 
-    protected RequestHandlerTask(Entity entity, Context context, String URL, int methodConnection, String params, Handler handler) {
+    protected RequestHandlerTask(Entity entity, Context context, String URL, String methodConnection, String params, Handler handler) {
         super(entity, context, URL, methodConnection, params);
         this.handler = handler;
     }
 
-    protected RequestHandlerTask(Entity entity, Context context, String URL, int methodConnection, Handler handler) {
+    protected RequestHandlerTask(Entity entity, Context context, String URL, String methodConnection, Handler handler) {
         super(entity, context, URL, methodConnection);
         this.handler = handler;
     }

@@ -141,6 +141,12 @@ public class JsonUtils<T>{
 
     public List<UserProfile> jsonToUserProfileList(String response) {
         postExecute();
-        return mGson.fromJson(response, new TypeToken<List<UserProfile>>(){}.getType());
+        return mGson.fromJson(response, new TypeToken<List<UserProfile>>() {
+        }.getType());
+    }
+
+    public String userToJson(User user) {
+        preExecute();
+        return mGson.toJson(user);
     }
 }

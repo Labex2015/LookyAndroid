@@ -19,6 +19,23 @@
         <item name="android:fontFamily">sans-serif</item>
         <item name="android:textColor">@android:color/white</item>
     </style>
+
+    <style name="item_list_title_default">
+        <item name="android:paddingTop">8dp</item>
+        <item name="android:textSize">16sp</item>
+        <item name="android:textColor">@color/base_app</item>
+        <item name="android:gravity">center_horizontal</item>
+    </style>
+    <style name="item_list_sub_title_default">
+        <item name="android:textSize">14dp</item>
+        <item name="android:layout_marginTop">2dp</item>
+        <item name="android:layout_marginBottom">8dp</item>
+        <item name="android:fontFamily">sans-serif</item>
+        <item name="android:textStyle">bold</item>
+        <item name="android:gravity">center</item>
+        <item name="android:textColor">@color/font_reverse</item>
+    </style>
+
     <style name="item_default_list">
         <item name="android:layout_margin">16dp</item>
         <item name="android:padding">16dp</item>
@@ -172,12 +189,20 @@
         <item name="android:paddingBottom">15dp</item>
     </style>
 
+    <style name="font_name_top_reverse" parent="font_name_top">
+        <item name="android:textColor">@color/base_app2</item>
+    </style>
+
     <style name="font_name_header">
         <item name="android:textSize">16dp</item>
         <item name="android:textStyle">bold</item>
         <item name="android:textColor">@color/base_app</item>
         <item name="android:gravity">center_vertical</item>
         <item name="android:paddingLeft">16dp</item>
+    </style>
+
+    <style name="font_name_header_reverse" parent="font_name_header">
+        <item name="android:textColor">@color/base_app2</item>
     </style>
 
     <style name="font_name_header_inverse">
@@ -194,6 +219,10 @@
         <item name="android:fontFamily">sans-serif-thin</item>
         <item name="android:textColor">@color/font_reverse</item>
         <item name="android:gravity">center_horizontal</item>
+    </style>
+
+    <style name="font_name_header_tiny_base_app2" parent="font_name_header_inverse_tiny">
+        <item name="android:textColor">@color/base_app2</item>
     </style>
 
     <style name="font_name_sub_title">
@@ -323,10 +352,18 @@
         <item name="android:progressDrawable">@drawable/ratingbar_selector_small</item>
         <item name="android:numStars">5</item>
         <item name="android:padding">1dp</item>
+        <item name="android:layout_height">32dip</item>
     </style>
 
     <style name="star_rating_bar_smallest" parent="star_rating_bar_small">
         <item name="android:progressDrawable">@drawable/ratingbar_selector_smallest</item>
+        <item name="android:layout_height">20dip</item>
+    </style>
+
+    <style name="text_notification_default">
+        <item name="android:textSize">14dp</item>
+        <item name="android:textColor">@color/font_reverse</item>
+        <item name="android:padding">8dp</item>
     </style>
 
 </resources>

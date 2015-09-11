@@ -14,11 +14,11 @@ import labex.feevale.br.looky.utils.MessageResponse;
 public class LoadKnowledgesService extends RequestHandler<List<Knowledge>> {
 
 
-    protected LoadKnowledgesService(List<Knowledge> knowledges, Context context, String URL, int methodConnection, String params) {
+    protected LoadKnowledgesService(List<Knowledge> knowledges, Context context, String URL, String methodConnection, String params) {
         super(knowledges, context, URL, methodConnection, params);
     }
 
-    protected LoadKnowledgesService(List<Knowledge> knowledges, Context context, String URL, int methodConnection) {
+    protected LoadKnowledgesService(List<Knowledge> knowledges, Context context, String URL, String methodConnection) {
         super(knowledges, context, URL, methodConnection);
     }
 

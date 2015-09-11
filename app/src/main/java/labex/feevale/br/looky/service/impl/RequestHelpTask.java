@@ -63,7 +63,7 @@ public class RequestHelpTask extends AsyncTask<Void, Void,MessageResponse> {
 
     class RequestHelpService extends RequestHandler<RequestHelp>{
 
-        protected RequestHelpService(RequestHelp requestHelp, Context context, String URL, int methodConnection, String params) {
+        protected RequestHelpService(RequestHelp requestHelp, Context context, String URL, String methodConnection, String params) {
             super(requestHelp, context, URL, methodConnection, params);
         }
 

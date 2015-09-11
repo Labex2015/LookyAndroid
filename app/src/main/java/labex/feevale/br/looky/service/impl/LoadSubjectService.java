@@ -1,6 +1,5 @@
 package labex.feevale.br.looky.service.impl;
 
-import android.app.IntentService;
 import android.app.Service;
 import android.content.Intent;
 import android.os.AsyncTask;
@@ -10,8 +9,6 @@ import java.util.ArrayList;
 import java.util.List;
 
 import labex.feevale.br.looky.LookyApplication;
-import labex.feevale.br.looky.MainActivity;
-import labex.feevale.br.looky.SplashActivity;
 import labex.feevale.br.looky.dao.SubjectDao;
 import labex.feevale.br.looky.model.Subject;
 import labex.feevale.br.looky.service.utils.CallbackTask;

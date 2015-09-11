@@ -24,7 +24,6 @@ import labex.feevale.br.looky.model.Subject;
 import labex.feevale.br.looky.service.impl.ManagerKnowledge;
 import labex.feevale.br.looky.service.utils.ExtraAction;
 import labex.feevale.br.looky.service.utils.HttpActions;
-import labex.feevale.br.looky.utils.L;
 import labex.feevale.br.looky.utils.MessageResponse;
 import labex.feevale.br.looky.utils.SharedPreferencesUtils;
 import labex.feevale.br.looky.view.BaseFragment;
@@ -128,7 +127,6 @@ public class KnowledgeFragment extends BaseFragment implements HttpActions<Knowl
 
             this.subjects = savedInstanceState.getParcelableArrayList("SUBJECTS");
             courseAutoCompleteAdapter = new CourseAutoCompleteAdapter(subjects, getActivity());
-            L.output("onViewStateRestored");
         }
     }
 

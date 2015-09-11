@@ -1,6 +1,5 @@
 package labex.feevale.br.looky.view.fragments;
 
-import android.app.Activity;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.v4.app.Fragment;
@@ -25,6 +24,12 @@ public class EvaluationProfileFragment extends Fragment {
     private EvaluationListProfileAdapter adapter;
     private ListView listView;
     private int size;
+
+    public EvaluationProfileFragment() { }
+
+    public EvaluationProfileFragment(List<Evaluation> evaluations) {
+        this.evaluations = evaluations;
+    }
 
     @Override
     public void onCreate(@Nullable Bundle savedInstanceState) {

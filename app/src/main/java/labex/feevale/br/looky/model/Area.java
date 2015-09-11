@@ -73,4 +73,15 @@ public class Area implements Parcelable, Serializable{
         parcel.writeString(name);
         parcel.writeParcelable(subject, i);
     }
+
+    public static final Parcelable.Creator<Area> CREATOR
+            = new Parcelable.Creator<Area>() {
+        public Area createFromParcel(Parcel in) {
+            return new Area(in);
+        }
+
+        public Area[] newArray(int size) {
+            return new Area[size];
+        }
+    };
 }

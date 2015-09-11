@@ -3,10 +3,9 @@ package labex.feevale.br.looky.view.adapters;
 import android.app.Activity;
 import android.content.Context;
 import android.graphics.BitmapFactory;
+import android.support.v7.widget.RecyclerView;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.AdapterView;
-import android.widget.BaseAdapter;
 import android.widget.RatingBar;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -26,28 +25,64 @@ import labex.feevale.br.looky.view.fragments.UserProfileFragment;
 /**
  * Created by grimmjowjack on 8/17/15.
  */
-public class ResultSearchItemListAdapter extends BaseAdapter implements AdapterView.OnItemClickListener {
+public class ResultSearchItemListAdapter extends RecyclerView.Adapter<ResultSearchItemListAdapter.ViewHolder>{
 
     private Activity activity;
     private List<UserProfile> profiles;
+    private View.OnClickListener listener;
 
-    public ResultSearchItemListAdapter(Activity activity) {
-        this(new ArrayList<UserProfile>(), activity);
+    public ResultSearchItemListAdapter(Activity activity, View.OnClickListener listener) {
+        this(new ArrayList<UserProfile>(), activity, listener);
     }
 
-    public ResultSearchItemListAdapter(List<UserProfile> profiles, Activity activity) {
+    public ResultSearchItemListAdapter(List<UserProfile> profiles, Activity activity, View.OnClickListener listener) {
         this.profiles = profiles;
         this.activity = activity;
+        this.listener = listener;
+    }
+
+    public static class ViewHolder extends RecyclerView.ViewHolder {
+        public TextView username;
+        public TextView degree;
+        public RatingBar rating;
+        public RoundedImageView picture;
+
+        public ViewHolder(View itemView, TextView username,
+                          TextView degree, RatingBar rating, RoundedImageView picture,
+                                                             View.OnClickListener listener) {
+            super(itemView);
+            this.username = username;
+            this.degree = degree;
+            this.rating = rating;
+            this.picture = picture;
+            itemView.setOnClickListener(listener);
+        }
+    }
+
+
+    @Override
+    public ViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
+        View view = activity.getLayoutInflater().inflate(R.layout.pre_profile_item_list, parent, false);
+        TextView username = (TextView)view.findViewById(R.id.usernamePreTextView);
+        TextView degree = (TextView)view.findViewById(R.id.degreePreTextView);
+        RatingBar rating = (RatingBar) view.findViewById(R.id.ratingPreProfile);
+        rating.setIsIndicator(true);
+        RoundedImageView picture =  (RoundedImageView)view.findViewById(R.id.preUserPicture);
+
+        return new ViewHolder(view,username,degree,rating,picture, listener);
     }
 
     @Override
-    public int getCount() {
-        return profiles.size();
-    }
+    public void onBindViewHolder(ViewHolder holder, int position) {
+        holder.username.setText(profiles.get(position).getUsername());
+        holder.degree.setText(profiles.get(position).getDegree());
 
-    @Override
-    public Object getItem(int i) {
-        return profiles.get(i);
+        float ratingValue = ((profiles.get(position).answerPoints + profiles.get(position).helpPoints))
+                * 5 / 2;
+        holder.rating.setRating(ratingValue);
+        if(profiles.get(position).getPicture() != null)
+            holder.picture.setImageBitmap(BitmapFactory.decodeByteArray(profiles.get(position).getPicture(),
+                    holder.picture.getWidth(), holder.picture.getHeight()));
     }
 
     @Override
@@ -56,27 +91,8 @@ public class ResultSearchItemListAdapter extends BaseAdapter implements AdapterV
     }
 
     @Override
-    public View getView(int position, View view, ViewGroup viewGroup) {
-        view = activity.getLayoutInflater().inflate(R.layout.pre_profile_item_list, viewGroup, false);
-
-        TextView username = (TextView)view.findViewById(R.id.usernamePreTextView);
-        username.setText(profiles.get(position).getUsername());
-
-        TextView degree = (TextView)view.findViewById(R.id.degreePreTextView);
-        degree.setText(profiles.get(position).getDegree());
-
-        float ratingValue = ((profiles.get(position).answerPoints + profiles.get(position).helpPoints))
-                            * 5 / 2;
-        RatingBar rating = (RatingBar) view.findViewById(R.id.ratingPreProfile);
-        rating.setRating(ratingValue);
-        rating.setIsIndicator(true);
-
-        RoundedImageView picture =  (RoundedImageView)view.findViewById(R.id.preUserPicture);
-        if(profiles.get(position).getPicture() != null)
-            picture.setImageBitmap(BitmapFactory.decodeByteArray(profiles.get(position).getPicture(),
-            picture.getWidth(), picture.getHeight()));
-
-        return view;
+    public int getItemCount() {
+        return profiles.size();
     }
 
     public List<UserProfile> getProfiles() {
@@ -88,8 +104,7 @@ public class ResultSearchItemListAdapter extends BaseAdapter implements AdapterV
         notifyDataSetChanged();
     }
 
-    @Override
-    public void onItemClick(AdapterView<?> adapterView, View view, int position, long l) {
+    public void loadProfile(int position){
         loadProfileTask(profiles.get(position));
     }
 

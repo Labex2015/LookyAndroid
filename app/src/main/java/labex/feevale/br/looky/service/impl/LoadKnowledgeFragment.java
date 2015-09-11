@@ -126,7 +126,7 @@ public class LoadKnowledgeFragment {
         private SourceAreas referency;
 
         protected AreaRequestTask(SourceAreas entity, Context context, Handler handler) {
-            super(entity, context, AppVariables.AREAS, RequestHandler.GET, handler);
+            super(entity, context, AppVariables.KNOWLEDGE_RESOURCES, RequestHandler.GET, handler);
             referency = entity;
         }
 

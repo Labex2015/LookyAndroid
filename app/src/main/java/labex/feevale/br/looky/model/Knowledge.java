@@ -41,6 +41,14 @@ public class Knowledge implements Serializable, Parcelable {
         this.idUser = idUser;
     }
 
+    public Knowledge(Parcel parcel) {
+        this.name = parcel.readString();
+        this.area = parcel.readLong();
+        this.subject = parcel.readLong();
+        this.idUser = parcel.readLong();
+        this.subjectName = parcel.readString();
+    }
+
     public Knowledge(Area selectedArea, Subject selectedSubject) {
         if(selectedArea.getId() != null && selectedArea.getId() > 0)
             this.area = selectedArea.getId();
@@ -102,8 +110,19 @@ public class Knowledge implements Serializable, Parcelable {
     @Override
     public void writeToParcel(Parcel parcel, int i) {
         parcel.writeLong(this.area);
-        parcel.writeLong(this.subject);
+        parcel.writeLong(this.subject != null ? this.subject : 0);
         parcel.writeLong(this.idUser);
         parcel.writeString(this.name);
     }
+
+    public static final Parcelable.Creator<Knowledge> CREATOR
+            = new Parcelable.Creator<Knowledge>() {
+        public Knowledge createFromParcel(Parcel in) {
+            return new Knowledge(in);
+        }
+
+        public Knowledge[] newArray(int size) {
+            return new Knowledge[size];
+        }
+    };
 }

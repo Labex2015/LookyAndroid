@@ -147,5 +147,12 @@
     <string name="label_empty_text_view">Vincule com uma disciplina....</string>
 
 
+    <!-- LOGIN SCREENS -->
+
+    <string name="login_message_notification">Olá #, só precisamos de mais algumas informações.</string>
+
+
+
+
 </resources>
 

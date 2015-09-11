@@ -22,6 +22,7 @@ public class User implements Serializable, Parcelable{
     public Integer semester;
     public String picturePath;
     public byte[] picture;
+    private String accountID;
 
     public User() {}
 
@@ -150,5 +151,24 @@ public class User implements Serializable, Parcelable{
         parcel.writeInt(semester != null ? semester:1);
         parcel.writeString(picturePath != null ? picturePath:"");
         parcel.writeByteArray(picture);
+    }
+
+    public static final Parcelable.Creator<User> CREATOR
+            = new Parcelable.Creator<User>() {
+        public User createFromParcel(Parcel in) {
+            return new User(in);
+        }
+
+        public User[] newArray(int size) {
+            return new User[size];
+        }
+    };
+
+    public String getAccountID() {
+        return accountID;
+    }
+
+    public void setAccountID(String accountID) {
+        this.accountID = accountID;
     }
 }

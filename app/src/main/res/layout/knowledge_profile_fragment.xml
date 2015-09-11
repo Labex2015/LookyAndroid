@@ -9,7 +9,7 @@
     <ListView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:divider="@drawable/divider_autocomplete"
+        android:divider="@drawable/divider_default"
         android:dividerHeight="1px"
         android:id="@+id/knowledgeProfileListView">
 

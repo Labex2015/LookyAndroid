@@ -51,20 +51,22 @@ public class GcmMessageHandler extends IntentService{
         String messageType = gcm.getMessageType(intent);
         message = extras.getString("body");
         messageTypeToRedirect = extras.getString("type");
-        type = Integer.parseInt(messageTypeToRedirect);
-        handler.post(new Runnable() {
-            @Override
-            public void run() {
-                switch (type) {
-                    case GCMVariables.TYPE_REQUEST_HELP:
-                        notifyRequestUserHelp(message);
-                        break;
-                    case GCMVariables.TYPE_RESPONSE_HELP:
-                        notifyResponseUser(message);
-                        break;
+        if(messageTypeToRedirect != null && message != null) {
+            type = Integer.parseInt(messageTypeToRedirect);
+            handler.post(new Runnable() {
+                @Override
+                public void run() {
+                    switch (type) {
+                        case GCMVariables.TYPE_REQUEST_HELP:
+                            notifyRequestUserHelp(message);
+                            break;
+                        case GCMVariables.TYPE_RESPONSE_HELP:
+                            notifyResponseUser(message);
+                            break;
+                    }
                 }
-            }
-        });
+            });
+        }
         GcmBroadcastReceiver.completeWakefulIntent(intent);
     }
 

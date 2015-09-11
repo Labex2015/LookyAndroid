@@ -86,7 +86,7 @@ public class ManagerKnowledge extends AsyncTask<Void, Void, Void>{
 
     abstract class ProcessKnowledgeRequest<Entity> extends RequestHandler {
 
-        public ProcessKnowledgeRequest(Entity entity, Activity context, int methodConnection, String params) {
+        public ProcessKnowledgeRequest(Entity entity, Activity context, String methodConnection, String params) {
             super(knowledge, context, AppVariables.KNOWLEDGE, methodConnection, params);
         }
 

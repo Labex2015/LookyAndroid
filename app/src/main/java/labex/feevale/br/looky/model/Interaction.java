@@ -10,9 +10,7 @@ public class Interaction implements Serializable{
 
     private Long id;
     private Long idRequestHelp;
-
     private RequestHelp requestHelp;
-
     private String request;
     private String chatRoom;
     private Boolean open;

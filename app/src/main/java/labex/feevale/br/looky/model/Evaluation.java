@@ -102,4 +102,15 @@ public class Evaluation implements Serializable, Parcelable{
         parcel.writeValue(evaluated);
         parcel.writeParcelable(userEvaluator, i);
     }
+
+    public static final Parcelable.Creator<Evaluation> CREATOR
+            = new Parcelable.Creator<Evaluation>() {
+        public Evaluation createFromParcel(Parcel in) {
+            return new Evaluation(in);
+        }
+
+        public Evaluation[] newArray(int size) {
+            return new Evaluation[size];
+        }
+    };
 }

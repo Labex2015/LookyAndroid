@@ -2,7 +2,6 @@ package labex.feevale.br.looky;
 
 import android.app.ProgressDialog;
 import android.content.Context;
-import android.content.Intent;
 import android.os.Bundle;
 import android.os.Handler;
 import android.os.StrictMode;
@@ -27,15 +26,12 @@ import android.widget.TextView;
 
 import java.util.Arrays;
 
-import labex.feevale.br.looky.dao.SubjectDao;
 import labex.feevale.br.looky.model.Interaction;
 import labex.feevale.br.looky.model.User;
 import labex.feevale.br.looky.service.impl.LoadKnowledgeFragment;
-import labex.feevale.br.looky.service.impl.LoadSubjectService;
 import labex.feevale.br.looky.service.impl.RequestInteractionsTask;
 import labex.feevale.br.looky.service.utils.TaskExtraAction;
 import labex.feevale.br.looky.utils.AppVariables;
-import labex.feevale.br.looky.utils.L;
 import labex.feevale.br.looky.utils.SharedPreferencesUtils;
 import labex.feevale.br.looky.utils.UserMock;
 import labex.feevale.br.looky.view.adapters.InteractionsListAdapter;
@@ -68,7 +64,6 @@ public class MainActivity extends AppCompatActivity implements AppCompatCallback
     private ActionBarDrawerToggle mDrawerToggle;
 
     private Fragment mFragment;
-    private Intent mService;
     private FragmentTransaction fragmentTransaction;
 
     private TextView usernameTextViewView, courseTexteView;
@@ -193,7 +188,7 @@ public class MainActivity extends AppCompatActivity implements AppCompatCallback
         if(manageFragment(fragment)) {
             closeKeyboard();
             fragmentTransaction = this.getSupportFragmentManager().beginTransaction();
-            fragmentTransaction.setCustomAnimations(R.anim.slide_in_left, 0, 0, R.anim.slide_out_left);
+            //fragmentTransaction.setCustomAnimations(R.anim.slide_in_left, 0, 0, R.anim.slide_out_left);
             fragmentTransaction.replace(R.id.container, fragment);
             fragmentTransaction.addToBackStack(null);
             fragmentTransaction.commit();

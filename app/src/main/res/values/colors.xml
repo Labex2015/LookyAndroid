@@ -35,6 +35,7 @@
 
     <!-- App -->
     <color name="base_app">#17393F</color>
+    <color name="base_app_strong">#0d3128</color>
     <color name="base_app2">#EBEBEB</color>
     <color name="font_reverse">#FBAE17</color>
     <color name="font_reverse2">#F5A403</color>

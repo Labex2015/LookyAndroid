@@ -7,8 +7,8 @@ import com.google.gson.annotations.Expose;
 
 import java.io.Serializable;
 
-import labex.feevale.br.looky.dao.model.SubjectModel;
 import labex.feevale.br.looky.dao.model.DegreeModel;
+import labex.feevale.br.looky.dao.model.SubjectModel;
 
 /**
  * Created by 0126128 on 07/07/2015.
@@ -46,14 +46,14 @@ public class Subject implements Serializable, Parcelable{
     }
 
     public Subject(SubjectModel s) {
-        this.id = s.get_id();
+        this.id = s.getIdUser();
         this.name = s.getName();
         this.setDegree(s.getDegree());
     }
 
     private void setDegree(DegreeModel degree) {
         if(degree != null)
-            this.degree = new Degree(degree.get_id(), degree.getName());
+            this.degree = new Degree(degree.getIdDegree(), degree.getName());
     }
 
     public Long getId() {
@@ -91,4 +91,15 @@ public class Subject implements Serializable, Parcelable{
         parcel.writeString(name);
         parcel.writeSerializable(degree);
     }
+
+    public static final Parcelable.Creator<Subject> CREATOR
+            = new Parcelable.Creator<Subject>() {
+        public Subject createFromParcel(Parcel in) {
+            return new Subject(in);
+        }
+
+        public Subject[] newArray(int size) {
+            return new Subject[size];
+        }
+    };
 }

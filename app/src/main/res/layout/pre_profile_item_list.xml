@@ -19,20 +19,20 @@
         <TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            style="@style/list_text_knowledge_style_bold"
             android:id="@+id/usernamePreTextView"
+            style="@style/item_list_title_default"
             android:text="Name_User"/>
         <TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            style="@style/font_text_long_description"
+            style="@style/item_list_sub_title_default"
             android:gravity="center"
             android:id="@+id/degreePreTextView"
             android:text="ciencia_computacao"/>
 
         <RatingBar
             android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
+            android:layout_height="32dp"
             android:id="@+id/ratingPreProfile"
             style="@style/star_rating_bar_small"
             android:clickable="false"

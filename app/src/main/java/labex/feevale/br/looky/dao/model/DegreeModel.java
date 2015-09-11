@@ -1,26 +1,35 @@
 package labex.feevale.br.looky.dao.model;
 
-import com.orm.SugarRecord;
-
 import java.io.Serializable;
 
+import io.realm.RealmObject;
+import io.realm.annotations.PrimaryKey;
+import io.realm.annotations.RealmClass;
 import labex.feevale.br.looky.model.Degree;
 
 /**
  * Created by grimmjowjack on 8/28/15.
  */
-public class DegreeModel extends SugarRecord<DegreeModel> implements Serializable{
+@RealmClass
+public class DegreeModel extends RealmObject {
 
-    private static final long serialVersionUID = 6465806781769429123L;
-
-    private Long _id;
+    @PrimaryKey
+    private long idDegree;
     private String name;
 
     public DegreeModel() {}
 
     public DegreeModel(Degree degree) {
         this.name = degree.getName();
-        this._id = degree.getId();
+        this.idDegree = degree.getId();
+    }
+
+    public long getIdDegree() {
+        return idDegree;
+    }
+
+    public void setIdDegree(long idDegree) {
+        this.idDegree = idDegree;
     }
 
     public String getName() {
@@ -29,13 +38,5 @@ public class DegreeModel extends SugarRecord<DegreeModel> implements Serializabl
 
     public void setName(String name) {
         this.name = name;
-    }
-
-    public Long get_id() {
-        return _id;
-    }
-
-    public void set_id(Long _id) {
-        this._id = _id;
     }
 }

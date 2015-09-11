@@ -66,4 +66,15 @@ public class SearchItem implements Serializable, Parcelable{
         parcel.writeLong(subject != null ? subject : 0L);
 
     }
+
+    public static final Parcelable.Creator<SearchItem> CREATOR
+            = new Parcelable.Creator<SearchItem>() {
+        public SearchItem createFromParcel(Parcel in) {
+            return new SearchItem(in);
+        }
+
+        public SearchItem[] newArray(int size) {
+            return new SearchItem[size];
+        }
+    };
 }

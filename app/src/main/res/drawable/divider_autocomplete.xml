@@ -4,7 +4,7 @@
     android:insetRight="16dp" >
 
     <shape android:shape="rectangle" >
-        <solid android:color="@color/base_app2" />
+        <solid android:color="@color/base_app_strong" />
     </shape>
 
 </inset>

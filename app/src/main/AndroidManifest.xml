@@ -8,6 +8,7 @@
     <uses-permission android:name="android.permission.INTERNET" />
     <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
     <uses-permission android:name="android.permission.GET_ACCOUNTS" />
+    <uses-permission android:name="android.permission.USE_CREDENTIALS" />
     <uses-permission android:name="android.permission.WAKE_LOCK" />
     <uses-permission android:name="com.google.android.c2dm.permission.RECEIVE" />
     <uses-permission android:name="android.permission.VIBRATE" />
@@ -25,10 +26,12 @@
         android:theme="@style/CustomThemeLooky"
         android:name=".LookyApplication">
 
-        <meta-data android:name="DATABASE" android:value="looky.db" />
-        <meta-data android:name="VERSION" android:value="2" />
-        <meta-data android:name="QUERY_LOG" android:value="true" />
-        <meta-data android:name="DOMAIN_PACKAGE_NAME" android:value="labex.feevale.br.looky.dao.model" />
+        <meta-data
+            android:name="com.google.android.gms.version"
+            android:value="@integer/google_play_services_version" />
+        <meta-data
+            android:name="com.google.android.geo.API_KEY"
+            android:value="AIzaSyAvc67klsaDu_yBzgGS8jH_6YYlq6Iqq0g"/>
 
         <activity
             android:name=".SplashActivity"
@@ -40,7 +43,11 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-
+        <activity android:name=".LoginActivity"
+            android:configChanges="keyboardHidden"
+            android:label="@string/app_name"
+            android:windowSoftInputMode="adjustPan">
+        </activity>
         <activity android:name=".MainActivity"
             android:configChanges="keyboardHidden"
             android:label="@string/app_name"
