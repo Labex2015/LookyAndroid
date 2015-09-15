@@ -10,6 +10,8 @@ public class AppVariables {
     public static final String LOOKY_KEY_OAUTH = "1079617689354-cdrmdhe6i88vvqedaq3ggcov65c9pcia.apps.googleusercontent.com";
     public static final String GOOGLE_SCOPE = "audience:server:client_id:1079617689354-csllf39rm4htea8r03vvcgm99e904j4u.apps.googleusercontent.com";
 
+    public static final String FACEBOOK_KEY = "+F7e0vDnxU8H4co9SGbWQVmkNKY=";
+
     public static final String TAG_ROM = "#ROOM";
     public static final String TAG_IDUSER = "#ID_USER";
     public static final String TAG_USERNAME = "#USERNAME";
@@ -18,7 +20,7 @@ public class AppVariables {
     public static final String TAG_ID_REQUEST = "#ID_REQUEST";
     public static final String TAG_ID_HELPER = "#ID_HELPER";
 
-    //public static final String URL = "http://192.168.1.102:8793/";
+    //public static final String URL = "http://192.168.57.1:8793/";
     public static final String URL = "http://52.26.130.5:8793/";
 
 
@@ -59,4 +61,5 @@ public class AppVariables {
     public static final String URL_USER_PROFILE = URL + USER_VERB + TAG_IDUSER + "/profile";
     public static final String SUBJECTS =  URL+"subjects";
     public static final String URL_SIGN_IN_GOOGLE = URL + "user/signin/google";
+    public static final String URL_SIGN_IN_FACEBOOK = URL+"user/signin/facebook";
 }

@@ -1,5 +1,6 @@
 package labex.feevale.br.looky.service;
 
+import android.accounts.NetworkErrorException;
 import android.content.Context;
 
 import org.apache.http.conn.ConnectTimeoutException;
@@ -16,6 +17,7 @@ import java.net.URL;
 import labex.feevale.br.looky.model.ServiceError;
 import labex.feevale.br.looky.utils.AppHelp;
 import labex.feevale.br.looky.utils.JsonUtils;
+import labex.feevale.br.looky.utils.L;
 import labex.feevale.br.looky.utils.MessageResponse;
 
 /**
@@ -27,9 +29,6 @@ public abstract class RequestHandler<Entity> {
     public final static String POST = "POST";
     public final static String PUT = "PUT";
     public final static String DELETE = "DELETE";
-
-    public static final int SERVICE = 100;
-    public static final int TASK = 200;
 
     public static final int TIMEOUT = 5000;
 
@@ -78,23 +77,15 @@ public abstract class RequestHandler<Entity> {
                 if(params != null)
                     configBody(params);
                 processReturn();
+                postExecute(String.valueOf(response));
+            }else{
+                error(new MessageResponse("Sem conexão com a internet", false));
             }
-            postExecute(String.valueOf(response));
         } catch (Exception e) {
-            ServiceError serviceError;
-            if (!(e instanceof ConnectTimeoutException)) {
-                try {
-                    serviceError = new JsonUtils().JsonToError((response == null ? "" : response.toString()));
-                    messageResponse.setMsg("Status: " + serviceError.getStatus() + ", Message: " + serviceError.getMessage());
-                } catch (Exception ex) {
-                    messageResponse.setMsg("Problemas ao tentar conectar com o servidor.");
-                }
-
-            }else if (e instanceof ConnectException)
+            if (e instanceof ConnectTimeoutException || e instanceof ConnectException)
                 messageResponse.setMsg("Problemas ao tentar conectar com o servidor.");
-            else
-                messageResponse.setMsg("Verifique sua conexão com a internet.");
 
+            messageResponse.setMsg(e.getMessage());
             error(messageResponse);
         }finally {
             if(connection != null) {
@@ -103,114 +94,114 @@ public abstract class RequestHandler<Entity> {
         }
     }
 
-    private void processReturn(){
+    private void processReturn() throws IOException {
         InputStream is = null;
         BufferedReader rd = null;
         try {
-            is = connection.getInputStream();
-            rd = new BufferedReader(new InputStreamReader(is));
-            String line;
-            response = new StringBuffer();
-            while ((line = rd.readLine()) != null) {
-                response.append(line);
-                response.append('\r');
+            if(processReturn(connection.getResponseCode())) {
+                is = connection.getInputStream();
+                rd = new BufferedReader(new InputStreamReader(is));
+                String line;
+                response = new StringBuffer();
+                while ((line = rd.readLine()) != null) {
+                    response.append(line);
+                    response.append('\r');
+                }
             }
-            processReturn(connection.getResponseCode());
         } catch (IOException e) {
-            e.printStackTrace();
-            error(new MessageResponse("Erro ao efetuar leitura dos dados retornados", false));
+            throw new IOException("Erro ao efetuar leitura dos dados retornados");
         }finally {
             try {
                 if(rd != null)
                     rd.close();
                 if(is != null)
                     is.close();
-            } catch (IOException e) {
-                e.printStackTrace();
-            }
+            } catch (IOException e) {L.output(e.getMessage());}
         }
     }
 
-    private void configBody(String params){
+    private void configBody(String params) throws IOException {
         try{
             byte[] postData       = params.getBytes(ENCODING_UTF);
             int    postDataLength = postData.length;
             connection.setDoOutput(true);
-            connection.setRequestProperty("charset", "utf-8");
+            connection.setRequestProperty("charset", ENCODING_UTF);
             connection.setRequestProperty("Content-Length", Integer.toString( postDataLength ));
             connection.setUseCaches(false);
             wr = new DataOutputStream(connection.getOutputStream());
             wr.write(postData);
         } catch (IOException e) {
-            e.printStackTrace();
-            error(new MessageResponse("Problemas ao processar dados para envio.", false));
+            throw new IOException("Problemas ao processar dados para envio.");
         }finally {
             if(wr != null){
                 try {
                     wr.flush();
                     wr.close();
-                } catch (IOException e) {
-                    e.printStackTrace();
-                }
+                } catch (IOException e) {L.output(e.getMessage());}
             }
         }
     }
 
 
-    private void processReturn(int statusCode) throws IOException {
-        if(statusCode >= 200 && statusCode <= 202) {
-            messageResponse.setStatus(true);
-            status = true;
-        }else if(statusCode == HttpURLConnection.HTTP_NO_CONTENT)
-            messageResponse.setMsg("Nenhum conteúdo encontrado.");
-        else if(statusCode == HttpURLConnection.HTTP_CONFLICT)
-            messageResponse.setMsg("Possível duplicidade.");
-        else if(statusCode == HttpURLConnection.HTTP_GATEWAY_TIMEOUT ||
-                statusCode == HttpURLConnection.HTTP_CLIENT_TIMEOUT)
-            messageResponse.setMsg("Tentativas de consulta expiraram.");
-        else if(statusCode == HttpURLConnection.HTTP_BAD_REQUEST)
-            messageResponse.setMsg("Url inválida: "+URL);
-        else if(statusCode == HttpURLConnection.HTTP_NOT_FOUND)
-            messageResponse.setMsg("Problemas ao localizar serviço.");
-        else if(statusCode == HttpURLConnection.HTTP_UNAUTHORIZED ||
-                statusCode == HttpURLConnection.HTTP_FORBIDDEN)
-            messageResponse.setMsg("Autenticação necessária.");
-        else if(statusCode == HttpURLConnection.HTTP_NOT_ACCEPTABLE)
-            messageResponse.setMsg("Parâmetros inválidos.");
-        else if(statusCode == HttpURLConnection.HTTP_UNAVAILABLE)
-            messageResponse.setMsg("Problemas ao efetuar solicitação para o servidor.");
-        else if(statusCode == HttpURLConnection.HTTP_UNSUPPORTED_TYPE)
-            messageResponse.setMsg("Parâmetros de requisição inválido.");
+    private Boolean processReturn(int statusCode) throws IOException {
+
+        switch (statusCode) {
+            case 200:;
+            case 201:;
+            case 202:
+                messageResponse.setStatus(true);
+                return true;
+            case HttpURLConnection.HTTP_NO_CONTENT:
+                messageResponse.setMsg("Nenhum conteúdo encontrado.");
+                break;
+            case HttpURLConnection.HTTP_CONFLICT:
+                messageResponse.setMsg("Possível duplicidade.");
+                break;
+            case HttpURLConnection.HTTP_GATEWAY_TIMEOUT:;
+            case HttpURLConnection.HTTP_CLIENT_TIMEOUT:
+                messageResponse.setMsg("Tentativas de consulta expiraram.");
+                break;
+            case HttpURLConnection.HTTP_BAD_REQUEST:
+                messageResponse.setMsg("Url inválida: " + URL);
+                break;
+            case HttpURLConnection.HTTP_NOT_FOUND:
+                messageResponse.setMsg("Problemas ao localizar serviço.");
+                break;
+            case HttpURLConnection.HTTP_UNAUTHORIZED:;
+            case HttpURLConnection.HTTP_FORBIDDEN:
+                messageResponse.setMsg("Autenticação necessária.");
+                break;
+            case HttpURLConnection.HTTP_NOT_ACCEPTABLE:
+                messageResponse.setMsg("Parâmetros inválidos.");
+                break;
+            case HttpURLConnection.HTTP_UNAVAILABLE:
+                messageResponse.setMsg("Problemas ao efetuar solicitação para o servidor.");
+                break;
+            case HttpURLConnection.HTTP_UNSUPPORTED_TYPE:
+                messageResponse.setMsg("Parâmetros de requisição inválido.");
+                break;
+        }
+        return false;
     }
 
     private void postExecute(String response) {
-        try {
-            if(status) {
-                this.entity = postExecuteCore(response);
-                messageResponse.setStatus(true);
-                close(this.entity);
-            }else
-                error(messageResponse);
-        } catch (Exception e) {
-            e.printStackTrace();
-            messageResponse.setMsg("Problemas ao processar retorno.");
-            messageResponse.setStatus(false);
+        if(response != null) {
+            this.entity = postExecuteCore(response);
+            messageResponse.setStatus(true);
+            close(this.entity);
+        }else
             error(messageResponse);
-        }
     }
 
     protected Entity postExecuteCore(String response){
         return (Entity) jsonUtils.process(response);
     }
 
-    private Boolean validateConnection(){
-        this.messageResponse.setMsg("Sem conexão com a internet.");
-        this.messageResponse.setStatus(false);
+    private boolean validateConnection(){
         return new AppHelp(context).validateConnection();
     }
 
     protected abstract void error(MessageResponse messageResponse);
 
     protected abstract void close(Entity entity);
-
 }

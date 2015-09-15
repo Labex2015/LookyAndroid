@@ -3,6 +3,8 @@ package labex.feevale.br.looky.model;
 import android.os.Parcel;
 import android.os.Parcelable;
 
+import com.google.gson.annotations.Expose;
+
 import java.io.Serializable;
 
 /**
@@ -13,15 +15,24 @@ public class User implements Serializable, Parcelable{
     private static final long serialVersionUID = 6844993266929805511L;
 
     public Long id;
+    @Expose
     public String username;
+    @Expose
     public String name;
+    @Expose
     public Float latitude;
+    @Expose
     public Float longitude;
+    @Expose
     public String description;
+    @Expose
     public String degree;
+    @Expose
     public Integer semester;
+    @Expose
     public String picturePath;
     public byte[] picture;
+    @Expose
     private String accountID;
 
     public User() {}

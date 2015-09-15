@@ -1,8 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:orientation="vertical"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:gravity="center_vertical"
     android:background="@color/base_app">
     <TextView
         android:layout_width="wrap_content"
@@ -10,6 +11,74 @@
         android:layout_gravity="start"
         android:text="@string/login_message_notification"
         style="@style/text_notification_default"
-        android:id="@+id/labelNotificationLoginNome"/>
+        android:id="@+id/labelNotificationLoginNome"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true" />
 
-</LinearLayout>
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/login_course_label"
+        android:id="@+id/textView5"
+        style="@style/text_notification_default"
+        android:layout_above="@+id/signinDegreeAutoComplete"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true" />
+
+    <AutoCompleteTextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/signinDegreeAutoComplete"
+        style="@style/edit_text_app"
+        android:layout_gravity="center_horizontal"
+        android:layout_below="@+id/linearLayout5"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true" />
+
+    <LinearLayout
+        android:orientation="horizontal"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal"
+        android:id="@+id/linearLayout5"
+        android:layout_marginTop="107dp"
+        android:layout_below="@+id/labelNotificationLoginNome"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true">
+
+    </LinearLayout>
+
+    <Button
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/login_button_save"
+        style="@style/button_default"
+        android:background="@color/font_reverse"
+        android:id="@+id/finishSignInButton"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true" />
+
+    <Spinner
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/semesterSignInSpinner"
+        android:layout_weight="1"
+        android:layout_below="@+id/signinDegreeAutoComplete"
+        android:layout_toRightOf="@+id/textView4"
+        android:layout_toEndOf="@+id/textView4"
+        android:spinnerMode="dropdown"
+        android:entries="@array/semester_array"/>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/login_course_semester"
+        style="@style/text_notification_default"
+        android:id="@+id/textView4"
+        android:layout_below="@+id/signinDegreeAutoComplete"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true" />
+
+</RelativeLayout>

@@ -14,9 +14,10 @@ public class SignInService extends RequestHandler<User> {
 
     private CallbackTask<User> callbackTask;
 
-    public SignInService(User user, Context context, String url, String param) {
+    public SignInService(User user, Context context, String url, String param, CallbackTask callbackTask) {
         super(user, context, url,
                 RequestHandler.POST, param);
+        this.callbackTask = callbackTask;
     }
 
 

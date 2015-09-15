@@ -32,6 +32,12 @@
         <meta-data
             android:name="com.google.android.geo.API_KEY"
             android:value="AIzaSyAvc67klsaDu_yBzgGS8jH_6YYlq6Iqq0g"/>
+        <meta-data
+            android:name="io.fabric.ApiKey"
+            android:value="71503609d045cba6115e34f616a0f2cb4b3d913a" />
+
+        <meta-data android:name="com.facebook.sdk.ApplicationId"
+            android:value="@string/facebook_app_id"/>
 
         <activity
             android:name=".SplashActivity"
@@ -53,6 +59,18 @@
             android:label="@string/app_name"
             android:windowSoftInputMode="adjustPan">
         </activity>
+        <activity android:name=".view.activities.AfterAuthorizationActivity"
+            android:configChanges="keyboardHidden"
+            android:label="@string/app_name"
+            android:windowSoftInputMode="adjustPan">
+        </activity>
+
+        <activity android:name="com.facebook.FacebookActivity"
+            android:configChanges=
+                "keyboard|keyboardHidden|screenLayout|screenSize|orientation"
+            android:theme="@android:style/Theme.Translucent.NoTitleBar"
+            android:label="@string/app_name" />
+
         <receiver
             android:name=".gcm.GcmBroadcastReceiver"
             android:permission="com.google.android.c2dm.permission.SEND" >

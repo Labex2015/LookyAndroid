@@ -10,6 +10,7 @@
     <string name="action_logout">Logout</string>
     <string name="action_chat_logout">Sair</string>
     <string name="action_to_home">Home</string>
+    <string name="facebook_app_id">1639860942950097</string>
 
     <!--DIALOGS-->
     <string name="FINALIZE_DIALOG">Deseja finalizar a ajuda?</string>
@@ -150,7 +151,20 @@
     <!-- LOGIN SCREENS -->
 
     <string name="login_message_notification">Olá #, só precisamos de mais algumas informações.</string>
-
+    <string name="login_course_label">Qual o ser curso?</string>
+    <string name="login_course_semester">Qual o semestre?</string>
+    <string name="login_button_save">Encerrar registro</string>
+    <string-array name="semester_array">
+        <item>1</item>
+        <item>2</item>
+        <item>3</item>
+        <item>4</item>
+        <item>5</item>
+        <item>6</item>
+        <item>7</item>
+        <item>8</item>
+        <item>9</item>
+    </string-array>
 
 
 

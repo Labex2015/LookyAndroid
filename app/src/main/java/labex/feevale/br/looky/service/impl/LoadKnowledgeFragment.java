@@ -111,11 +111,11 @@ public class LoadKnowledgeFragment {
 
         @Override
         protected void close(Object response) {
-            if(response != null) {
+            if(response != null)
                 ((List<Knowledge>) param).addAll((List<Knowledge>) response);
-                message.arg1 = LoadKnowledgeFragment.OK;
-                handler.sendMessage(message);
-            }
+            message.arg1 = LoadKnowledgeFragment.OK;
+            handler.sendMessage(message);
+
         }
     }
 
