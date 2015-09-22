@@ -1,7 +1,16 @@
 package labex.feevale.br.looky;
 
+import android.app.DialogFragment;
 import android.app.ProgressDialog;
 import android.content.Context;
+import android.content.res.Configuration;
+import android.graphics.Bitmap;
+import android.graphics.Canvas;
+import android.graphics.Color;
+import android.graphics.Paint;
+import android.graphics.PorterDuff;
+import android.graphics.PorterDuffXfermode;
+import android.graphics.Rect;
 import android.os.Bundle;
 import android.os.Handler;
 import android.os.StrictMode;
@@ -24,6 +33,8 @@ import android.view.animation.Animation;
 import android.view.inputmethod.InputMethodManager;
 import android.widget.TextView;
 
+import com.squareup.picasso.Picasso;
+
 import java.util.Arrays;
 
 import labex.feevale.br.looky.model.Interaction;
@@ -32,14 +43,20 @@ import labex.feevale.br.looky.service.impl.LoadKnowledgeFragment;
 import labex.feevale.br.looky.service.impl.RequestInteractionsTask;
 import labex.feevale.br.looky.service.utils.TaskExtraAction;
 import labex.feevale.br.looky.utils.AppVariables;
+import labex.feevale.br.looky.utils.L;
 import labex.feevale.br.looky.utils.SharedPreferencesUtils;
 import labex.feevale.br.looky.utils.UserMock;
+import labex.feevale.br.looky.view.BaseFragment;
 import labex.feevale.br.looky.view.adapters.InteractionsListAdapter;
 import labex.feevale.br.looky.view.adapters.InteractionsPendingListAdapter;
+import labex.feevale.br.looky.view.custom.LookyDialog;
 import labex.feevale.br.looky.view.custom.RoundedImageView;
+import labex.feevale.br.looky.view.dialogs.DialogActions;
 import labex.feevale.br.looky.view.fragments.InteractionsFragment;
 import labex.feevale.br.looky.view.fragments.KnowledgeFragment;
 import labex.feevale.br.looky.view.fragments.MainFragment;
+import labex.feevale.br.looky.view.fragments.ProfileFragment;
+import labex.feevale.br.looky.view.fragments.RequestsGlobalFragment;
 import labex.feevale.br.looky.view.fragments.SearchHelpFragment;
 
 
@@ -89,11 +106,7 @@ public class MainActivity extends AppCompatActivity implements AppCompatCallback
             setContentView(R.layout.activity_main);
 
             mDrawerLayout = (DrawerLayout) findViewById(R.id.drawer_layout);
-            toolbar = (Toolbar) findViewById(R.id.action_bar_looky);
-            toolbar.setTitle("");
-            toolbar.setLogo(R.drawable.ic_launcher);
-            setSupportActionBar(toolbar);
-
+            loadActionBar();
            // if (savedInstanceState == null) {
                 mNavItemId = R.id.drawer_home;
            /* } else {
@@ -104,31 +117,55 @@ public class MainActivity extends AppCompatActivity implements AppCompatCallback
             navigationView.setNavigationItemSelectedListener(this);
             navigationView.getMenu().findItem(mNavItemId).setChecked(true);
 
-            mDrawerToggle = new ActionBarDrawerToggle(this, mDrawerLayout, toolbar, R.string.action_logout,
-                    R.string.action_logout);
-            mDrawerLayout.setDrawerListener(mDrawerToggle);
-            mDrawerToggle.syncState();
+
 
 //        navigate(navigationView.getMenu().getItem(mNavItemId).getNumericShortcut());
 
-            user = new SharedPreferencesUtils().getUSer(this);
+            user = new SharedPreferencesUtils().getUser(this);
             if (user != null) {
                 usernameTextViewView = (TextView) findViewById(R.id.usernameDrawerTextView);
                 courseTexteView = (TextView) findViewById(R.id.userCourseDrawerTextView);
+                userPicture = (RoundedImageView) findViewById(R.id.drawerUserPicture);
 
                 usernameTextViewView.setText(user.getName());
                 courseTexteView.setText(user.getDegree());
-                //loadMainScreen();
+                Picasso.with(this).load(user.picturePath).resize(150, 150)
+                        .centerCrop().into(userPicture);
 
                 if(savedInstanceState == null)
                     changeFragment(new MainFragment());
             }
     }
 
+    public void loadActionBar() {
+        toolbar = (Toolbar) findViewById(R.id.action_bar_looky);
+        toolbar.setTitle("");
+        toolbar.setLogo(R.drawable.ic_launcher);
+        setSupportActionBar(toolbar);
+
+
+        mDrawerToggle = new ActionBarDrawerToggle(this, mDrawerLayout, toolbar, R.string.action_logout,
+                R.string.action_logout);
+        mDrawerLayout.setDrawerListener(mDrawerToggle);
+        mDrawerToggle.syncState();
+    }
+
     @Override
     protected void onSaveInstanceState(Bundle outState) {
         super.onSaveInstanceState(outState);
        // getSupportFragmentManager().putFragment(outState,"mfragment", mFragment);
+    }
+
+    @Override
+    protected void onPostCreate(Bundle savedInstanceState) {
+        super.onPostCreate(savedInstanceState);
+        mDrawerToggle.syncState();
+    }
+
+    @Override
+    public void onConfigurationChanged(Configuration newConfig) {
+        super.onConfigurationChanged(newConfig);
+        mDrawerToggle.onConfigurationChanged(newConfig);
     }
 
     @Override
@@ -166,7 +203,7 @@ public class MainActivity extends AppCompatActivity implements AppCompatCallback
                 break;
             case SEARCH_HELP: changeFragment(new SearchHelpFragment());
                 break;
-            case GLOBAL_HELP: ;
+            case GLOBAL_HELP: changeFragment(new RequestsGlobalFragment(this));
                 break;
             case CHAT:        if(!(mFragment instanceof InteractionsFragment))loadInteractions();
                 break;
@@ -198,6 +235,8 @@ public class MainActivity extends AppCompatActivity implements AppCompatCallback
                 callMainMenuAnimation(false);
             else
                 callMainMenuAnimation(true);
+
+            L.output("TAG > "+ fragment.getTag());
         }
     }
 
@@ -216,7 +255,7 @@ public class MainActivity extends AppCompatActivity implements AppCompatCallback
     }
 
     public void loadInteractions(){
-        final User user = new SharedPreferencesUtils().getUSer(this);
+        final User user = new SharedPreferencesUtils().getUser(this);
         new RequestInteractionsTask(MainActivity.this, AppVariables.URL_LIST_INTERACTIONS
                         .replace(AppVariables.TAG_IDUSER, user.getId().toString()), new TaskExtraAction<Interaction>(){
                     @Override
@@ -231,7 +270,7 @@ public class MainActivity extends AppCompatActivity implements AppCompatCallback
     }
 
     public void loadPending(){
-        final User user = new SharedPreferencesUtils().getUSer(this);
+        final User user = new SharedPreferencesUtils().getUser(this);
         new RequestInteractionsTask(MainActivity.this, AppVariables.URL_LIST_PENDING_INTERACTIONS
                 .replace(AppVariables.TAG_IDUSER, user.getId().toString()), new TaskExtraAction<Interaction>(){
             @Override
@@ -293,20 +332,27 @@ public class MainActivity extends AppCompatActivity implements AppCompatCallback
         }
     }
 
-    private Boolean manageFragment(Fragment solicitaded){
+    private Boolean manageFragment(Fragment solicited    ){
         if(mFragment == null)
             return true;
-        if(solicitaded.getClass() == mFragment.getClass()){
+        if(solicited.getClass() == mFragment.getClass()){
             return false;
         }
-        if(solicitaded instanceof MainFragment)
+        if(solicited instanceof MainFragment)
             if(appState++ == 1) {
                 finish();
             }else{
                 return true;
             }
 
+        mFragment = solicited;
         return true;
+    }
+
+    public void loadDialog(String title, String description, DialogActions dialogActions) {
+        LookyDialog lookyDialog = new LookyDialog(title, description, dialogActions);
+        lookyDialog.setStyle(DialogFragment.STYLE_NO_TITLE, lookyDialog.getTheme());
+        lookyDialog.show(getFragmentManager(),mFragment.getTag());
     }
 }
 

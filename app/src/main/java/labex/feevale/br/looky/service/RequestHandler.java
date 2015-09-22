@@ -77,15 +77,17 @@ public abstract class RequestHandler<Entity> {
                 if(params != null)
                     configBody(params);
                 processReturn();
-                postExecute(String.valueOf(response));
+                postExecute(response != null ? response.toString() : null);
             }else{
                 error(new MessageResponse("Sem conexão com a internet", false));
             }
         } catch (Exception e) {
             if (e instanceof ConnectTimeoutException || e instanceof ConnectException)
                 messageResponse.setMsg("Problemas ao tentar conectar com o servidor.");
-
-            messageResponse.setMsg(e.getMessage());
+            else if (e instanceof NullPointerException)
+                messageResponse.setMsg("Humm, algo de errado deve ter acontecido com o servidor.");
+            else
+                messageResponse.setMsg(e.getMessage());
             error(messageResponse);
         }finally {
             if(connection != null) {
@@ -144,7 +146,7 @@ public abstract class RequestHandler<Entity> {
 
 
     private Boolean processReturn(int statusCode) throws IOException {
-
+        L.output("STATUS CODE: "+statusCode);
         switch (statusCode) {
             case 200:;
             case 201:;
@@ -180,6 +182,10 @@ public abstract class RequestHandler<Entity> {
             case HttpURLConnection.HTTP_UNSUPPORTED_TYPE:
                 messageResponse.setMsg("Parâmetros de requisição inválido.");
                 break;
+            case HttpURLConnection.HTTP_INTERNAL_ERROR:
+                messageResponse.setMsg("Humm, parece que estamos com problema nos nossos servidores.");
+                break;
+            default: messageResponse.setMsg("Problemas ao efetuar comunicação com o servidor.");
         }
         return false;
     }

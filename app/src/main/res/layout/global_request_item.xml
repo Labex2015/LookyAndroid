@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:card_view="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@android:color/transparent">
+
+    <android.support.v7.widget.CardView
+        card_view:cardBackgroundColor="@color/white"
+        card_view:cardUseCompatPadding="true"
+        android:id="@+id/card_view"
+        android:layout_gravity="center"
+        android:layout_width="match_parent"
+        android:layout_height="200dp"
+        card_view:cardElevation="6dp">
+        <RelativeLayout
+            android:orientation="vertical"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+            <labex.feevale.br.looky.view.custom.RoundedImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+
+                style="@style/default_image_item_list"
+                android:id="@+id/globalItemUserPicture"/>
+            <LinearLayout
+                android:orientation="vertical"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_below="@+id/globalItemUserPicture">
+                <TextView
+                    android:id="@+id/titleGlobalTextView"
+                    android:text="TITLE"
+                    android:layout_gravity="left"
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    style="@style/item_card_title"
+                    android:gravity="start"
+                    android:singleLine="true"
+                    />
+                <TextView
+                    android:id="@+id/descriptionGlobalTextView"
+                    android:text="CONTENT"
+                    style="@style/font_text_long_description"
+                    android:layout_marginTop="8dp"
+                    android:textSize="12sp"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent" />
+            </LinearLayout>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Medium Text"
+                android:id="@+id/globalItemUserName"
+                style="@style/font_name_header"
+                android:textColor="@color/base_app"
+                android:layout_alignBottom="@+id/globalItemUserPicture"
+                android:layout_toRightOf="@+id/globalItemUserPicture"
+                android:layout_toEndOf="@+id/globalItemUserPicture" />
+
+            <ImageButton
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/globalDeleteItemButton"
+                android:padding="8dp"
+                android:src="@drawable/delete"
+                android:visibility="gone"
+                android:background="@android:color/transparent"
+                android:layout_alignTop="@+id/globalItemUserPicture"
+                android:layout_alignParentRight="true"
+                android:layout_alignParentEnd="true" />
+        </RelativeLayout>
+    </android.support.v7.widget.CardView>
+</LinearLayout>

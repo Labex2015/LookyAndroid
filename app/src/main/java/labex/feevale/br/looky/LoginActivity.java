@@ -85,13 +85,6 @@ public class LoginActivity extends AppCompatActivity implements  GoogleApiClient
         findViewById(R.id.signInButtonGoogle).setOnClickListener(this);
         faceBookLoginButton = (LoginButton)findViewById(R.id.signInFaceBookButton);
         progressBar = (ProgressBar) findViewById(R.id.loginProgressBar);
-        /*((TwitterLoginButton) findViewById(R.id.twitterSignInButton))
-                              .setCallback(new TwitterCallback());
-
-        TwitterAuthConfig authConfig = new TwitterAuthConfig(LookyApplication.TWITTER_KEY,
-                                                             LookyApplication.TWITTER_SECRET);
-        Fabric.with(this, new Twitter(authConfig));*/
-
 
         callbackManager = CallbackManager.Factory.create();
         faceBookLoginButton.setReadPermissions(Arrays.asList("public_profile", "user_friends", "email"));
@@ -141,7 +134,9 @@ public class LoginActivity extends AppCompatActivity implements  GoogleApiClient
                 .addScope(new Scope(Scopes.PROFILE))
                 .addScope(new Scope(Scopes.PLUS_ME))
                 .build();
+
         mShouldResolve = true;
+        loginAction = GOOGLE;
         mGoogleApiClient.connect();
     }
 
@@ -216,9 +211,11 @@ public class LoginActivity extends AppCompatActivity implements  GoogleApiClient
                     @Override
                     protected void onCurrentProfileChanged(Profile old, Profile profile) {
                         user = new User();
+                        user.setAccountType(User.FACEBOOK);
                         user.setName(profile.getName());
                         user.setPicturePath("http://graph.facebook.com/" + profile.getId() + "/picture?type=large");
-                        user.setAccountID(loginResult.getAccessToken().getToken());
+                        user.setAccountID(profile.getId());
+                        user.setToken(loginResult.getAccessToken().getToken());
                         new FacebookLoginTask(loginResult).execute();
                         facebookProfileTracker.stopTracking();
                     }
@@ -263,19 +260,23 @@ public class LoginActivity extends AppCompatActivity implements  GoogleApiClient
                                 String email = jsonObject.getString("email");
                                 if (email != null)
                                     user.setUsername(email);
+                                else {
+                                    String name = jsonObject.getString("name");
+                                    user.setUsername(name.replaceAll(" ", "").trim());
+                                }
                                 String param = new JsonUtils().userToJson(user);
+                                new SignInService(user,LoginActivity.this, AppVariables.URL_SIGN_IN_FACEBOOK,param,
+                                  LoginActivity.this).makeRequest();
 
-                                /*new SignInService(user,LoginActivity.this, AppVariables.URL_SIGN_IN_FACEBOOK,param,
-                                  LoginActivity.this).makeRequest();*/
-                                L.output(param);
-                                L.output(jsonObject.toString());
                             } catch (JSONException e) {
                                 e.printStackTrace();
                             }
                         }
                     });
+            Bundle parameters = new Bundle();
+            parameters.putString("fields", "id,name,email,gender, birthday");
+            request.setParameters(parameters);
             request.executeAndWait();
-
             return null;
         }
     }
@@ -291,10 +292,13 @@ public class LoginActivity extends AppCompatActivity implements  GoogleApiClient
         Person currentPerson = Plus.PeopleApi.getCurrentPerson(mGoogleApiClient);
         if (currentPerson != null) {
             user = new User();
+            user.setAccountType(User.GOOGLE);
             user.setName(currentPerson.getDisplayName());
             user.setPicturePath(currentPerson.getImage().getUrl());
             user.setDescription(currentPerson.getAboutMe());
             user.setUsername(currentPerson.getNickname());
+
+            showProgressing(true);
             new GetIdTokenTask().execute();
         }else{
             error(new MessageResponse("Problemas ao listar usuário da conta",false));
@@ -371,18 +375,13 @@ public class LoginActivity extends AppCompatActivity implements  GoogleApiClient
     private class GetIdTokenTask extends AsyncTask<Void, Void, Void> {
 
         @Override
-        protected void onPreExecute() {
-            showProgressing(true);
-        }
-
-        @Override
         protected Void doInBackground(Void... params) {
             String accountName = Plus.AccountApi.getAccountName(mGoogleApiClient);
             Account account = new Account(accountName, GoogleAuthUtil.GOOGLE_ACCOUNT_TYPE);
             String scopes = AppVariables.GOOGLE_SCOPE;
             try {
                 String ID =  GoogleAuthUtil.getToken(getApplicationContext(), account, scopes);
-                user.setAccountID(ID);
+                user.setToken(ID);
                 String param = new JsonUtils().UserToJson(user);
                 new SignInService(user,LoginActivity.this, AppVariables.URL_SIGN_IN_GOOGLE, param,
                                   LoginActivity.this).makeRequest();

@@ -180,7 +180,7 @@ public class KnowledgeFragment extends BaseFragment implements HttpActions<Knowl
             selectedArea = new Area(null, areaTextView.getText().toString());
         }
         Knowledge knowledge = new Knowledge(selectedArea, selectedSubject);
-        knowledge.setIdUser(new SharedPreferencesUtils().getUSer(getActivity()).getId());
+        knowledge.setIdUser(new SharedPreferencesUtils().getUser(getActivity()).getId());
         processRequest(knowledge);
     }
 

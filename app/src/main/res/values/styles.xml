@@ -26,6 +26,17 @@
         <item name="android:textColor">@color/base_app</item>
         <item name="android:gravity">center_horizontal</item>
     </style>
+
+    <style name="item_card_title">
+        <item name="android:textColor">@color/font_reverse</item>
+        <item name="android:background">@color/base_app</item>
+        <item name="android:gravity">start</item>
+        <item name="android:layout_marginTop">8dp</item>
+        <item name="android:textSize">16sp</item>
+        <item name="android:paddingLeft">8dp</item>
+        <item name="android:paddingRight">8dp</item>
+    </style>
+
     <style name="item_list_sub_title_default">
         <item name="android:textSize">14dp</item>
         <item name="android:layout_marginTop">2dp</item>
@@ -88,6 +99,14 @@
         <item name="android:textColorHint">@color/white</item>
         <item name="android:fontFamily">sans-serif</item>
         <item name="android:layout_height">40dp</item>
+    </style>
+    <!-- Autocomplete -->
+    <style name="autocomplete_style_tiny_reverse" parent="autocomplete_style_tiny">
+        <item name="android:layout_height">40dp</item>
+        <item name="android:divider">@drawable/divider_autocomplete</item>
+        <item name="android:textColor">@color/font_reverse</item>
+        <item name="android:textColorHint">@color/base_app</item>
+        <item name="android:background">@color/base_app2</item>
     </style>
     <style name="text_autocomplete_style_tiny">
         <item name="android:textSize">14dp</item>
@@ -154,6 +173,7 @@
     <style name="edit_text_multi_line_default">
         <item name="android:gravity">start</item>
         <item name="android:textColor">@color/base_app</item>
+        <item name="android:background">@color/white</item>
         <item name="android:textSize">16dp</item>
         <item name="android:ems">255</item>
         <item name="android:padding">8dp</item>

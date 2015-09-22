@@ -2,7 +2,6 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
-      <module fileurl="file://$PROJECT_DIR$/samples/HelloFacebookSample/HelloFacebookSample.iml" filepath="$PROJECT_DIR$/samples/HelloFacebookSample/HelloFacebookSample.iml" />
       <module fileurl="file://$PROJECT_DIR$/samples/Iconicus/Iconicus.iml" filepath="$PROJECT_DIR$/samples/Iconicus/Iconicus.iml" />
       <module fileurl="file://$PROJECT_DIR$/Looky.iml" filepath="$PROJECT_DIR$/Looky.iml" />
       <module fileurl="file://$PROJECT_DIR$/samples/MessengerSendSample/MessengerSendSample.iml" filepath="$PROJECT_DIR$/samples/MessengerSendSample/MessengerSendSample.iml" />
@@ -11,7 +10,6 @@
       <module fileurl="file://$PROJECT_DIR$/samples/ShareIt/ShareIt.iml" filepath="$PROJECT_DIR$/samples/ShareIt/ShareIt.iml" />
       <module fileurl="file://$PROJECT_DIR$/samples/SwitchUserSample/SwitchUserSample.iml" filepath="$PROJECT_DIR$/samples/SwitchUserSample/SwitchUserSample.iml" />
       <module fileurl="file://$PROJECT_DIR$/app/app.iml" filepath="$PROJECT_DIR$/app/app.iml" />
-      <module fileurl="file://$PROJECT_DIR$/facebook/facebook.iml" filepath="$PROJECT_DIR$/facebook/facebook.iml" />
       <module fileurl="file://$PROJECT_DIR$/samples/samples.iml" filepath="$PROJECT_DIR$/samples/samples.iml" />
     </modules>
   </component>

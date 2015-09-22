@@ -12,15 +12,20 @@ public class AppVariables {
 
     public static final String FACEBOOK_KEY = "+F7e0vDnxU8H4co9SGbWQVmkNKY=";
 
+    public static final String LINKED_IN_KEY = "77hlvj5jl9r2ml";
+    public static final String LINKED_IN_SECRET = "ksuj7f2ivgyU8xgZ";
+
+
     public static final String TAG_ROM = "#ROOM";
     public static final String TAG_IDUSER = "#ID_USER";
     public static final String TAG_USERNAME = "#USERNAME";
     public static final String TAG_ID_KNOWLEDGE = "#TAG_ID_KNOWLEDGE";
+    public static final String TAG_PARAM = "#PARAM";
 
     public static final String TAG_ID_REQUEST = "#ID_REQUEST";
     public static final String TAG_ID_HELPER = "#ID_HELPER";
 
-    //public static final String URL = "http://192.168.57.1:8793/";
+//    public static final String URL = "http://192.168.1.5:8793/";
     public static final String URL = "http://52.26.130.5:8793/";
 
 
@@ -48,7 +53,8 @@ public class AppVariables {
     public static final String URL_LIST_PENDING_INTERACTIONS = URL+"user/#ID_USER/interactions/pending";
     public static final String URL_USER_EVALUATION = URL+"user/evaluations/#ID";
     public static final String URL_CLOSE_INTERACTION = URL+"user/#ID_USER/interaction/#ID";
-    public static final String URL_SEND_GLOBAL_REQUEST_HELP = URL+"user/request_help";
+    public static final String URL_SEND_GLOBAL_REQUEST_HELP = URL+"user/request_help/global";
+    public static final String URL_GLOBAL_REQUEST_HELP = URL+"request_help/global";
 
 
     //Params
@@ -57,7 +63,7 @@ public class AppVariables {
     public static final int SOCKET_TIME_OUT = 5000;
     public static final String WEB_SOCKET = "ws://54.94.220.165:8383/looky-chat-1.0.0/chat/#ROOM/#IDUSER/#USERNAME";
 
-    public static final String SEARCH_HELP = URL + "user/help/search";
+    public static final String SEARCH_HELP = URL + "/user/#ID/help/search:#PARAM/#SUBJECT/#POSITION/#MAX";
     public static final String URL_USER_PROFILE = URL + USER_VERB + TAG_IDUSER + "/profile";
     public static final String SUBJECTS =  URL+"subjects";
     public static final String URL_SIGN_IN_GOOGLE = URL + "user/signin/google";

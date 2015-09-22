@@ -15,6 +15,7 @@ import labex.feevale.br.looky.model.ServiceError;
 import labex.feevale.br.looky.model.Subject;
 import labex.feevale.br.looky.model.User;
 import labex.feevale.br.looky.model.UserProfile;
+import labex.feevale.br.looky.service.mod.GlobalMod;
 
 /**
  * Created by 0118230 on 12/12/2014.
@@ -88,6 +89,11 @@ public class JsonUtils<T>{
     public List<User> JsonToListUsers(String response){
         postExecute();
         return mGson.fromJson(response, new TypeToken<List<User>>(){}.getType());
+    }
+
+    public List<GlobalMod> JsonToListGlobalMod(String response){
+        postExecute();
+        return mGson.fromJson(response, new TypeToken<List<GlobalMod>>(){}.getType());
     }
 
     public List<Subject> JsonToListSubjects(String response){

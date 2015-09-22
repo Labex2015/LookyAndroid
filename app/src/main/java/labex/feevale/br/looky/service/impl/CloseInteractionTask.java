@@ -148,7 +148,7 @@ public class CloseInteractionTask extends AsyncTask<Void, Void, Void> implements
             @Override
             public void confirmAction() {
                 ((MainActivity)activity).changeFragment(
-                        new ReqGlobalHelpFragment(idInteraction,new TaskExtraAction<MessageResponse>(){
+                        new ReqGlobalHelpFragment(idInteraction, null,new TaskExtraAction<MessageResponse>(){
 
                             @Override
                             public void onPostExecuteSuccess(MessageResponse... params) {

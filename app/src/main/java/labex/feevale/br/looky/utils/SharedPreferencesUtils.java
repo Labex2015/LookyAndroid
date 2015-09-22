@@ -3,6 +3,8 @@ package labex.feevale.br.looky.utils;
 import android.content.Context;
 import android.content.SharedPreferences;
 
+import com.google.gson.annotations.Expose;
+
 import labex.feevale.br.looky.model.User;
 import labex.feevale.br.looky.service.utils.GCMVariables;
 
@@ -20,23 +22,35 @@ public class SharedPreferencesUtils {
     public static final String KEY_NAME = "USER_NAME";
     public static final String KEY_ID_ACCOUNT = "KEY_ID_ACCOUNT";
     private static final String KEY_PICTURE_PATH = "KEY_PICTURE_PATH";
+    public static final String USER_KEY = "USER_KEY";
+    private static final String KEY_DESCRIPTION = "KEY_DESCRIPTION";
+    private static final String KEY_DEGREE = "KEY_DEGREE";
+    private static final String KEY_DEGREE_ID = "KEY_DEGREE_ID";
+    private static final String KEY_SEMESTER = "KEY_SEMESTER";
+    private static final String KEY_TOKEN = "KEY_TOKEN";
+    private static final String KEY_DEVICE_KEY = "KEY_DEVICE_KEY";
+    private static final String KEY_ACCOUNT_TYPE = "KEY_ACCOUNT_TYPE";
+    private static final String KEY_PROFILE_STATUS = "KEY_PROFILE_STATUS";
 
     public static final String CHAT_CURRENT_ACTIVE = "CHAT_CURRENT_ACTIVE";
-
-    public static final String USER_KEY = "USER_KEY";
-
-
 
     public void saveUser(Context context, User user) {
         SharedPreferences.Editor editor = returnMySharedPref(context).edit();
         editor.putLong(KEY_ID, user.getId());
-        //editor.putString(KEY_EMAIL, user.getEmail());
         editor.putString(KEY_USERNAME, user.getUsername());
         editor.putString(KEY_NAME, user.getName());
         editor.putString(KEY_PICTURE_PATH, user.getPicturePath());
         editor.putString(KEY_LATITUDE, user.getLatitude() + "");
         editor.putString(KEY_LONGITUDE, user.getLongitude() + "");
         editor.putString(KEY_ID_ACCOUNT, user.getAccountID());
+
+        editor.putString(KEY_DESCRIPTION, user.getDescription());
+        editor.putString(KEY_DEGREE, user.getDegree());
+        editor.putLong(KEY_DEGREE_ID, user.getDegreeID() == null ? 0L : user.getDegreeID());
+        editor.putInt(KEY_SEMESTER, user.getSemester() == null ? 0 : user.getSemester());
+        editor.putString(KEY_TOKEN, user.getToken());
+        editor.putString(KEY_ACCOUNT_TYPE, user.getAccountType());
+        editor.putString(KEY_PROFILE_STATUS, String.valueOf(user.getProfileStatus()));
         editor.commit();
     }
 
@@ -68,20 +82,30 @@ public class SharedPreferencesUtils {
             return false;
     }
 
-    public User getUSer(Context context) {
+    public User getUser(Context context) {
         SharedPreferences preferences = returnMySharedPref(context);
         if (checkMyPrefs(context)) {
             User user = new User();
             user.setId(preferences.getLong(KEY_ID, 0));
-            //user.setEmail(preferences.getString(KEY_EMAIL, ""));
             user.setUsername(preferences.getString(KEY_USERNAME, ""));
             try {
                 user.setLatitude(Float.parseFloat(preferences.getString(KEY_LATITUDE, "0")));
                 user.setLongitude(Float.parseFloat(preferences.getString(KEY_LONGITUDE, "0")));
+                user.setDegreeID(Long.parseLong(preferences.getString(KEY_DEGREE_ID, "0")));
+                user.setSemester(Integer.parseInt(preferences.getString(KEY_SEMESTER, "0")));
             }catch (Exception e){
                 user.setLatitude(0f);
                 user.setLongitude(0f);
             }
+            user.setName(preferences.getString(KEY_NAME, ""));
+            user.setPicturePath(preferences.getString(KEY_PICTURE_PATH, ""));
+            user.setAccountID(preferences.getString(KEY_ID_ACCOUNT, ""));
+            user.setDescription(preferences.getString(KEY_DESCRIPTION, ""));
+            user.setDegree(preferences.getString(KEY_DEGREE, ""));
+            user.setToken(preferences.getString(KEY_TOKEN, ""));
+            user.setAccountType(preferences.getString(KEY_ACCOUNT_TYPE, ""));
+            user.setProfileStatus(preferences.getString(KEY_PROFILE_STATUS, "P").charAt(0));
+
             return user;
         }else{
            return null;

@@ -39,7 +39,7 @@ public class InteractionsListAdapter extends BaseAdapter implements DialogAction
     public InteractionsListAdapter(List<Interaction> interactionList, Activity activity) {
         this.interactionList = interactionList;
         this.activity = activity;
-        me = new SharedPreferencesUtils().getUSer(activity);
+        me = new SharedPreferencesUtils().getUser(activity);
     }
 
     @Override

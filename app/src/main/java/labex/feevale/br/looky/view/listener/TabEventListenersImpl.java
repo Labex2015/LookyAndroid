@@ -36,7 +36,7 @@ public class TabEventListenersImpl implements ActionBar.TabListener {
 
     @Override
     public void onTabSelected(ActionBar.Tab tab, FragmentTransaction fragmentTransaction) {
-        User user = new SharedPreferencesUtils().getUSer(activity);
+        User user = new SharedPreferencesUtils().getUser(activity);
 
         switch (position){
             case SEARCH_HELP: ((MainActivity)activity).loadMainScreen();

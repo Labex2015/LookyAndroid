@@ -14,8 +14,10 @@ import java.util.List;
 
 import labex.feevale.br.looky.R;
 import labex.feevale.br.looky.model.GlobalHelp;
+import labex.feevale.br.looky.model.User;
 import labex.feevale.br.looky.service.impl.GlobalHelpTask;
 import labex.feevale.br.looky.service.utils.TaskExtraAction;
+import labex.feevale.br.looky.utils.SharedPreferencesUtils;
 import labex.feevale.br.looky.view.BaseFragment;
 import labex.feevale.br.looky.view.dialogs.DialogActions;
 import labex.feevale.br.looky.view.dialogs.DialogMaker;
@@ -25,6 +27,7 @@ import labex.feevale.br.looky.view.dialogs.DialogMaker;
  */
 public class ReqGlobalHelpFragment extends BaseFragment implements DialogActions {
 
+    private String params;
     private GlobalHelp globalHelp;
     private Long idRequestHelp;
 
@@ -34,8 +37,17 @@ public class ReqGlobalHelpFragment extends BaseFragment implements DialogActions
     private TaskExtraAction taskExtraAction;
     private List<EditTextWatcher> textWatchers = new ArrayList<EditTextWatcher>();
 
-    public ReqGlobalHelpFragment(Long idRequestHelp, TaskExtraAction taskExtraAction) {
+    public ReqGlobalHelpFragment() {
+        super();
+    }
+
+    public ReqGlobalHelpFragment(String params, TaskExtraAction taskExtraAction) {
+        this(0L,params,taskExtraAction);
+    }
+
+    public ReqGlobalHelpFragment(Long idRequestHelp,String params, TaskExtraAction taskExtraAction) {
         this.globalHelp = globalHelp;
+        this.params = params;
         this.idRequestHelp = idRequestHelp;
         this.taskExtraAction = taskExtraAction;
     }
@@ -95,9 +107,9 @@ public class ReqGlobalHelpFragment extends BaseFragment implements DialogActions
     }
 
     private void loadHelp() {
-        this.globalHelp = new GlobalHelp(idRequestHelp,
-                titleEditText.getText().toString(),
-                descriptionEditText.getText().toString());
+        User user = new SharedPreferencesUtils().getUser(getActivity());
+        this.globalHelp = new GlobalHelp(user.getId(), idRequestHelp,titleEditText.getText().toString(),
+                                         descriptionEditText.getText().toString(), params);
     }
 
     class EditTextWatcher implements TextWatcher{

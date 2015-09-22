@@ -13,6 +13,8 @@ import java.io.Serializable;
 public class User implements Serializable, Parcelable{
 
     private static final long serialVersionUID = 6844993266929805511L;
+    public static final String GOOGLE = "GOOGLE", FACEBOOK = "FACEBOOK";
+    public static final char COMPLETE = 'C', PENDING = 'P';
 
     public Long id;
     @Expose
@@ -28,12 +30,22 @@ public class User implements Serializable, Parcelable{
     @Expose
     public String degree;
     @Expose
+    public Long degreeID;
+    @Expose
     public Integer semester;
     @Expose
     public String picturePath;
     public byte[] picture;
     @Expose
     private String accountID;
+    @Expose
+    private String token;
+    @Expose
+    private String deviceKey;
+
+
+    public String accountType;
+    private char profileStatus;
 
     public User() {}
 
@@ -62,7 +74,8 @@ public class User implements Serializable, Parcelable{
         this.degree = parcel.readString();
         this.semester = parcel.readInt();
         this.picturePath = parcel.readString();
-        //this.picture = parcel.readByteArray();TODO:Arrumar picture
+        this.token = parcel.readString();
+        this.degreeID = parcel.readLong();
     }
 
     public Long getId() {
@@ -154,14 +167,15 @@ public class User implements Serializable, Parcelable{
     public void writeToParcel(Parcel parcel, int i) {
         parcel.writeLong(id);
         parcel.writeString(username != null ? username:"");
-        parcel.writeString(name != null ? name:"");
+        parcel.writeString(name != null ? name : "");
         parcel.writeFloat(latitude != null ? latitude:0);
-        parcel.writeFloat(longitude != null ? longitude:0);
+        parcel.writeFloat(longitude != null ? longitude : 0);
         parcel.writeString(description != null ? description:"");
-        parcel.writeString(degree != null ? degree:null);
-        parcel.writeInt(semester != null ? semester:1);
-        parcel.writeString(picturePath != null ? picturePath:"");
-        parcel.writeByteArray(picture);
+        parcel.writeString(degree != null ? degree : null);
+        parcel.writeInt(semester != null ? semester : 1);
+        parcel.writeString(picturePath != null ? picturePath : "");
+        parcel.writeString(token != null ? token:"");
+        parcel.writeLong(degreeID);
     }
 
     public static final Parcelable.Creator<User> CREATOR
@@ -181,5 +195,45 @@ public class User implements Serializable, Parcelable{
 
     public void setAccountID(String accountID) {
         this.accountID = accountID;
+    }
+
+    public String getAccountType() {
+        return accountType;
+    }
+
+    public void setAccountType(String accountType) {
+        this.accountType = accountType;
+    }
+
+    public String getToken() {
+        return token;
+    }
+
+    public void setToken(String token) {
+        this.token = token;
+    }
+
+    public Long getDegreeID() {
+        return degreeID;
+    }
+
+    public void setDegreeID(Long degreeID) {
+        this.degreeID = degreeID;
+    }
+
+    public String getDeviceKey() {
+        return deviceKey;
+    }
+
+    public void setDeviceKey(String deviceKey) {
+        this.deviceKey = deviceKey;
+    }
+
+    public char getProfileStatus() {
+        return profileStatus;
+    }
+
+    public void setProfileStatus(char profileStatus) {
+        this.profileStatus = profileStatus;
     }
 }

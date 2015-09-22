@@ -35,7 +35,7 @@ public class RequestInteractionsTask extends AsyncTask<Void, Void, Void> impleme
 
     public RequestInteractionsTask(Activity activity, String url, TaskExtraAction taskExtraAction) {
         this.activity = activity;
-        me = new SharedPreferencesUtils().getUSer(activity);
+        me = new SharedPreferencesUtils().getUser(activity);
         this.taskExtraAction = taskExtraAction;
         this.url = url;
 

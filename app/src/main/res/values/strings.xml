@@ -151,21 +151,27 @@
     <!-- LOGIN SCREENS -->
 
     <string name="login_message_notification">Olá #, só precisamos de mais algumas informações.</string>
-    <string name="login_course_label">Qual o ser curso?</string>
+    <string name="login_course_label">Qual o seu curso?</string>
     <string name="login_course_semester">Qual o semestre?</string>
     <string name="login_button_save">Encerrar registro</string>
+    <string name="notify_degree_error">Você deve selecionar uma graduação válida.</string>
+    <string name="notify_option_global_help">Você também pode cadastrar um pedido de ajuda na área geral. Deseja abrir um pedido de ajuda?</string>
+    <string name="open_global_help_button">Cadastrar pedido de ajuda!</string>
     <string-array name="semester_array">
-        <item>1</item>
-        <item>2</item>
-        <item>3</item>
-        <item>4</item>
-        <item>5</item>
-        <item>6</item>
-        <item>7</item>
-        <item>8</item>
-        <item>9</item>
+        <item>1º Semestre</item>
+        <item>2º Semestre</item>
+        <item>3º Semestre</item>
+        <item>4º Semestre</item>
+        <item>5º Semestre</item>
+        <item>6º Semestre</item>
+        <item>7º Semestre</item>
+        <item>8º Semestre</item>
+        <item>9º Semestre</item>
     </string-array>
 
+    <!-- GLOBAL HELP LIST -->
+
+    <string name="you">VOCÊ</string>
 
 
 </resources>

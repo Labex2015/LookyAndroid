@@ -2,6 +2,8 @@ package labex.feevale.br.looky.view.fragments;
 
 import android.os.Bundle;
 import android.view.LayoutInflater;
+import android.view.Menu;
+import android.view.MenuInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageButton;
@@ -9,6 +11,8 @@ import android.widget.ListView;
 import android.widget.RatingBar;
 import android.widget.TextView;
 import android.widget.Toast;
+
+import com.squareup.picasso.Picasso;
 
 import java.util.ArrayList;
 import java.util.Date;
@@ -28,8 +32,6 @@ import labex.feevale.br.looky.view.custom.RoundedImageView;
  */
 public class UserProfileFragment extends BaseFragment {
 
-    public static final String TAB_KNOWLEDGES = "Conhecimentos", TAB_EVALUATIONS = "Avaliações";
-
     private RoundedImageView picture;
     private TextView usernameTextView, distanceTextView, helpedTextView, requestedTextView,
                      graduationTextView, scoreTextView;
@@ -48,6 +50,8 @@ public class UserProfileFragment extends BaseFragment {
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState){
+        setHasOptionsMenu(true);
+
         View view = inflater.inflate(R.layout.user_profile_fragment, container, false);
         knowledgesView = (ListView) view.findViewById(R.id.knowledgeProfileListView);
 
@@ -58,8 +62,9 @@ public class UserProfileFragment extends BaseFragment {
         scoreTextView = (TextView)  header.findViewById(R.id.scoreProfileText);
         graduationTextView = (TextView)  header.findViewById(R.id.userGraduationProfileText);
         ratingBar = (RatingBar) header.findViewById(R.id.ratingScoreUserProfile);
-        commentsButton = (ImageButton) header.findViewById(R.id.commentsImageButton);
+        picture = (RoundedImageView) header.findViewById(R.id.userProfileImageView);
 
+        commentsButton = (ImageButton) header.findViewById(R.id.commentsImageButton);
         commentsButton.setOnClickListener(loadCommentsFragment());
 
         knowledgesView.addHeaderView(header);
@@ -82,10 +87,20 @@ public class UserProfileFragment extends BaseFragment {
     }
 
     @Override
+    public void onCreateOptionsMenu(Menu menu, MenuInflater inflater) {
+        inflater.inflate(R.menu.chat_menu, menu);
+        super.onCreateOptionsMenu(menu, inflater);
+    }
+
+    @Override
     public void onViewCreated(View view, Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
         adapter = new KnowledgeListProfileAdapter(profile.knowledges, getActivity());
         knowledgesView.setAdapter(adapter);
+
+        if(profile.getPicturePath() != null && !profile.getPicturePath().isEmpty())
+            Picasso.with(getActivity()).load(profile.picturePath).resize(175,175)
+                    .centerCrop().into(picture);
     }
 
     private void loadLayoutData(){
@@ -98,18 +113,4 @@ public class UserProfileFragment extends BaseFragment {
         ratingBar.setRating(profile.getRating());
     }
 
-    private List<Evaluation> getEvaluations(){
-        List<Evaluation> evaluations = new ArrayList<>();
-        evaluations.add(new Evaluation(1L,3,4,"Me ajudou legal, mas mesmo assim fiquei com dúvida.",
-                new Date(), new User(1L,"bóris", null, 23.454545F, 32.343434F, "", "Ciência da Computação", 5, null, null)));
-        evaluations.add(new Evaluation(2L,3,4,"Me ajudou legal, mas mesmo assim fiquei com dúvida.",
-                new Date(), new User(3L,"Carmem", null, 23.454545F, 32.343434F, "", "Contabilidade", 3, null, null)));
-        evaluations.add(new Evaluation(4L,3,4,"Me ajudou legal, mas mesmo assim fiquei com dúvida.",
-                new Date(), new User(5L,"Jaques", null, 23.454545F, 32.343434F, "", "Moda", 5, null, null)));
-        evaluations.add(new Evaluation(6L, 3, 4, "Me ajudou legal, mas mesmo assim fiquei com dúvida.",
-                new Date(), new User(7L, "Mariana", null, 23.454545F, 32.343434F, "", "Ciência da Computação", 8, null, null)));
-        evaluations.add(new Evaluation(8L, 3, 4, "Me ajudou legal, mas mesmo assim fiquei com dúvida.",
-                new Date(), new User(9L, "Tammer", null, 23.454545F, 32.343434F, "", "Engenharia Civil", 7, null, null)));
-        return evaluations;
-    }
 }

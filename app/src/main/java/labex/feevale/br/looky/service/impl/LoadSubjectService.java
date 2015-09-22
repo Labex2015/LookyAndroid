@@ -61,10 +61,7 @@ public class LoadSubjectService extends Service implements CallbackTask<List<Sub
     @Override
     public void error(MessageResponse response) {}
 
-    public void finish(){
-        if(getApplication() instanceof LookyApplication)
-            ((LookyApplication)getApplication()).loadMainActivity();
-    }
+    public void finish(){}
 
     @Override
     public void onDestroy() {

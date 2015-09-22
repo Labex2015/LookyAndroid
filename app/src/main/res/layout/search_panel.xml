@@ -1,8 +1,15 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<android.support.v7.widget.Toolbar
+    xmlns:android="http://schemas.android.com/apk/res/android"
     android:orientation="vertical"
     android:layout_width="match_parent"
-    android:layout_height="130dp">
+    android:layout_height="130dp"
+    android:background="@color/base_app"
+    android:id="@+id/search_panel">
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
     <EditText
         android:id="@+id/searchHelpEditText"
         android:layout_width="match_parent"
@@ -23,5 +30,5 @@
             android:spinnerMode="dropdown">
         </Spinner>
     </LinearLayout>
-
-</LinearLayout>
+    </LinearLayout>
+</android.support.v7.widget.Toolbar>

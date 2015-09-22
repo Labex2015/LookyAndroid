@@ -22,7 +22,6 @@ public class UserProfile extends User implements Serializable, Parcelable{
 
     public List<Evaluation> evaluations;
     public List<Knowledge> knowledges;
-    private Parcel values;
 
     public UserProfile(){}
 

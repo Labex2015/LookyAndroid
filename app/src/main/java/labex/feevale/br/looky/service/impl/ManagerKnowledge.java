@@ -63,7 +63,7 @@ public class ManagerKnowledge extends AsyncTask<Void, Void, Void>{
             }.makeRequest();
         }else if(type.equals(DELETE)){
             new ProcessKnowledgeRequest<Knowledge>(activity,knowledge.getArea(),
-                    new SharedPreferencesUtils().getUSer(activity).getId()) {
+                    new SharedPreferencesUtils().getUser(activity).getId()) {
                 @Override
                 protected void close(Object object) {
                     messageResponse = new MessageResponse("Removido com sucesso!", true);

@@ -38,7 +38,7 @@ public class InteractionsPendingListAdapter extends BaseAdapter implements OnIte
         this.interactionList = new ArrayList<Interaction>();
         this.interactionList.addAll(interactionList);
         this.activity = activity;
-        me = new SharedPreferencesUtils().getUSer(activity);
+        me = new SharedPreferencesUtils().getUser(activity);
     }
 
     @Override

@@ -49,9 +49,16 @@ public class AreaAutoCompleteAdapter extends BaseAdapter implements Filterable{
 
     @Override
     public View getView(int i, View view, ViewGroup viewGroup) {
-        view = activity.getLayoutInflater().inflate(R.layout.area_item_autocomplete, viewGroup, false);
-        TextView textView = (TextView)view.findViewById(R.id.areaAutocompTextView);
-        textView.setText(areas.get(i).getName());
+        AdapterViewHolder holder = null;
+        if(view == null) {
+            view = activity.getLayoutInflater().inflate(R.layout.area_item_autocomplete, viewGroup, false);
+            holder = new AdapterViewHolder();
+            holder.textView = (TextView) view.findViewById(R.id.areaAutocompTextView);
+            view.setTag(holder);
+        }else{
+            holder = (AdapterViewHolder) view.getTag();
+        }
+        holder.textView.setText(areas.get(i).getName());
         return view;
     }
 
@@ -84,5 +91,9 @@ public class AreaAutoCompleteAdapter extends BaseAdapter implements Filterable{
                 }
             }
         };
+    }
+
+    class AdapterViewHolder {
+        public TextView textView;
     }
 }

@@ -31,7 +31,12 @@ public class SubjectsSpinnerAdapter implements SpinnerAdapter{
         View rowView =  ((Activity)activity).getLayoutInflater().inflate(R.layout.item_subject_list, viewGroup, false);
 
         TextView subject = (TextView)rowView.findViewById(R.id.subjectTextView);
-        subject.setText(subjects.get(position).getName());
+
+        if(subjects.get(position).getName().length() > 0)
+            subject.setText(subjects.get(position).getName());
+        else
+            subject.setText("Todos as disciplinas");
+
 
         if(subjects.get(position).getDegree() != null) {
             TextView degree = (TextView) rowView.findViewById(R.id.subjectDegreeTextView);

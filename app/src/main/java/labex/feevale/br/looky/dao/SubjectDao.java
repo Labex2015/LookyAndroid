@@ -7,6 +7,7 @@ import io.realm.Realm;
 import io.realm.RealmResults;
 import labex.feevale.br.looky.dao.model.DegreeModel;
 import labex.feevale.br.looky.dao.model.SubjectModel;
+import labex.feevale.br.looky.model.Degree;
 import labex.feevale.br.looky.model.Subject;
 
 /**
@@ -73,5 +74,15 @@ public class SubjectDao {
             if(realm != null)
                 realm.close();
         }
+    }
+
+    public List<Degree> listAllDegrees(){
+        realm = Realm.getDefaultInstance();
+        List<DegreeModel> list = realm.where(DegreeModel.class).findAll();
+        List<Degree> degrees = new ArrayList<>();
+        for(DegreeModel m : list)
+            degrees.add(new Degree(m));
+
+        return degrees;
     }
 }

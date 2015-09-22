@@ -1,12 +1,39 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:orientation="vertical" android:layout_width="match_parent"
     android:layout_height="match_parent">
 
     <include layout="@layout/search_panel" />
+    <LinearLayout
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/newRequestHelpPanel">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/notify_option_global_help"
+            style="@style/font_text_long_description"
+            android:layout_margin="8dp"
+            android:id="@+id/textView6"
+            android:layout_gravity="center_horizontal" />
+
+        <Button
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/open_global_help_button"
+            style="@style/button_default"
+            android:layout_margin="8dp"
+            android:id="@+id/newRequestHelpButton"
+            android:layout_gravity="center_horizontal" />
+    </LinearLayout>
     <android.support.v7.widget.RecyclerView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         style="@style/list_default_style"
         android:id="@+id/searchResultList"/>
+
+
 </LinearLayout>
