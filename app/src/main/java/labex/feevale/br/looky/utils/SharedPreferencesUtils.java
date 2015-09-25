@@ -35,7 +35,7 @@ public class SharedPreferencesUtils {
 
     public void saveUser(Context context, User user) {
         SharedPreferences.Editor editor = returnMySharedPref(context).edit();
-        editor.putLong(KEY_ID, user.getId());
+        editor.putLong(KEY_ID, user.getId() == null ? 0 : user.getId());
         editor.putString(KEY_USERNAME, user.getUsername());
         editor.putString(KEY_NAME, user.getName());
         editor.putString(KEY_PICTURE_PATH, user.getPicturePath());

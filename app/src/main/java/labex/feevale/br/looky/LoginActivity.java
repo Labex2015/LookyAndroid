@@ -265,6 +265,7 @@ public class LoginActivity extends AppCompatActivity implements  GoogleApiClient
 
     @Override
     public void onConnected(Bundle bundle) {
+        manageProgress(true);
         Plus.PeopleApi.loadVisible(mGoogleApiClient, null).setResultCallback(this);
         mShouldResolve = false;
         Person currentPerson = Plus.PeopleApi.getCurrentPerson(mGoogleApiClient);
@@ -285,7 +286,7 @@ public class LoginActivity extends AppCompatActivity implements  GoogleApiClient
 
     @Override
     public void onConnectionSuspended(int i) {
-
+        manageProgress(false);
     }
 
     @Override
@@ -312,7 +313,8 @@ public class LoginActivity extends AppCompatActivity implements  GoogleApiClient
     }
 
     @Override
-    public void success(User user) {
+    public void success(User response) {
+        this.user = response;
         showMessage(false, null);
         if(user.getDegreeID() > 0 && user.getSemester() > 0)
             finishMainActivity();

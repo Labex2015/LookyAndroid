@@ -162,6 +162,9 @@ public abstract class RequestHandler<Entity> {
             wr = new DataOutputStream(connection.getOutputStream());
             wr.write(postData);
         } catch (IOException e) {
+            if(e instanceof ConnectException)
+                throw new IOException("Problemas ao tentar conectar com o servidor.");
+
             throw new IOException("Problemas ao processar dados para envio.");
         }finally {
             if(wr != null){
