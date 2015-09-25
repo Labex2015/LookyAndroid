@@ -199,13 +199,13 @@ public class MainActivity extends AppCompatActivity implements AppCompatCallback
                 break;
             case GLOBAL_HELP: changeFragment(new RequestsGlobalFragment(this));
                 break;
-            case CHAT:        if(!(mFragment instanceof InteractionsFragment))loadInteractions();
+            case CHAT:        loadInteractions();
                 break;
             case PROFILE:
                 break;
             case KNOWLEDGES:  if(!(mFragment instanceof KnowledgeFragment)) new LoadKnowledgeFragment(this, user).load();
                 break;
-            case PENDING: loadPending();
+            case PENDING:     loadPending();
                 break;
             case HISTORY:
                 break;

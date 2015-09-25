@@ -181,6 +181,7 @@
     <string name="answer_global_help_message">Desculpe insistir, mas você está se comprometendo a ajudar alguém. Proceder?</string>
     <string name="logout">Sair</string>
     <string name="loading">Carregando...</string>
+    <string name="global_help_removed">Pedido de ajuda removido!</string>
 
 
 </resources>

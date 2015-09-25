@@ -147,7 +147,7 @@ public class RequestsGlobalFragment extends BaseFragment implements CallbackTask
     @Override
     public void afterDelete(MessageResponse messageResponse) {
         removeAndUpdate();
-        Toast.makeText(getActivity(),messageResponse.getMsg(),Toast.LENGTH_LONG).show();
+        Toast.makeText(getActivity(),getString(R.string.global_help_removed),Toast.LENGTH_LONG).show();
     }
 
     @Override
