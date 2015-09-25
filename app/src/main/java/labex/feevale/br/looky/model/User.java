@@ -214,6 +214,8 @@ public class User implements Serializable, Parcelable{
     }
 
     public Long getDegreeID() {
+        if(this.getDegreeID() == null)
+            this.degreeID = 0L;
         return degreeID;
     }
 

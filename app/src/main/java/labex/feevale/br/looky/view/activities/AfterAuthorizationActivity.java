@@ -15,9 +15,9 @@ import labex.feevale.br.looky.R;
 import labex.feevale.br.looky.dao.SubjectDao;
 import labex.feevale.br.looky.model.Degree;
 import labex.feevale.br.looky.model.User;
+import labex.feevale.br.looky.service.impl.ProfileService;
 import labex.feevale.br.looky.service.utils.Observer;
 import labex.feevale.br.looky.service.utils.Subject;
-import labex.feevale.br.looky.utils.L;
 import labex.feevale.br.looky.utils.SharedPreferencesUtils;
 import labex.feevale.br.looky.view.adapters.DegreeAutoCompleteAdapter;
 
@@ -83,8 +83,12 @@ public class AfterAuthorizationActivity extends AppCompatActivity
     @Override
     public void onClick(View view) {
         if(validateItems()){
+            SharedPreferencesUtils utils = new SharedPreferencesUtils();
             user.setProfileStatus(User.COMPLETE);
-            new SharedPreferencesUtils().saveUser(this, user);
+            utils.saveUser(this, user);
+
+            startService(new Intent(Intent.ACTION_SYNC, null, this, ProfileService.class));
+
             Intent intent = new Intent(this, MainActivity.class);
             startActivity(intent);
             finish();

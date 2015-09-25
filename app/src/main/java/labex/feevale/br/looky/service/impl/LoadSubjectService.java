@@ -8,7 +8,6 @@ import android.os.IBinder;
 import java.util.ArrayList;
 import java.util.List;
 
-import labex.feevale.br.looky.LookyApplication;
 import labex.feevale.br.looky.dao.SubjectDao;
 import labex.feevale.br.looky.model.Subject;
 import labex.feevale.br.looky.service.utils.CallbackTask;

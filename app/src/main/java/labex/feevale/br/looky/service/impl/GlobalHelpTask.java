@@ -76,7 +76,7 @@ public class GlobalHelpTask extends AsyncTask<Void, Void, Void> implements Extra
 
 
         protected SendGlobalRequestHelp(Activity activity, GlobalHelp globalHelp, ExtraAction<MessageResponse> extra) {
-            super("", activity, AppVariables.URL_SEND_GLOBAL_REQUEST_HELP, RequestHandler.POST,
+            super("", activity, AppVariables.URL_USER_GLOBAL_REQUEST_HELP, RequestHandler.POST,
                     new JsonUtils<GlobalHelp>(globalHelp).process(globalHelp));
             this.extra = extra;
         }

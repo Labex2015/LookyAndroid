@@ -13,7 +13,6 @@ import java.util.List;
 
 import labex.feevale.br.looky.R;
 import labex.feevale.br.looky.model.Degree;
-
 import labex.feevale.br.looky.service.utils.Observer;
 import labex.feevale.br.looky.service.utils.Subject;
 /**

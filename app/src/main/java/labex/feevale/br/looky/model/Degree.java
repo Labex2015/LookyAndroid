@@ -8,7 +8,6 @@ import com.google.gson.annotations.Expose;
 import java.io.Serializable;
 
 import labex.feevale.br.looky.dao.model.DegreeModel;
-import labex.feevale.br.looky.utils.L;
 
 /**
  * Created by grimmjowjack on 8/21/15.

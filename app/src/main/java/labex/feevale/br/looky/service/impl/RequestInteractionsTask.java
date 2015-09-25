@@ -86,7 +86,10 @@ public class RequestInteractionsTask extends AsyncTask<Void, Void, Void> impleme
 
         @Override
         protected void close(List<Interaction> interactionsResponse) {
-            interactions.addAll(interactionsResponse);
+            if(interactionsResponse != null)
+                interactions.addAll(interactionsResponse);
+            else
+                interactions.addAll(new ArrayList<Interaction>());
         }
 
         @Override

@@ -82,8 +82,11 @@ public class ResultSearchItemListAdapter extends RecyclerView.Adapter<ResultSear
         float ratingValue = ((profiles.get(position).answerPoints + profiles.get(position).helpPoints))
                 * 5 / 2;
         holder.rating.setRating(ratingValue);
-        if(profiles.get(position).getPicturePath() != null && !profiles.get(position).getPicturePath().isEmpty())
-            Picasso.with(activity).load(profiles.get(position).picturePath).resize(150,150)
+        Picasso.with(activity)
+                .load(profiles.get(position).picturePath)
+                .placeholder(R.drawable.default_avatar)
+                .error(R.drawable.default_avatar)
+                .resize(150, 150)
                 .centerCrop().into(holder.picture);
 
     }

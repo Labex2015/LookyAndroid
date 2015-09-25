@@ -7,6 +7,7 @@ import com.google.gson.reflect.TypeToken;
 import java.util.List;
 
 import labex.feevale.br.looky.gcm.model.RegisterLogin;
+import labex.feevale.br.looky.model.ChatResponse;
 import labex.feevale.br.looky.model.Interaction;
 import labex.feevale.br.looky.model.Knowledge;
 import labex.feevale.br.looky.model.RequestHelp;
@@ -154,5 +155,9 @@ public class JsonUtils<T>{
     public String userToJson(User user) {
         preExecute();
         return mGson.toJson(user);
+    }
+
+    public ChatResponse JsonToChatResponse(String message) {
+        return null;
     }
 }

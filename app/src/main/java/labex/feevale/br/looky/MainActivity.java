@@ -1,16 +1,9 @@
 package labex.feevale.br.looky;
 
-import android.app.DialogFragment;
 import android.app.ProgressDialog;
 import android.content.Context;
+import android.content.Intent;
 import android.content.res.Configuration;
-import android.graphics.Bitmap;
-import android.graphics.Canvas;
-import android.graphics.Color;
-import android.graphics.Paint;
-import android.graphics.PorterDuff;
-import android.graphics.PorterDuffXfermode;
-import android.graphics.Rect;
 import android.os.Bundle;
 import android.os.Handler;
 import android.os.StrictMode;
@@ -43,10 +36,7 @@ import labex.feevale.br.looky.service.impl.LoadKnowledgeFragment;
 import labex.feevale.br.looky.service.impl.RequestInteractionsTask;
 import labex.feevale.br.looky.service.utils.TaskExtraAction;
 import labex.feevale.br.looky.utils.AppVariables;
-import labex.feevale.br.looky.utils.L;
 import labex.feevale.br.looky.utils.SharedPreferencesUtils;
-import labex.feevale.br.looky.utils.UserMock;
-import labex.feevale.br.looky.view.BaseFragment;
 import labex.feevale.br.looky.view.adapters.InteractionsListAdapter;
 import labex.feevale.br.looky.view.adapters.InteractionsPendingListAdapter;
 import labex.feevale.br.looky.view.custom.LookyDialog;
@@ -55,7 +45,6 @@ import labex.feevale.br.looky.view.dialogs.DialogActions;
 import labex.feevale.br.looky.view.fragments.InteractionsFragment;
 import labex.feevale.br.looky.view.fragments.KnowledgeFragment;
 import labex.feevale.br.looky.view.fragments.MainFragment;
-import labex.feevale.br.looky.view.fragments.ProfileFragment;
 import labex.feevale.br.looky.view.fragments.RequestsGlobalFragment;
 import labex.feevale.br.looky.view.fragments.SearchHelpFragment;
 
@@ -68,6 +57,7 @@ public class MainActivity extends AppCompatActivity implements AppCompatCallback
     private static final char HOME = '1', SEARCH_HELP = '2', GLOBAL_HELP = '3',
                               CHAT = '4', HISTORY = '5', REQUESTS = '6',
                               PROFILE = '7', KNOWLEDGES = '8', PENDING = '9';
+    private static final char LOGOUT = 'X';
 
     public static int appState = 0;
 
@@ -129,7 +119,11 @@ public class MainActivity extends AppCompatActivity implements AppCompatCallback
 
                 usernameTextViewView.setText(user.getName());
                 courseTexteView.setText(user.getDegree());
-                Picasso.with(this).load(user.picturePath).resize(150, 150)
+                Picasso.with(this)
+                        .load(user.picturePath)
+                        .placeholder(R.drawable.default_avatar)
+                        .error(R.drawable.default_avatar)
+                        .resize(150, 150)
                         .centerCrop().into(userPicture);
 
                 if(savedInstanceState == null)
@@ -217,7 +211,16 @@ public class MainActivity extends AppCompatActivity implements AppCompatCallback
                 break;
             case REQUESTS:
                 break;
+            case LOGOUT: logout();
+                break;
         }
+    }
+
+    private void logout() {
+        new SharedPreferencesUtils().clear(this);
+        Intent intent = new Intent(this, LoginActivity.class);
+        startActivity(intent);
+        this.finish();
     }
 
     public void changeFragment(Fragment fragment){
@@ -235,18 +238,12 @@ public class MainActivity extends AppCompatActivity implements AppCompatCallback
                 callMainMenuAnimation(false);
             else
                 callMainMenuAnimation(true);
-
-            L.output("TAG > "+ fragment.getTag());
         }
     }
 
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
         return true;
-    }
-
-    public static User getUserMock(){
-        return UserMock.getUser();
     }
 
     public void loadMainScreen(){
@@ -349,10 +346,9 @@ public class MainActivity extends AppCompatActivity implements AppCompatCallback
         return true;
     }
 
-    public void loadDialog(String title, String description, DialogActions dialogActions) {
-        LookyDialog lookyDialog = new LookyDialog(title, description, dialogActions);
-        lookyDialog.setStyle(DialogFragment.STYLE_NO_TITLE, lookyDialog.getTheme());
-        lookyDialog.show(getFragmentManager(),mFragment.getTag());
+    public void loadDialog(String title, String description, DialogActions dialogActions, Boolean override) {
+        LookyDialog lookyDialog = new LookyDialog(title, description, dialogActions, override);
+        lookyDialog.show(getFragmentManager(), mFragment.getTag());
     }
 }
 

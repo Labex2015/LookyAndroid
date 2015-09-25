@@ -91,6 +91,8 @@
 
         </service>-->
         <service android:name=".service.impl.LoadSubjectService" android:exported="false" />
+        <service android:name=".service.impl.ProfileService" android:exported="false" />
+        <service android:name=".gcm.GCMService" android:exported="false" />
     </application>
 
 </manifest>

@@ -48,5 +48,10 @@
             android:icon="@drawable/info"
             android:numericShortcut="5"
             android:title="@string/about_labex"/>
+        <item
+            android:id="@+id/drawer_logout"
+            android:icon="@drawable/logout"
+            android:numericShortcut="X"
+            android:title="@string/logout"/>
     </group>
 </menu>

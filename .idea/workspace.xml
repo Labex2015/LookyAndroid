@@ -1,5 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
+  <component name="AndroidGradleBuildConfiguration">
+    <option name="COMMAND_LINE_OPTIONS" value="--offline" />
+  </component>
   <component name="AndroidLayouts">
     <shared>
       <config>
@@ -100,7 +103,9 @@
     </layouts>
   </component>
   <component name="AndroidLogFilters">
-    <option name="TOOL_WINDOW_LOG_LEVEL" value="ERROR" />
+    <option name="TOOL_WINDOW_CUSTOM_FILTER" value="DEBUG_LOOKY" />
+    <option name="TOOL_WINDOW_LOG_LEVEL" value="DEBUG" />
+    <option name="TOOL_WINDOW_CONFIGURED_FILTER" value="Show only selected application" />
   </component>
   <component name="ChangeListManager">
     <list default="true" id="8e41db3f-95f6-4c6a-9810-d701dfd99084" name="Default" comment="" />
@@ -114,6 +119,9 @@
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
   <component name="ChangesViewManager" flattened_view="true" show_ignored="false" />
+  <component name="CompilerWorkspaceConfiguration">
+    <option name="MAKE_PROJECT_ON_SAVE" value="true" />
+  </component>
   <component name="CreatePatchCommitExecutor">
     <option name="PATCH_PATH" value="" />
   </component>
@@ -200,127 +208,82 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="SearchHelpFragment.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/src/main/java/labex/feevale/br/looky/view/fragments/SearchHelpFragment.java">
+      <file leaf-file-name="LoginActivity.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/src/main/java/labex/feevale/br/looky/LoginActivity.java">
           <provider selected="true" editor-type-id="text-editor">
             <state vertical-scroll-proportion="0.0">
-              <caret line="81" column="50" selection-start-line="81" selection-start-column="50" selection-end-line="81" selection-end-column="50" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="RequestsGlobalFragment.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/src/main/java/labex/feevale/br/looky/view/fragments/RequestsGlobalFragment.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0">
-              <caret line="92" column="46" selection-start-line="92" selection-start-column="46" selection-end-line="92" selection-end-column="46" />
+              <caret line="316" column="21" selection-start-line="316" selection-start-column="21" selection-end-line="316" selection-end-column="21" />
               <folding>
-                <element signature="imports" expanded="true" />
-                <element signature="e#1717#1718#0" expanded="true" />
-                <element signature="e#1756#1757#0" expanded="true" />
-                <element signature="e#2613#2811#0" expanded="true" />
-                <element signature="e#2810#2811#0" expanded="true" />
-                <element signature="e#2939#3145#0" expanded="true" />
-                <element signature="e#3144#3145#0" expanded="true" />
-                <element signature="e#3970#3971#0" expanded="true" />
-                <element signature="e#4051#4052#0" expanded="true" />
-                <element signature="e#5001#5002#0" expanded="true" />
-                <element signature="e#5058#5059#0" expanded="true" />
+                <element signature="e#5399#5665#0" expanded="true" />
+                <element signature="e#5664#5665#0" expanded="true" />
+                <element signature="e#7676#7677#0" expanded="true" />
+                <element signature="e#7730#7731#0" expanded="true" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="LookyDialog.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/src/main/java/labex/feevale/br/looky/view/custom/LookyDialog.java">
+      <file leaf-file-name="User.java" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/app/src/main/java/labex/feevale/br/looky/model/User.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0">
-              <caret line="35" column="0" selection-start-line="35" selection-start-column="0" selection-end-line="35" selection-end-column="0" />
-              <folding>
-                <element signature="imports" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="looky_dialog.xml" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/looky_dialog.xml">
-          <provider editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0">
-              <caret line="5" column="35" selection-start-line="5" selection-start-column="35" selection-end-line="5" selection-end-column="35" />
-              <folding />
-            </state>
-          </provider>
-          <provider selected="true" editor-type-id="android-designer">
-            <state />
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="JsonUtils.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/src/main/java/labex/feevale/br/looky/utils/JsonUtils.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0">
-              <caret line="93" column="46" selection-start-line="93" selection-start-column="27" selection-end-line="93" selection-end-column="46" />
-              <folding>
-                <element signature="e#842#843#0" expanded="true" />
-                <element signature="e#878#879#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="GlobalHelpAdapter.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/src/main/java/labex/feevale/br/looky/view/adapters/GlobalHelpAdapter.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0">
-              <caret line="63" column="57" selection-start-line="61" selection-start-column="10" selection-end-line="63" selection-end-column="57" />
-              <folding>
-                <element signature="imports" expanded="true" />
-                <element signature="e#2237#2249#0" expanded="true" />
-                <element signature="e#2652#2653#0" expanded="true" />
-                <element signature="e#2690#2691#0" expanded="true" />
-                <element signature="e#2734#2735#0" expanded="true" />
-                <element signature="e#2765#2766#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="global_request_item.xml" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/global_request_item.xml">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-7.2413793">
-              <caret line="23" column="0" selection-start-line="23" selection-start-column="0" selection-end-line="23" selection-end-column="0" />
-              <folding />
-            </state>
-          </provider>
-          <provider editor-type-id="android-designer">
-            <state />
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="styles.xml" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/src/main/res/values/styles.xml">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0">
-              <caret line="258" column="12" selection-start-line="258" selection-start-column="12" selection-end-line="258" selection-end-column="12" />
+            <state vertical-scroll-proportion="1.0913706">
+              <caret line="217" column="25" selection-start-line="217" selection-start-column="25" selection-end-line="217" selection-end-column="25" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="MainActivity.java" pinned="false" current-in-tab="true">
+      <file leaf-file-name="MainActivity.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/src/main/java/labex/feevale/br/looky/MainActivity.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.72627735">
-              <caret line="353" column="84" selection-start-line="353" selection-start-column="84" selection-end-line="353" selection-end-column="84" />
+            <state vertical-scroll-proportion="0.0">
+              <caret line="219" column="39" selection-start-line="219" selection-start-column="39" selection-end-line="219" selection-end-column="39" />
               <folding>
                 <element signature="method#loadMainScreen#0;class#MainActivity#0" expanded="false" />
-                <element signature="method#loadInteractions#0;class#MainActivity#0" expanded="false" />
                 <element signature="method#loadMainEventListener#0;class#MainActivity#0" expanded="false" />
-                <element signature="method#callMainMenuAnimation#0;class#MainActivity#0" expanded="false" />
               </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="SplashActivity.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/src/main/java/labex/feevale/br/looky/SplashActivity.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.0">
+              <caret line="30" column="0" selection-start-line="30" selection-start-column="0" selection-end-line="30" selection-end-column="0" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="RequestHandler.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/src/main/java/labex/feevale/br/looky/service/RequestHandler.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.0">
+              <caret line="103" column="0" selection-start-line="103" selection-start-column="0" selection-end-line="103" selection-end-column="0" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="SignInService.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/src/main/java/labex/feevale/br/looky/service/impl/SignInService.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.0">
+              <caret line="30" column="0" selection-start-line="30" selection-start-column="0" selection-end-line="30" selection-end-column="0" />
+              <folding>
+                <element signature="e#894#895#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="ProfileService.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/src/main/java/labex/feevale/br/looky/service/impl/ProfileService.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.0">
+              <caret line="31" column="0" selection-start-line="31" selection-start-column="0" selection-end-line="31" selection-end-column="0" />
+              <folding />
             </state>
           </provider>
         </entry>
@@ -331,11 +294,11 @@
     <option name="RECENT_TEMPLATES">
       <list>
         <option value="Interface" />
-        <option value="valueResourceFile" />
-        <option value="resourceFile" />
         <option value="layoutResourceFile" />
-        <option value="Class" />
         <option value="layoutResourceFile_vertical" />
+        <option value="resourceFile" />
+        <option value="valueResourceFile" />
+        <option value="Class" />
       </list>
     </option>
   </component>
@@ -2838,57 +2801,57 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/app/proguard-rules.pro" />
-        <option value="$PROJECT_DIR$/app/src/main/java/labex/feevale/br/looky/service/impl/SignInService.java" />
-        <option value="$PROJECT_DIR$/app/fabric.properties" />
-        <option value="$PROJECT_DIR$/build.gradle" />
-        <option value="$PROJECT_DIR$/app/src/main/java/labex/feevale/br/looky/LookyApplication.java" />
-        <option value="$PROJECT_DIR$/app/build.gradle" />
-        <option value="$PROJECT_DIR$/app/src/main/AndroidManifest.xml" />
-        <option value="$PROJECT_DIR$/app/src/main/res/layout/login_activity.xml" />
-        <option value="$PROJECT_DIR$/app/src/main/java/labex/feevale/br/looky/utils/MessageResponse.java" />
-        <option value="$PROJECT_DIR$/app/src/main/java/labex/feevale/br/looky/service/impl/LoadKnowledgeFragment.java" />
-        <option value="$PROJECT_DIR$/app/src/main/java/labex/feevale/br/looky/service/impl/LoadSubjectService.java" />
-        <option value="$PROJECT_DIR$/app/src/main/res/layout/course_item_autocomplete.xml" />
-        <option value="$PROJECT_DIR$/app/src/main/res/layout/degree_autocomplete.xml" />
-        <option value="$PROJECT_DIR$/app/src/main/java/labex/feevale/br/looky/dao/SubjectDao.java" />
-        <option value="$PROJECT_DIR$/app/src/main/java/labex/feevale/br/looky/model/User.java" />
-        <option value="$PROJECT_DIR$/app/src/main/java/labex/feevale/br/looky/utils/SharedPreferencesUtils.java" />
-        <option value="$PROJECT_DIR$/app/src/main/java/labex/feevale/br/looky/SplashActivity.java" />
-        <option value="$PROJECT_DIR$/settings.gradle" />
-        <option value="$PROJECT_DIR$/app/src/main/java/labex/feevale/br/looky/LoginActivity.java" />
-        <option value="$PROJECT_DIR$/app/src/main/java/labex/feevale/br/looky/view/adapters/DegreeAutoCompleteAdapter.java" />
-        <option value="$PROJECT_DIR$/app/src/main/res/layout/after_authorization_activity.xml" />
-        <option value="$PROJECT_DIR$/app/src/main/java/labex/feevale/br/looky/model/Degree.java" />
-        <option value="$PROJECT_DIR$/app/src/main/res/layout/header_drawer.xml" />
-        <option value="$PROJECT_DIR$/app/src/main/java/labex/feevale/br/looky/view/adapters/AreaAutoCompleteAdapter.java" />
-        <option value="$PROJECT_DIR$/app/src/main/java/labex/feevale/br/looky/view/adapters/SubjectsSpinnerAdapter.java" />
-        <option value="$PROJECT_DIR$/app/src/main/java/labex/feevale/br/looky/view/activities/AfterAuthorizationActivity.java" />
-        <option value="$PROJECT_DIR$/app/src/main/res/layout/global_request_help_fragment.xml" />
-        <option value="$PROJECT_DIR$/app/src/main/java/labex/feevale/br/looky/service/RequestHandler.java" />
-        <option value="$PROJECT_DIR$/app/src/main/java/labex/feevale/br/looky/model/GlobalHelp.java" />
-        <option value="$PROJECT_DIR$/app/src/main/java/labex/feevale/br/looky/view/fragments/ReqGlobalHelpFragment.java" />
-        <option value="$PROJECT_DIR$/app/src/main/java/labex/feevale/br/looky/service/impl/CloseInteractionTask.java" />
-        <option value="$PROJECT_DIR$/app/src/main/java/labex/feevale/br/looky/view/fragments/UserProfileFragment.java" />
-        <option value="$PROJECT_DIR$/app/src/main/res/layout/search_panel.xml" />
-        <option value="$PROJECT_DIR$/app/src/main/res/menu/chat_menu.xml" />
-        <option value="$PROJECT_DIR$/app/src/main/res/layout/search_fragment.xml" />
-        <option value="$PROJECT_DIR$/app/src/main/java/labex/feevale/br/looky/utils/AppVariables.java" />
-        <option value="$PROJECT_DIR$/app/src/main/java/labex/feevale/br/looky/model/UserProfile.java" />
         <option value="$PROJECT_DIR$/app/src/main/java/labex/feevale/br/looky/service/mod/GlobalMod.java" />
-        <option value="$PROJECT_DIR$/app/src/main/java/labex/feevale/br/looky/view/fragments/SearchHelpFragment.java" />
         <option value="$PROJECT_DIR$/app/src/main/res/layout/global_list_fragment.xml" />
         <option value="$PROJECT_DIR$/app/src/main/res/layout/pre_profile_item_list.xml" />
+        <option value="$PROJECT_DIR$/app/src/main/res/values/themes.xml" />
+        <option value="$PROJECT_DIR$/app/src/main/res/drawable/panel_rectangle_white.xml" />
+        <option value="$PROJECT_DIR$/app/src/main/res/drawable/fab_ok.xml" />
+        <option value="$PROJECT_DIR$/app/src/main/res/drawable/oval_with_animation.xml" />
+        <option value="$PROJECT_DIR$/app/src/main/res/drawable/oval_shape_reverse.xml" />
+        <option value="$PROJECT_DIR$/app/src/main/res/drawable/oval_pressed_reverse.xml" />
+        <option value="$PROJECT_DIR$/app/src/main/res/drawable/oval_with_animation_reverse.xml" />
+        <option value="$PROJECT_DIR$/app/src/main/res/layout/looky_dialog.xml" />
+        <option value="$PROJECT_DIR$/app/src/main/res/layout/global_request_item.xml" />
+        <option value="$PROJECT_DIR$/app/src/main/java/labex/feevale/br/looky/view/custom/LookyDialog.java" />
+        <option value="$PROJECT_DIR$/app/src/main/java/labex/feevale/br/looky/service/impl/RequestGlobalHandler.java" />
+        <option value="$PROJECT_DIR$/app/src/main/res/values/ids.xml" />
+        <option value="$PROJECT_DIR$/app/src/main/java/labex/feevale/br/looky/view/fragments/RequestsGlobalFragment.java" />
+        <option value="$PROJECT_DIR$/app/src/main/res/menu/menu_drawer.xml" />
         <option value="$PROJECT_DIR$/app/src/main/java/labex/feevale/br/looky/view/adapters/ResultSearchItemListAdapter.java" />
         <option value="$PROJECT_DIR$/app/src/main/java/labex/feevale/br/looky/utils/JsonUtils.java" />
-        <option value="$PROJECT_DIR$/app/src/main/res/values/strings.xml" />
-        <option value="$PROJECT_DIR$/app/src/main/res/values/styles.xml" />
+        <option value="$PROJECT_DIR$/app/src/main/java/labex/feevale/br/looky/gcm/GcmBroadcastReceiver.java" />
+        <option value="$PROJECT_DIR$/app/src/main/java/labex/feevale/br/looky/service/utils/GCMVariables.java" />
+        <option value="$PROJECT_DIR$/app/src/main/java/labex/feevale/br/looky/model/ChatResponse.java" />
+        <option value="$PROJECT_DIR$/app/src/main/java/labex/feevale/br/looky/gcm/GCMService.java" />
         <option value="$PROJECT_DIR$/app/src/main/java/labex/feevale/br/looky/view/adapters/GlobalHelpAdapter.java" />
-        <option value="$PROJECT_DIR$/app/src/main/res/layout/global_request_item.xml" />
-        <option value="$PROJECT_DIR$/app/src/main/java/labex/feevale/br/looky/view/fragments/RequestsGlobalFragment.java" />
-        <option value="$PROJECT_DIR$/app/src/main/java/labex/feevale/br/looky/view/custom/LookyDialog.java" />
-        <option value="$PROJECT_DIR$/app/src/main/res/layout/looky_dialog.xml" />
+        <option value="$PROJECT_DIR$/app/src/main/res/drawable/oval_pressed.xml" />
+        <option value="$PROJECT_DIR$/app/src/main/res/drawable/oval_ripple.xml" />
+        <option value="$PROJECT_DIR$/app/src/main/res/drawable/oval_shape.xml" />
+        <option value="$PROJECT_DIR$/app/src/main/java/labex/feevale/br/looky/view/actions/RequestGlobalFragmentActions.java" />
+        <option value="$PROJECT_DIR$/app/src/main/java/labex/feevale/br/looky/service/mod/ResponseMod.java" />
+        <option value="$PROJECT_DIR$/app/src/main/java/labex/feevale/br/looky/service/impl/ProfileService.java" />
+        <option value="$PROJECT_DIR$/app/src/main/java/labex/feevale/br/looky/view/activities/AfterAuthorizationActivity.java" />
+        <option value="$PROJECT_DIR$/app/src/main/AndroidManifest.xml" />
+        <option value="$PROJECT_DIR$/app/src/main/java/labex/feevale/br/looky/utils/AppVariables.java" />
+        <option value="$PROJECT_DIR$/app/src/main/java/labex/feevale/br/looky/utils/SharedPreferencesUtils.java" />
+        <option value="$PROJECT_DIR$/app/src/main/java/labex/feevale/br/looky/view/fragments/SearchHelpFragment.java" />
+        <option value="$PROJECT_DIR$/app/src/main/java/labex/feevale/br/looky/service/RequestHandler.java" />
+        <option value="$PROJECT_DIR$/app/src/main/java/labex/feevale/br/looky/view/fragments/InteractionsFragment.java" />
+        <option value="$PROJECT_DIR$/app/src/main/res/layout/login_activity.xml" />
+        <option value="$PROJECT_DIR$/app/src/main/java/labex/feevale/br/looky/service/impl/CloseInteractionTask.java" />
+        <option value="$PROJECT_DIR$/app/src/main/java/labex/feevale/br/looky/view/adapters/InteractionsListAdapter.java" />
+        <option value="$PROJECT_DIR$/app/src/main/java/labex/feevale/br/looky/model/Interaction.java" />
+        <option value="$PROJECT_DIR$/app/src/main/java/labex/feevale/br/looky/view/adapters/InteractionsPendingListAdapter.java" />
         <option value="$PROJECT_DIR$/app/src/main/java/labex/feevale/br/looky/MainActivity.java" />
+        <option value="$PROJECT_DIR$/app/src/main/java/labex/feevale/br/looky/service/impl/RequestInteractionsTask.java" />
+        <option value="$PROJECT_DIR$/app/src/main/java/labex/feevale/br/looky/view/fragments/UserProfileFragment.java" />
+        <option value="$PROJECT_DIR$/app/src/main/res/values/strings.xml" />
+        <option value="$PROJECT_DIR$/app/src/main/java/labex/feevale/br/looky/SplashActivity.java" />
+        <option value="$PROJECT_DIR$/app/src/main/res/values/styles.xml" />
+        <option value="$PROJECT_DIR$/app/src/main/res/layout/interactions_fragment.xml" />
+        <option value="$PROJECT_DIR$/app/src/main/java/labex/feevale/br/looky/LoginActivity.java" />
+        <option value="$PROJECT_DIR$/app/src/main/java/labex/feevale/br/looky/model/User.java" />
       </list>
     </option>
   </component>
@@ -2952,34 +2915,7 @@
       <sortByType />
     </navigator>
     <panes>
-      <pane id="PackagesPane">
-        <subPane>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="Looky" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PackageViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="app" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PackageViewModuleNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="Looky" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PackageViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="app" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PackageViewModuleNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="labex.feevale.br.looky" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PackageElementNode" />
-            </PATH_ELEMENT>
-          </PATH>
-        </subPane>
-      </pane>
+      <pane id="Scratches" />
       <pane id="AndroidView">
         <subPane>
           <PATH>
@@ -3040,72 +2976,6 @@
               <option name="myItemType" value="com.android.tools.idea.navigator.nodes.AndroidModuleNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="res" />
-              <option name="myItemType" value="com.android.tools.idea.navigator.nodes.AndroidResFolderNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="drawable" />
-              <option name="myItemType" value="com.android.tools.idea.navigator.nodes.AndroidResFolderTypeNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="ok_up.png" />
-              <option name="myItemType" value="com.android.tools.idea.navigator.nodes.AndroidResGroupNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="Looky" />
-              <option name="myItemType" value="com.android.tools.idea.navigator.nodes.AndroidViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="app" />
-              <option name="myItemType" value="com.android.tools.idea.navigator.nodes.AndroidModuleNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="res" />
-              <option name="myItemType" value="com.android.tools.idea.navigator.nodes.AndroidResFolderNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="drawable" />
-              <option name="myItemType" value="com.android.tools.idea.navigator.nodes.AndroidResFolderTypeNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="cancel_up.png" />
-              <option name="myItemType" value="com.android.tools.idea.navigator.nodes.AndroidResGroupNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="Looky" />
-              <option name="myItemType" value="com.android.tools.idea.navigator.nodes.AndroidViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="app" />
-              <option name="myItemType" value="com.android.tools.idea.navigator.nodes.AndroidModuleNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="res" />
-              <option name="myItemType" value="com.android.tools.idea.navigator.nodes.AndroidResFolderNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="drawable" />
-              <option name="myItemType" value="com.android.tools.idea.navigator.nodes.AndroidResFolderTypeNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="cancel_press.png" />
-              <option name="myItemType" value="com.android.tools.idea.navigator.nodes.AndroidResGroupNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="Looky" />
-              <option name="myItemType" value="com.android.tools.idea.navigator.nodes.AndroidViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="app" />
-              <option name="myItemType" value="com.android.tools.idea.navigator.nodes.AndroidModuleNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
               <option name="myItemId" value="java" />
               <option name="myItemType" value="com.android.tools.idea.navigator.nodes.AndroidSourceTypeNode" />
             </PATH_ELEMENT>
@@ -3146,7 +3016,7 @@
               <option name="myItemType" value="com.android.tools.idea.navigator.nodes.AndroidPsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="view" />
+              <option name="myItemId" value="service" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -3168,11 +3038,27 @@
               <option name="myItemType" value="com.android.tools.idea.navigator.nodes.AndroidPsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="view" />
+              <option name="myItemId" value="gcm" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
+          </PATH>
+        </subPane>
+      </pane>
+      <pane id="ProjectPane">
+        <subPane>
+          <PATH>
             <PATH_ELEMENT>
-              <option name="myItemId" value="custom" />
+              <option name="myItemId" value="Looky" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Looky" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Looky" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -3290,23 +3176,30 @@
           </PATH>
         </subPane>
       </pane>
-      <pane id="Scratches" />
-      <pane id="ProjectPane">
+      <pane id="PackagesPane">
         <subPane>
           <PATH>
             <PATH_ELEMENT>
               <option name="myItemId" value="Looky" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PackageViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="app" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PackageViewModuleNode" />
             </PATH_ELEMENT>
           </PATH>
           <PATH>
             <PATH_ELEMENT>
               <option name="myItemId" value="Looky" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PackageViewProjectNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="Looky" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+              <option name="myItemId" value="app" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PackageViewModuleNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="labex.feevale.br.looky" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PackageElementNode" />
             </PATH_ELEMENT>
           </PATH>
         </subPane>
@@ -3315,13 +3208,13 @@
   </component>
   <component name="PropertiesComponent">
     <property name="android.sdk.path" value="$USER_HOME$/Android/Sdk" />
-    <property name="settings.editor.selected.configurable" value="http.proxy" />
+    <property name="settings.editor.selected.configurable" value="gradle.compiler" />
     <property name="settings.editor.splitter.proportion" value="0.2" />
     <property name="recentsLimit" value="5" />
-    <property name="SearchEverywhereHistoryKey" value="colo&#9;FILE&#9;file:///home/grimmjowjack/Documents/Projetos/Looky/app/src/main/res/values/colors.xml&#10;profi&#9;FILE&#9;file:///home/grimmjowjack/Documents/Projetos/Looky/app/src/main/res/layout/profile_list_header.xml&#10;Prof&#9;FILE&#9;file:///home/grimmjowjack/Documents/Projetos/Looky/app/src/main/java/labex/feevale/br/looky/view/fragments/UserProfileFragment.java&#10;Sear&#9;FILE&#9;file:///home/grimmjowjack/Documents/Projetos/Looky/app/src/main/java/labex/feevale/br/looky/view/fragments/SearchHelpFragment.java&#10;Main&#9;FILE&#9;file:///home/grimmjowjack/Documents/Projetos/Looky/app/src/main/java/labex/feevale/br/looky/MainActivity.java&#10;know&#9;FILE&#9;file:///home/grimmjowjack/Documents/Projetos/Looky/app/src/main/res/layout/knowledge_item_list_profile.xml&#10;kno&#9;FILE&#9;file:///home/grimmjowjack/Documents/Projetos/Looky/app/src/main/res/layout/knowledge_profile_item_list.xml&#10;knowledge_it&#9;FILE&#9;file:///home/grimmjowjack/Documents/Projetos/Looky/app/src/main/res/layout/knowledge_item_list_profile.xml&#10;SearchH&#9;FILE&#9;file:///home/grimmjowjack/Documents/Projetos/Looky/app/src/main/java/labex/feevale/br/looky/view/fragments/SearchHelpFragment.java&#10;Kno&#9;FILE&#9;file:///home/grimmjowjack/Documents/Projetos/Looky/app/src/main/java/labex/feevale/br/looky/view/fragments/KnowledgeFragment.java&#10;App&#9;FILE&#9;file:///home/grimmjowjack/Documents/Projetos/Looky/app/src/main/java/labex/feevale/br/looky/utils/AppVariables.java&#10;MainFra&#9;PSI&#9;JAVA://labex.feevale.br.looky.view.fragments.MainFragment&#10;sear&#9;FILE&#9;file:///home/grimmjowjack/Documents/Projetos/Looky/app/src/main/java/labex/feevale/br/looky/view/fragments/SearchHelpFragment.java&#10;app&#9;FILE&#9;file:///home/grimmjowjack/Documents/Projetos/Looky/app/src/main/java/labex/feevale/br/looky/utils/AppVariables.java&#10;a&#9;FILE&#9;file:///home/grimmjowjack/Documents/Projetos/Looky/app/src/main/java/labex/feevale/br/looky/utils/AppVariables.java&#10;Searc&#9;PSI&#9;JAVA://labex.feevale.br.looky.view.fragments.SearchHelpFragment&#10;Requ&#9;FILE&#9;file:///home/grimmjowjack/Documents/Projetos/Looky/app/src/main/java/labex/feevale/br/looky/service/RequestHandler.java&#10;main&#9;FILE&#9;file:///home/grimmjowjack/Documents/Projetos/Looky/app/src/main/res/layout/activity_main.xml&#10;men&#9;FILE&#9;file:///home/grimmjowjack/Documents/Projetos/Looky/app/src/main/res/menu/menu_drawer.xml&#10;Roun&#9;FILE&#9;file:///home/grimmjowjack/Documents/Projetos/Looky/app/src/main/java/labex/feevale/br/looky/view/custom/RoundedImageView.java&#10;DAO&#9;FILE&#9;file:///home/grimmjowjack/Documents/Projetos/Looky/app/src/main/java/labex/feevale/br/looky/dao/SubjectDao.java&#10;Know&#9;FILE&#9;file:///home/grimmjowjack/Documents/Projetos/Looky/app/src/main/java/labex/feevale/br/looky/view/fragments/KnowledgeFragment.java&#10;Spla&#9;FILE&#9;file:///home/grimmjowjack/Documents/Projetos/Looky/app/src/main/java/labex/feevale/br/looky/SplashActivity.java&#10;Share&#9;FILE&#9;file:///home/grimmjowjack/Documents/Projetos/Looky/app/src/main/java/labex/feevale/br/looky/utils/SharedPreferencesUtils.java&#10;User&#9;FILE&#9;file:///home/grimmjowjack/Documents/Projetos/Looky/app/src/main/java/labex/feevale/br/looky/model/User.java&#10;appv&#9;FILE&#9;file:///home/grimmjowjack/Documents/Projetos/Looky/app/src/main/java/labex/feevale/br/looky/utils/AppVariables.java&#10;Knowle&#9;FILE&#9;file:///home/grimmjowjack/Documents/Projetos/Looky/app/src/main/java/labex/feevale/br/looky/view/fragments/KnowledgeFragment.java&#10;Dao&#9;PSI&#9;JAVA://labex.feevale.br.looky.dao.SubjectDao&#10;Degree&#9;FILE&#9;file:///home/grimmjowjack/Documents/Projetos/Looky/app/src/main/java/labex/feevale/br/looky/dao/model/DegreeModel.java&#10;Degr&#9;FILE&#9;file:///home/grimmjowjack/Documents/Projetos/Looky/app/src/main/java/labex/feevale/br/looky/model/Degree.java&#10;Aut&#9;FILE&#9;file:///home/grimmjowjack/Documents/Projetos/Looky/app/src/main/java/labex/feevale/br/looky/view/adapters/CourseAutoCompleteAdapter.java&#10;k&#9;FILE&#9;file:///home/grimmjowjack/Documents/Projetos/Looky/app/src/main/res/layout/knowledge_fragment.xml&#10;SecondP&#9;PSI&#9;JAVA://labex.feevale.br.looky.LoginActivity#startSecondPhase&#10;Android&#9;FILE&#9;file:///home/grimmjowjack/Documents/Projetos/Looky/app/src/main/AndroidManifest.xml&#10;Use&#9;FILE&#9;file:///home/grimmjowjack/Documents/Projetos/Looky/app/src/main/java/labex/feevale/br/looky/model/User.java&#10;USer&#9;FILE&#9;file:///home/grimmjowjack/Documents/Projetos/Looky/app/src/main/java/labex/feevale/br/looky/model/User.java&#10;gra&#9;FILE&#9;file:///home/grimmjowjack/Documents/Projetos/Looky/app/build.gradle&#10;grad&#9;FILE&#9;file:///home/grimmjowjack/Documents/Projetos/Looky/build.gradle&#10;Load&#9;PSI&#9;JAVA://labex.feevale.br.looky.service.impl.LoadKnowledgeFragment&#10;AppV&#9;FILE&#9;file:///home/grimmjowjack/Documents/Projetos/Looky/app/src/main/java/labex/feevale/br/looky/utils/AppVariables.java&#10;us&#9;FILE&#9;file:///home/grimmjowjack/Documents/Projetos/Looky/app/src/main/java/labex/feevale/br/looky/model/User.java&#10;Strin&#9;FILE&#9;file:///home/grimmjowjack/Documents/Projetos/Looky/app/src/main/res/values/strings.xml&#10;Us&#9;FILE&#9;file:///home/grimmjowjack/Documents/Projetos/Looky/app/src/main/java/labex/feevale/br/looky/model/User.java&#10;mani&#9;FILE&#9;file:///home/grimmjowjack/Documents/Projetos/Looky/app/src/main/AndroidManifest.xml&#10;Mani&#9;FILE&#9;file:///home/grimmjowjack/Documents/Projetos/Looky/app/src/main/AndroidManifest.xml&#10;b&#9;FILE&#9;file:///home/grimmjowjack/Documents/Projetos/Looky/app/build.gradle&#10;bui&#9;FILE&#9;file:///home/grimmjowjack/Documents/Projetos/Looky/app/build.gradle&#10;Sin&#9;FILE&#9;file:///home/grimmjowjack/Documents/Projetos/Looky/app/src/main/java/labex/feevale/br/looky/service/impl/SignInService.java&#10;Subj&#9;FILE&#9;file:///home/grimmjowjack/Documents/Projetos/Looky/app/src/main/java/labex/feevale/br/looky/dao/model/SubjectModel.java&#10;DEgree&#9;FILE&#9;file:///home/grimmjowjack/Documents/Projetos/Looky/app/src/main/java/labex/feevale/br/looky/dao/model/DegreeModel.java" />
-    <property name="last_directory_selection" value="$PROJECT_DIR$/app/src/main/res/drawable-xhdpi" />
+    <property name="SearchEverywhereHistoryKey" value="onSuc&#9;PSI&#9;JAVA://null#onSuccess&#10;User&#9;FILE&#9;file:///home/grimmjowjack/Documents/Projetos/Looky/app/src/main/java/labex/feevale/br/looky/model/User.java&#10;Main&#9;FILE&#9;file:///home/grimmjowjack/Documents/Projetos/Looky/app/src/main/java/labex/feevale/br/looky/MainActivity.java&#10;Shar&#9;FILE&#9;file:///home/grimmjowjack/Documents/Projetos/Looky/app/src/main/java/labex/feevale/br/looky/utils/SharedPreferencesUtils.java&#10;logout&#9;PSI&#9;JAVA://labex.feevale.br.looky.MainActivity#logout&#10;success&#9;PSI&#9;JAVA://null#onSuccess&#10;Suce&#9;PSI&#9;JAVA://sun.security.ssl.JsseJce.SunCertificates&#10;Login&#9;FILE&#9;file:///home/grimmjowjack/Documents/Projetos/Looky/app/src/main/java/labex/feevale/br/looky/LoginActivity.java&#10;intera&#9;FILE&#9;file:///home/grimmjowjack/Documents/Projetos/Looky/app/src/main/res/layout/interactions_fragment.xml&#10;Mai&#9;FILE&#9;file:///home/grimmjowjack/Documents/Projetos/Looky/app/src/main/java/labex/feevale/br/looky/MainActivity.java&#10;Profile&#9;PSI&#9;JAVA://labex.feevale.br.looky.view.fragments.ProfileFragment&#10;Pro&#9;FILE&#9;file:///home/grimmjowjack/Documents/Projetos/Looky/app/src/main/java/labex/feevale/br/looky/service/impl/ProfileService.java&#10;Lis&#9;FILE&#9;file:///home/grimmjowjack/Documents/Projetos/Looky/app/src/main/java/labex/feevale/br/looky/view/adapters/InteractionsPendingListAdapter.java&#10;Intera&#9;FILE&#9;file:///home/grimmjowjack/Documents/Projetos/Looky/app/src/main/java/labex/feevale/br/looky/view/adapters/InteractionsListAdapter.java&#10;App&#9;FILE&#9;file:///home/grimmjowjack/Documents/Projetos/Looky/app/src/main/java/labex/feevale/br/looky/utils/AppVariables.java&#10;Close&#9;FILE&#9;file:///home/grimmjowjack/Documents/Projetos/Looky/app/src/main/java/labex/feevale/br/looky/service/impl/CloseInteractionTask.java&#10;REque&#9;FILE&#9;file:///home/grimmjowjack/Documents/Projetos/Looky/app/src/main/java/labex/feevale/br/looky/service/RequestHandler.java&#10;Sear&#9;FILE&#9;file:///home/grimmjowjack/Documents/Projetos/Looky/app/src/main/java/labex/feevale/br/looky/view/fragments/SearchHelpFragment.java&#10;GLobal&#9;FILE&#9;file:///home/grimmjowjack/Documents/Projetos/Looky/app/src/main/java/labex/feevale/br/looky/view/adapters/GlobalHelpAdapter.java&#10;Profi&#9;FILE&#9;file:///home/grimmjowjack/Documents/Projetos/Looky/app/src/main/java/labex/feevale/br/looky/service/impl/ProfileService.java&#10;Phas&#9;PSI&#9;JAVA://labex.feevale.br.looky.LookyApplication#loadSecondPhaseLogin&#10;REqu&#9;FILE&#9;file:///home/grimmjowjack/Documents/Projetos/Looky/app/src/main/java/labex/feevale/br/looky/service/RequestHandler.java&#10;AppV&#9;FILE&#9;file:///home/grimmjowjack/Documents/Projetos/Looky/app/src/main/java/labex/feevale/br/looky/utils/AppVariables.java&#10;Mani&#9;FILE&#9;file:///home/grimmjowjack/Documents/Projetos/Looky/app/src/main/AndroidManifest.xml&#10;login&#9;FILE&#9;file:///home/grimmjowjack/Documents/Projetos/Looky/app/src/main/res/layout/login_activity.xml&#10;Phase&#9;PSI&#9;JAVA://labex.feevale.br.looky.LookyApplication#loadSecondPhaseLogin&#10;app&#9;FILE&#9;file:///home/grimmjowjack/Documents/Projetos/Looky/app/src/main/java/labex/feevale/br/looky/utils/AppVariables.java&#10;oval_sha&#9;FILE&#9;file:///home/grimmjowjack/Documents/Projetos/Looky/app/src/main/res/drawable/oval_shape.xml&#10;ova&#9;FILE&#9;file:///home/grimmjowjack/Documents/Projetos/Looky/app/src/main/res/drawable/oval_ripple.xml&#10;oval&#9;FILE&#9;file:///home/grimmjowjack/Documents/Projetos/Looky/app/src/main/res/drawable/oval_shape_reverse.xml&#10;The&#9;FILE&#9;file:///home/grimmjowjack/Documents/Projetos/Looky/app/src/main/res/values/themes.xml&#10;Glob&#9;FILE&#9;file:///home/grimmjowjack/Documents/Projetos/Looky/app/src/main/java/labex/feevale/br/looky/view/actions/RequestGlobalFragmentActions.java&#10;Gloa&#9;FILE&#9;file:///home/grimmjowjack/Documents/Projetos/Looky/app/src/main/java/labex/feevale/br/looky/view/actions/RequestGlobalFragmentActions.java&#10;Sign&#9;PSI&#9;JAVA://labex.feevale.br.looky.service.impl.SignInService&#10;Serv&#9;FILE&#9;file:///home/grimmjowjack/Documents/Projetos/Looky/app/src/main/java/labex/feevale/br/looky/service/impl/LoadSubjectService.java&#10;Spl&#9;FILE&#9;file:///home/grimmjowjack/Documents/Projetos/Looky/app/src/main/java/labex/feevale/br/looky/SplashActivity.java&#10;Gcm&#9;PSI&#9;JAVA://labex.feevale.br.looky.gcm.GcmMessageHandler&#10;GcmS&#9;PSI&#9;JAVA://labex.feevale.br.looky.gcm.GCMService&#10;Searc&#9;FILE&#9;file:///home/grimmjowjack/Documents/Projetos/Looky/app/src/main/java/labex/feevale/br/looky/view/adapters/ResultSearchItemListAdapter.java&#10;Spla&#9;PSI&#9;JAVA://labex.feevale.br.looky.SplashActivity&#10;menu&#9;FILE&#9;file:///home/grimmjowjack/Documents/Projetos/Looky/app/src/main/res/menu/menu_drawer.xml&#10;men&#9;FILE&#9;file:///home/grimmjowjack/Documents/Projetos/Looky/app/src/main/res/menu/menu_drawer.xml&#10;RequestHa&#9;PSI&#9;JAVA://labex.feevale.br.looky.service.RequestHandler&#10;Reque&#9;FILE&#9;file:///home/grimmjowjack/Documents/Projetos/Looky/app/src/main/java/labex/feevale/br/looky/service/RequestHandler.java&#10;co&#9;FILE&#9;file:///home/grimmjowjack/Documents/Projetos/Looky/app/src/main/res/values/colors.xml&#10;Theme&#9;FILE&#9;file:///home/grimmjowjack/Documents/Projetos/Looky/app/src/main/res/values/themes.xml&#10;colo&#9;FILE&#9;file:///home/grimmjowjack/Documents/Projetos/Looky/app/src/main/res/values/colors.xml&#10;profi&#9;FILE&#9;file:///home/grimmjowjack/Documents/Projetos/Looky/app/src/main/res/layout/profile_list_header.xml&#10;Prof&#9;FILE&#9;file:///home/grimmjowjack/Documents/Projetos/Looky/app/src/main/java/labex/feevale/br/looky/view/fragments/UserProfileFragment.java&#10;know&#9;FILE&#9;file:///home/grimmjowjack/Documents/Projetos/Looky/app/src/main/res/layout/knowledge_item_list_profile.xml" />
+    <property name="last_directory_selection" value="$PROJECT_DIR$/app/src/main/res/drawable-xxhdpi" />
     <property name="UI_DESIGNER_EDITOR_MODE.UIDesignerToolWindowManager2.WIDTH" value="207" />
-    <property name="ANDROID_EXTENDED_DEVICE_CHOOSER_SERIALS" value="192.168.57.101:5555" />
+    <property name="ANDROID_EXTENDED_DEVICE_CHOOSER_SERIALS" value="0424412724" />
     <property name="ANDROID_EXTENDED_DEVICE_CHOOSER_AVD" value="Nexus_5_API_22_x86_1" />
     <property name="android.project.structure.last.selected" value="app" />
     <property name="android.project.structure.proportion" value="0.15" />
@@ -3335,18 +3228,18 @@
   </component>
   <component name="RecentsManager">
     <key name="CreateClassDialog.RecentsKey">
+      <recent name="labex.feevale.br.looky.model" />
+      <recent name="labex.feevale.br.looky.service.mod" />
+      <recent name="labex.feevale.br.looky.view.actions" />
       <recent name="labex.feevale.br.looky.view.adapters" />
       <recent name="labex.feevale.br.looky.view.activities" />
-      <recent name="labex.feevale.br.looky.service.utils" />
-      <recent name="labex.feevale.br.looky.utils" />
-      <recent name="labex.feevale.br.looky.model" />
     </key>
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/app/src/main/res/drawable-xxhdpi" />
       <recent name="$PROJECT_DIR$/app/src/main/res/drawable-xhdpi" />
       <recent name="$PROJECT_DIR$/app/src/main/res/drawable-hdpi" />
-      <recent name="$PROJECT_DIR$/app/src/main/res/drawable-xxhdpi" />
       <recent name="$PROJECT_DIR$/app/src/main/res/drawable-mdpi" />
-      <recent name="$PROJECT_DIR$/app/libs" />
+      <recent name="$PROJECT_DIR$/app/src/main/res/drawable" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
       <recent name="$PROJECT_DIR$/app/src/main/res/layout" />
@@ -3623,32 +3516,34 @@
     <editor active="true" />
     <layout>
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3298731" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.21792035" sideWeight="0.4952381" order="6" side_tool="false" content_ui="tabs" />
+      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.21570796" sideWeight="0.4952381" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Build Variants" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.16056167" sideWeight="0.5074627" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Palette&#9;" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
-      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3153153" sideWeight="0.50238097" order="7" side_tool="true" content_ui="tabs" />
+      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3761062" sideWeight="0.51221" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Application Servers" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
       <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32905984" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Preview" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25679758" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.20243363" sideWeight="0.4924357" order="5" side_tool="false" content_ui="tabs" />
-      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32605043" sideWeight="0.49761903" order="11" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.31526548" sideWeight="0.4924357" order="5" side_tool="false" content_ui="tabs" />
+      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.49411765" sideWeight="0.49761903" order="11" side_tool="false" content_ui="tabs" />
       <window_info id="Captures" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32967034" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Android" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.36283186" sideWeight="0.4920635" order="13" side_tool="false" content_ui="tabs" />
+      <window_info id="Android" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.67699116" sideWeight="0.48779" order="13" side_tool="false" content_ui="tabs" />
       <window_info id="Gradle Console" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.45328718" sideWeight="0.50793654" order="12" side_tool="true" content_ui="tabs" />
       <window_info id="Designer" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.14896215" sideWeight="0.49253732" order="0" side_tool="false" content_ui="combo" />
-      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32605043" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.14529915" sideWeight="0.49253732" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Problems" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32964602" sideWeight="0.5" order="14" side_tool="false" content_ui="tabs" />
       <window_info id="Gradle" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.16971917" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.24969475" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.16056167" sideWeight="0.5074627" order="4" side_tool="true" content_ui="tabs" />
-      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4369469" sideWeight="0.49464285" order="10" side_tool="false" content_ui="tabs" />
+      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.43252212" sideWeight="0.49464285" order="10" side_tool="false" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="SLIDING" type="SLIDING" visible="false" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
+      <window_info id="Dynamic Properties" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32930514" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32522124" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
     </layout>
   </component>
   <component name="Vcs.Log.UiProperties">
@@ -3679,37 +3574,31 @@
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/app/src/main/java/labex/feevale/br/looky/view/adapters/InteractionsListAdapter.java</url>
-          <line>104</line>
+          <line>113</line>
           <properties />
           <option name="timeStamp" value="10" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/app/src/main/java/labex/feevale/br/looky/view/adapters/InteractionsListAdapter.java</url>
-          <line>111</line>
+          <line>120</line>
           <properties />
           <option name="timeStamp" value="11" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/app/src/main/java/labex/feevale/br/looky/view/adapters/InteractionsListAdapter.java</url>
-          <line>63</line>
+          <line>64</line>
           <properties />
           <option name="timeStamp" value="15" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/app/src/main/java/labex/feevale/br/looky/view/adapters/InteractionsListAdapter.java</url>
-          <line>69</line>
-          <properties />
-          <option name="timeStamp" value="16" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/app/src/main/java/labex/feevale/br/looky/view/fragments/UserProfileFragment.java</url>
-          <line>54</line>
+          <line>51</line>
           <properties />
           <option name="timeStamp" value="19" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/app/src/main/java/labex/feevale/br/looky/view/fragments/UserProfileFragment.java</url>
-          <line>106</line>
+          <line>110</line>
           <properties />
           <option name="timeStamp" value="23" />
         </line-breakpoint>
@@ -3750,18 +3639,6 @@
           <option name="timeStamp" value="67" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/app/src/main/java/labex/feevale/br/looky/LoginActivity.java</url>
-          <line>192</line>
-          <properties />
-          <option name="timeStamp" value="68" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/app/src/main/java/labex/feevale/br/looky/LoginActivity.java</url>
-          <line>197</line>
-          <properties />
-          <option name="timeStamp" value="69" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/app/src/main/java/labex/feevale/br/looky/dao/SubjectDao.java</url>
           <line>80</line>
           <properties />
@@ -3769,31 +3646,31 @@
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/app/src/main/java/labex/feevale/br/looky/LoginActivity.java</url>
-          <line>340</line>
+          <line>315</line>
           <properties />
           <option name="timeStamp" value="86" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/app/src/main/java/labex/feevale/br/looky/service/RequestHandler.java</url>
-          <line>70</line>
+          <line>85</line>
           <properties />
           <option name="timeStamp" value="87" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/app/src/main/java/labex/feevale/br/looky/service/RequestHandler.java</url>
-          <line>193</line>
+          <line>227</line>
           <properties />
           <option name="timeStamp" value="88" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/app/src/main/java/labex/feevale/br/looky/service/RequestHandler.java</url>
-          <line>99</line>
+          <line>126</line>
           <properties />
           <option name="timeStamp" value="89" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/app/src/main/java/labex/feevale/br/looky/service/RequestHandler.java</url>
-          <line>149</line>
+          <line>178</line>
           <properties />
           <option name="timeStamp" value="92" />
         </line-breakpoint>
@@ -3811,65 +3688,222 @@
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/app/src/main/java/labex/feevale/br/looky/view/fragments/SearchHelpFragment.java</url>
-          <line>235</line>
+          <line>234</line>
           <properties />
           <option name="timeStamp" value="95" />
         </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/app/src/main/java/labex/feevale/br/looky/SplashActivity.java</url>
+          <line>30</line>
+          <properties />
+          <option name="timeStamp" value="97" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/app/src/main/java/labex/feevale/br/looky/view/actions/RequestGlobalFragmentActions.java</url>
+          <line>101</line>
+          <properties />
+          <option name="timeStamp" value="99" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/app/src/main/java/labex/feevale/br/looky/service/impl/ProfileService.java</url>
+          <line>31</line>
+          <properties />
+          <option name="timeStamp" value="100" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/app/src/main/java/labex/feevale/br/looky/view/fragments/UserProfileFragment.java</url>
+          <line>96</line>
+          <properties />
+          <option name="timeStamp" value="101" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/app/src/main/java/labex/feevale/br/looky/service/impl/CloseInteractionTask.java</url>
+          <line>104</line>
+          <properties />
+          <option name="timeStamp" value="102" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/app/src/main/java/labex/feevale/br/looky/service/impl/CloseInteractionTask.java</url>
+          <line>111</line>
+          <properties />
+          <option name="timeStamp" value="103" />
+        </line-breakpoint>
       </breakpoints>
-      <option name="time" value="97" />
+      <option name="time" value="105" />
     </breakpoint-manager>
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/header_drawer.xml">
-      <provider editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="8" column="29" selection-start-line="8" selection-start-column="29" selection-end-line="8" selection-end-column="29" />
-          <folding />
-        </state>
-      </provider>
-      <provider selected="true" editor-type-id="android-designer">
-        <state />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/activity_main.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.60212517">
-          <caret line="34" column="41" selection-start-line="34" selection-start-column="41" selection-end-line="34" selection-end-column="41" />
-          <folding />
-        </state>
-      </provider>
+    <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/looky_dialog.xml">
       <provider editor-type-id="android-designer">
         <state />
       </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/labex/feevale/br/looky/dao/SubjectDao.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.81164384">
-          <caret line="83" column="32" selection-start-line="83" selection-start-column="32" selection-end-line="83" selection-end-column="32" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/labex/feevale/br/looky/view/adapters/DegreeAutoCompleteAdapter.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.7328767">
-          <caret line="91" column="17" selection-start-line="91" selection-start-column="17" selection-end-line="91" selection-end-column="17" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/labex/feevale/br/looky/view/adapters/AreaAutoCompleteAdapter.java">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
-          <caret line="52" column="26" selection-start-line="52" selection-start-column="26" selection-end-line="52" selection-end-column="26" />
+          <caret line="31" column="53" selection-start-line="31" selection-start-column="53" selection-end-line="31" selection-end-column="53" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/labex/feevale/br/looky/view/adapters/SubjectsSpinnerAdapter.java">
+    <entry file="file://$PROJECT_DIR$/app/src/main/res/values/themes.xml">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-0.031746034">
-          <caret line="37" column="49" selection-start-line="37" selection-start-column="49" selection-end-line="37" selection-end-column="49" />
+        <state vertical-scroll-proportion="0.0">
+          <caret line="11" column="40" selection-start-line="11" selection-start-column="34" selection-end-line="11" selection-end-column="40" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/res/drawable/oval_pressed.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="2" column="26" selection-start-line="2" selection-start-column="26" selection-end-line="2" selection-end-column="45" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/res/drawable/oval_shape_reverse.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="2" column="40" selection-start-line="2" selection-start-column="40" selection-end-line="2" selection-end-column="40" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/.navigation/app/raw/main.nvg.xml">
+      <provider selected="true" editor-type-id="navigationeditor">
+        <state />
+      </provider>
+      <provider editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/res/drawable/oval_ripple.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="2" column="6" selection-start-line="2" selection-start-column="6" selection-end-line="2" selection-end-column="6" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/22.2.1/res/values/values.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.3655706">
+          <caret line="97" column="4615" selection-start-line="97" selection-start-column="4615" selection-end-line="97" selection-end-column="4615" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/res/drawable/oval_shape.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="2" column="41" selection-start-line="2" selection-start-column="41" selection-end-line="2" selection-end-column="41" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/res/drawable/oval_pressed_reverse.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.052910052">
+          <caret line="2" column="40" selection-start-line="2" selection-start-column="40" selection-end-line="2" selection-end-column="40" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/labex/feevale/br/looky/service/impl/LoadKnowledgesService.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.18518518">
+          <caret line="13" column="13" selection-start-line="13" selection-start-column="13" selection-end-line="13" selection-end-column="13" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/labex/feevale/br/looky/gcm/GCMService.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.82539684">
+          <caret line="67" column="5" selection-start-line="41" selection-start-column="4" selection-end-line="67" selection-end-column="5" />
+          <folding>
+            <element signature="imports" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/labex/feevale/br/looky/service/mod/ResponseMod.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.2739726">
+          <caret line="18" column="28" selection-start-line="18" selection-start-column="28" selection-end-line="18" selection-end-column="28" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/labex/feevale/br/looky/view/actions/RequestGlobalFragmentActions.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.32534248">
+          <caret line="104" column="35" selection-start-line="104" selection-start-column="35" selection-end-line="104" selection-end-column="35" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/labex/feevale/br/looky/view/adapters/ResultSearchItemListAdapter.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.6061644">
+          <caret line="123" column="54" selection-start-line="123" selection-start-column="54" selection-end-line="123" selection-end-column="54" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/main_fragment.xml">
+      <provider editor-type-id="android-designer">
+        <state />
+      </provider>
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/build/intermediates/exploded-aar/com.facebook.android/facebook-android-sdk/4.5.0/res/values/values.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.34312573">
+          <caret line="46" column="50" selection-start-line="46" selection-start-column="40" selection-end-line="46" selection-end-column="50" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/AndroidManifest.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.8287671">
+          <caret line="93" column="59" selection-start-line="93" selection-start-column="59" selection-end-line="93" selection-end-column="59" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$USER_HOME$/Android/Sdk/platforms/android-21/android.jar!/android/content/Intent.class">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.35">
+          <caret line="304" column="11" selection-start-line="304" selection-start-column="11" selection-end-line="304" selection-end-column="11" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/labex/feevale/br/looky/view/adapters/KnowledgeListProfileAdapter.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="18" column="39" selection-start-line="18" selection-start-column="39" selection-end-line="18" selection-end-column="39" />
+          <folding>
+            <element signature="e#696#697#0" expanded="true" />
+            <element signature="e#736#737#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/labex/feevale/br/looky/LookyApplication.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="40" column="56" selection-start-line="40" selection-start-column="56" selection-end-line="40" selection-end-column="56" />
           <folding />
         </state>
       </provider>
@@ -3877,430 +3911,279 @@
     <entry file="file://$PROJECT_DIR$/app/src/main/java/labex/feevale/br/looky/view/activities/AfterAuthorizationActivity.java">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
-          <caret line="39" column="0" selection-start-line="39" selection-start-column="0" selection-end-line="39" selection-end-column="0" />
+          <caret line="90" column="21" selection-start-line="90" selection-start-column="21" selection-end-line="90" selection-end-column="21" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="jar://$USER_HOME$/Android/Sdk/platforms/android-21/android.jar!/android/widget/AdapterView.class">
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/labex/feevale/br/looky/view/adapters/GlobalHelpAdapter.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.34585288">
-          <caret line="67" column="16" selection-start-line="67" selection-start-column="16" selection-end-line="67" selection-end-column="16" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/global_request_help_fragment.xml">
-      <provider editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="49" column="37" selection-start-line="49" selection-start-column="37" selection-end-line="49" selection-end-column="37" />
-          <folding />
-        </state>
-      </provider>
-      <provider selected="true" editor-type-id="android-designer">
-        <state />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/labex/feevale/br/looky/service/impl/GlobalHelpTask.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="77" column="63" selection-start-line="77" selection-start-column="63" selection-end-line="77" selection-end-column="63" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/labex/feevale/br/looky/service/impl/CloseInteractionTask.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.64041096">
-          <caret line="150" column="69" selection-start-line="150" selection-start-column="69" selection-end-line="150" selection-end-column="69" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://$USER_HOME$/Android/Sdk/extras/android/m2repository/com/android/support/appcompat-v7/22.2.1/appcompat-v7-22.2.1-sources.jar!/android/support/v7/app/AppCompatActivity.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.33333334">
-          <caret line="94" column="16" selection-start-line="94" selection-start-column="16" selection-end-line="94" selection-end-column="16" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$USER_HOME$/Android/Sdk/platforms/android-21/data/res/values/attrs.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.33333334">
-          <caret line="237" column="20" selection-start-line="237" selection-start-column="20" selection-end-line="237" selection-end-column="20" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://$USER_HOME$/Android/Sdk/platforms/android-21/android.jar!/android/view/View.class">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.34312573">
-          <caret line="1055" column="21" selection-start-line="1055" selection-start-column="21" selection-end-line="1055" selection-end-column="21" />
+        <state vertical-scroll-proportion="0.41237113">
+          <caret line="59" column="8" selection-start-line="59" selection-start-column="8" selection-end-line="64" selection-end-column="51" />
           <folding>
-            <element signature="e#33170#33171#0" expanded="true" />
-            <element signature="e#33221#33222#0" expanded="true" />
+            <element signature="imports" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/labex/feevale/br/looky/view/custom/RoundedImageView.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.3321918">
-          <caret line="56" column="19" selection-start-line="56" selection-start-column="19" selection-end-line="56" selection-end-column="19" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/res/menu/chat_menu.xml">
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/labex/feevale/br/looky/view/fragments/InteractionsFragment.java">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
-          <caret line="6" column="42" selection-start-line="6" selection-start-column="42" selection-end-line="6" selection-end-column="42" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/search_panel.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.1394052">
-          <caret line="5" column="33" selection-start-line="5" selection-start-column="33" selection-end-line="5" selection-end-column="33" />
+          <caret line="0" column="46" selection-start-line="0" selection-start-column="46" selection-end-line="0" selection-end-column="46" />
           <folding>
-            <element signature="e#639#665#0" expanded="false" />
-            <element signature="e#771#797#0" expanded="false" />
+            <element signature="imports" expanded="true" />
           </folding>
         </state>
       </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/login_activity.xml">
       <provider editor-type-id="android-designer">
         <state />
       </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/labex/feevale/br/looky/view/fragments/ReqGlobalHelpFragment.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.17283951">
-          <caret line="30" column="19" selection-start-line="30" selection-start-column="19" selection-end-line="30" selection-end-column="19" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/labex/feevale/br/looky/service/utils/HttpActions.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.18518518">
-          <caret line="7" column="17" selection-start-line="7" selection-start-column="17" selection-end-line="7" selection-end-column="17" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/labex/feevale/br/looky/model/UserProfile.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.18518518">
-          <caret line="11" column="13" selection-start-line="11" selection-start-column="13" selection-end-line="11" selection-end-column="13" />
+        <state vertical-scroll-proportion="0.60212517">
+          <caret line="34" column="49" selection-start-line="34" selection-start-column="49" selection-end-line="34" selection-end-column="49" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app/src/main/java/labex/feevale/br/looky/utils/AppVariables.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.52380955">
-          <caret line="56" column="60" selection-start-line="56" selection-start-column="60" selection-end-line="56" selection-end-column="60" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/labex/feevale/br/looky/service/mod/ProfileMod.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.23809524">
-          <caret line="12" column="13" selection-start-line="12" selection-start-column="13" selection-end-line="12" selection-end-column="13" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/labex/feevale/br/looky/model/User.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.18518518">
-          <caret line="12" column="13" selection-start-line="12" selection-start-column="13" selection-end-line="12" selection-end-column="13" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/labex/feevale/br/looky/service/RequestHandler.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.33333334">
-          <caret line="63" column="14" selection-start-line="63" selection-start-column="14" selection-end-line="63" selection-end-column="14" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/global_list_fragment.xml">
-      <provider editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
-          <caret line="8" column="0" selection-start-line="8" selection-start-column="0" selection-end-line="8" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-      <provider selected="true" editor-type-id="android-designer">
-        <state />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/labex/feevale/br/looky/model/GlobalHelp.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.18518518">
-          <caret line="7" column="13" selection-start-line="7" selection-start-column="13" selection-end-line="7" selection-end-column="13" />
+          <caret line="42" column="45" selection-start-line="42" selection-start-column="45" selection-end-line="42" selection-end-column="45" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/labex/feevale/br/looky/service/mod/GlobalMod.java">
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/labex/feevale/br/looky/service/impl/GlobalHelpTask.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.33333334">
-          <caret line="13" column="13" selection-start-line="13" selection-start-column="13" selection-end-line="13" selection-end-column="13" />
+        <state vertical-scroll-proportion="-0.13013698">
+          <caret line="32" column="11" selection-start-line="32" selection-start-column="11" selection-end-line="32" selection-end-column="11" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/labex/feevale/br/looky/view/fragments/ReqGlobalHelpFragment.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.7876712">
+          <caret line="104" column="22" selection-start-line="104" selection-start-column="22" selection-end-line="104" selection-end-column="22" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/labex/feevale/br/looky/model/RequestHelp.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.21649484">
+          <caret line="8" column="13" selection-start-line="8" selection-start-column="13" selection-end-line="8" selection-end-column="13" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/labex/feevale/br/looky/model/Interaction.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="1.7938144">
+          <caret line="81" column="0" selection-start-line="81" selection-start-column="0" selection-end-line="81" selection-end-column="0" />
           <folding>
-            <element signature="imports" expanded="false" />
+            <element signature="e#1690#1691#0" expanded="true" />
+            <element signature="e#1726#1727#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/labex/feevale/br/looky/view/adapters/KnowledgesUserAdapter.java">
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/labex/feevale/br/looky/view/adapters/InteractionsPendingListAdapter.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="47" column="71" selection-start-line="47" selection-start-column="71" selection-end-line="47" selection-end-column="71" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/knowledge_profile_item_list.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.111524165">
-          <caret line="4" column="4" selection-start-line="4" selection-start-column="4" selection-end-line="4" selection-end-column="36" />
-          <folding />
-        </state>
-      </provider>
-      <provider editor-type-id="android-designer">
-        <state />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/knowledge_item_list_profile.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.1394052">
-          <caret line="5" column="4" selection-start-line="5" selection-start-column="4" selection-end-line="6" selection-end-column="27" />
-          <folding />
-        </state>
-      </provider>
-      <provider editor-type-id="android-designer">
-        <state />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/labex/feevale/br/looky/view/fragments/KnowledgeFragment.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.1005291">
-          <caret line="40" column="24" selection-start-line="40" selection-start-column="24" selection-end-line="40" selection-end-column="24" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/pre_profile_item_list.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.33139536">
-          <caret line="12" column="20" selection-start-line="12" selection-start-column="20" selection-end-line="12" selection-end-column="20" />
-          <folding />
-        </state>
-      </provider>
-      <provider editor-type-id="android-designer">
-        <state />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/labex/feevale/br/looky/view/adapters/ResultSearchItemListAdapter.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.32451499">
-          <caret line="71" column="83" selection-start-line="71" selection-start-column="83" selection-end-line="71" selection-end-column="83" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/labex/feevale/br/looky/view/fragments/MainFragment.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.026455026">
-          <caret line="22" column="13" selection-start-line="22" selection-start-column="13" selection-end-line="22" selection-end-column="13" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/res/drawable-hdpi/bg_avatar.png">
-      <provider selected="true" editor-type-id="images">
-        <state />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/res/values/strings.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.853114">
-          <caret line="172" column="0" selection-start-line="172" selection-start-column="0" selection-end-line="172" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/labex/feevale/br/looky/utils/JsonUtils.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="93" column="46" selection-start-line="93" selection-start-column="27" selection-end-line="93" selection-end-column="46" />
-          <folding>
-            <element signature="e#842#843#0" expanded="true" />
-            <element signature="e#878#879#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/res/values/styles.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="258" column="12" selection-start-line="258" selection-start-column="12" selection-end-line="258" selection-end-column="12" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/global_request_item.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-7.2413793">
-          <caret line="23" column="0" selection-start-line="23" selection-start-column="0" selection-end-line="23" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-      <provider editor-type-id="android-designer">
-        <state />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/search_fragment.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.8959538">
-          <caret line="31" column="4" selection-start-line="31" selection-start-column="4" selection-end-line="35" selection-end-column="44" />
-          <folding />
-        </state>
-      </provider>
-      <provider editor-type-id="android-designer">
-        <state />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/labex/feevale/br/looky/view/fragments/SearchHelpFragment.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="81" column="50" selection-start-line="81" selection-start-column="50" selection-end-line="81" selection-end-column="50" />
+        <state vertical-scroll-proportion="0.026804123">
+          <caret line="77" column="44" selection-start-line="77" selection-start-column="44" selection-end-line="77" selection-end-column="44" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/user_profile_fragment.xml">
+      <provider editor-type-id="android-designer">
+        <state />
+      </provider>
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding />
         </state>
       </provider>
-      <provider editor-type-id="android-designer">
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/profile_fragment.xml">
+      <provider selected="true" editor-type-id="android-designer">
         <state />
       </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/profile_list_header.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.37572256">
-          <caret line="16" column="56" selection-start-line="16" selection-start-column="40" selection-end-line="16" selection-end-column="56" />
+      <provider editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding />
         </state>
       </provider>
-      <provider editor-type-id="android-designer">
-        <state />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/labex/feevale/br/looky/view/fragments/ProfileFragment.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="44" column="51" selection-start-line="44" selection-start-column="51" selection-end-line="44" selection-end-column="51" />
+          <folding />
+        </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app/src/main/java/labex/feevale/br/looky/view/fragments/UserProfileFragment.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.28832117">
-          <caret line="54" column="53" selection-start-line="54" selection-start-column="53" selection-end-line="54" selection-end-column="53" />
+        <state vertical-scroll-proportion="0.6917808">
+          <caret line="109" column="27" selection-start-line="109" selection-start-column="27" selection-end-line="109" selection-end-column="27" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/res/values/colors.xml">
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/labex/feevale/br/looky/service/impl/CloseInteractionTask.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.7390511">
-          <caret line="36" column="34" selection-start-line="36" selection-start-column="28" selection-end-line="36" selection-end-column="34" />
+        <state vertical-scroll-proportion="-0.79223746">
+          <caret line="41" column="11" selection-start-line="41" selection-start-column="11" selection-end-line="41" selection-end-column="11" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="jar://$USER_HOME$/Android/Sdk/platforms/android-21/android.jar!/android/app/DialogFragment.class">
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/labex/feevale/br/looky/view/adapters/InteractionsListAdapter.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-0.03250478">
-          <caret line="19" column="13" selection-start-line="19" selection-start-column="13" selection-end-line="19" selection-end-column="13" />
-          <folding>
-            <element signature="e#1056#1057#0" expanded="true" />
-            <element signature="e#1107#1108#0" expanded="true" />
-          </folding>
+        <state vertical-scroll-proportion="0.28082192">
+          <caret line="110" column="78" selection-start-line="110" selection-start-column="78" selection-end-line="110" selection-end-column="78" />
+          <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/labex/feevale/br/looky/view/adapters/GlobalHelpAdapter.java">
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/labex/feevale/br/looky/service/impl/RequestInteractionsTask.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.31506848">
+          <caret line="66" column="58" selection-start-line="66" selection-start-column="58" selection-end-line="66" selection-end-column="58" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/labex/feevale/br/looky/view/fragments/SearchHelpFragment.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.22945206">
+          <caret line="199" column="21" selection-start-line="199" selection-start-column="21" selection-end-line="199" selection-end-column="21" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/res/values/strings.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-11.68">
+          <caret line="82" column="61" selection-start-line="82" selection-start-column="61" selection-end-line="82" selection-end-column="61" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/res/values/styles.xml">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
-          <caret line="63" column="57" selection-start-line="61" selection-start-column="10" selection-end-line="63" selection-end-column="57" />
-          <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="e#2237#2249#0" expanded="true" />
-            <element signature="e#2652#2653#0" expanded="true" />
-            <element signature="e#2690#2691#0" expanded="true" />
-            <element signature="e#2734#2735#0" expanded="true" />
-            <element signature="e#2765#2766#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/looky_dialog.xml">
-      <provider editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="5" column="35" selection-start-line="5" selection-start-column="35" selection-end-line="5" selection-end-column="35" />
+          <caret line="223" column="32" selection-start-line="223" selection-start-column="17" selection-end-line="223" selection-end-column="32" />
           <folding />
         </state>
       </provider>
-      <provider selected="true" editor-type-id="android-designer">
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/interactions_fragment.xml">
+      <provider editor-type-id="android-designer">
         <state />
       </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/labex/feevale/br/looky/view/custom/LookyDialog.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="35" column="0" selection-start-line="35" selection-start-column="0" selection-end-line="35" selection-end-column="0" />
+        <state vertical-scroll-proportion="0.283353">
+          <caret line="16" column="37" selection-start-line="16" selection-start-column="37" selection-end-line="16" selection-end-column="37" />
           <folding>
-            <element signature="imports" expanded="true" />
+            <element signature="e#725#758#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/labex/feevale/br/looky/view/fragments/RequestsGlobalFragment.java">
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/labex/feevale/br/looky/service/utils/CallbackTask.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="92" column="46" selection-start-line="92" selection-start-column="46" selection-end-line="92" selection-end-column="46" />
-          <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="e#1717#1718#0" expanded="true" />
-            <element signature="e#1756#1757#0" expanded="true" />
-            <element signature="e#2613#2811#0" expanded="true" />
-            <element signature="e#2810#2811#0" expanded="true" />
-            <element signature="e#2939#3145#0" expanded="true" />
-            <element signature="e#3144#3145#0" expanded="true" />
-            <element signature="e#3970#3971#0" expanded="true" />
-            <element signature="e#4051#4052#0" expanded="true" />
-            <element signature="e#5001#5002#0" expanded="true" />
-            <element signature="e#5058#5059#0" expanded="true" />
-          </folding>
+        <state vertical-scroll-proportion="0.11986301">
+          <caret line="7" column="17" selection-start-line="7" selection-start-column="17" selection-end-line="7" selection-end-column="17" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar:///opt/jdk/jdk1.8.0_05/jre/lib/jsse.jar!/sun/security/ssl/JsseJce.class">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.43008226">
+          <caret line="255" column="31" selection-start-line="255" selection-start-column="31" selection-end-line="255" selection-end-column="31" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/labex/feevale/br/looky/utils/SharedPreferencesUtils.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.025114154">
+          <caret line="69" column="29" selection-start-line="69" selection-start-column="29" selection-end-line="69" selection-end-column="29" />
+          <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app/src/main/java/labex/feevale/br/looky/MainActivity.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.72627735">
-          <caret line="353" column="84" selection-start-line="353" selection-start-column="84" selection-end-line="353" selection-end-column="84" />
+        <state vertical-scroll-proportion="0.0">
+          <caret line="219" column="39" selection-start-line="219" selection-start-column="39" selection-end-line="219" selection-end-column="39" />
           <folding>
             <element signature="method#loadMainScreen#0;class#MainActivity#0" expanded="false" />
-            <element signature="method#loadInteractions#0;class#MainActivity#0" expanded="false" />
             <element signature="method#loadMainEventListener#0;class#MainActivity#0" expanded="false" />
-            <element signature="method#callMainMenuAnimation#0;class#MainActivity#0" expanded="false" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/labex/feevale/br/looky/SplashActivity.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="30" column="0" selection-start-line="30" selection-start-column="0" selection-end-line="30" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/labex/feevale/br/looky/service/impl/ProfileService.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="31" column="0" selection-start-line="31" selection-start-column="0" selection-end-line="31" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/labex/feevale/br/looky/service/impl/SignInService.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="30" column="0" selection-start-line="30" selection-start-column="0" selection-end-line="30" selection-end-column="0" />
+          <folding>
+            <element signature="e#894#895#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/labex/feevale/br/looky/service/RequestHandler.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="103" column="0" selection-start-line="103" selection-start-column="0" selection-end-line="103" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/labex/feevale/br/looky/LoginActivity.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="316" column="21" selection-start-line="316" selection-start-column="21" selection-end-line="316" selection-end-column="21" />
+          <folding>
+            <element signature="e#5399#5665#0" expanded="true" />
+            <element signature="e#5664#5665#0" expanded="true" />
+            <element signature="e#7676#7677#0" expanded="true" />
+            <element signature="e#7730#7731#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/labex/feevale/br/looky/model/User.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="1.0913706">
+          <caret line="217" column="25" selection-start-line="217" selection-start-column="25" selection-end-line="217" selection-end-column="25" />
+          <folding />
         </state>
       </provider>
     </entry>

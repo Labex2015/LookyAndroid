@@ -221,6 +221,13 @@
         <item name="android:paddingLeft">16dp</item>
     </style>
 
+    <style name="font_no_content">
+        <item name="android:textSize">24sp</item>
+        <item name="android:textStyle">bold|italic</item>
+        <item name="android:textColor">@color/base_app</item>
+        <item name="android:gravity">center_vertical|center_horizontal</item>
+    </style>
+
     <style name="font_name_header_reverse" parent="font_name_header">
         <item name="android:textColor">@color/base_app2</item>
     </style>
@@ -286,6 +293,8 @@
 
     <style name="default_image_item_list">
         <item name="android:layout_margin">8dp</item>
+        <item name="android:layout_height">100dp</item>
+        <item name="android:layout_width">100dp</item>
         <item name="android:src">@drawable/default_avatar</item>
     </style>
 

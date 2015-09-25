@@ -7,8 +7,10 @@ import android.support.v7.app.AppCompatActivity;
 import java.io.Serializable;
 
 import labex.feevale.br.looky.dao.SubjectDao;
+import labex.feevale.br.looky.gcm.GCMService;
 import labex.feevale.br.looky.model.User;
 import labex.feevale.br.looky.service.impl.LoadSubjectService;
+import labex.feevale.br.looky.service.impl.ProfileService;
 import labex.feevale.br.looky.utils.SharedPreferencesUtils;
 
 /**
@@ -26,11 +28,17 @@ public class SplashActivity extends AppCompatActivity implements Serializable {
     protected void onResume() {
         super.onResume();
 
-        if (new SubjectDao().ïsEmpty()) {
+        if(new SubjectDao().ïsEmpty())
             startService(new Intent(Intent.ACTION_SYNC, null, this, LoadSubjectService.class));
-            finish();
-        }
-        User user = new SharedPreferencesUtils().getUser(this);
+
+        SharedPreferencesUtils utils = new SharedPreferencesUtils();
+        if(utils.getUserKey(this) == null)
+            startService(new Intent(Intent.ACTION_SYNC, null, this, GCMService.class));
+
+        if(!utils.getState(this))
+            startService(new Intent(Intent.ACTION_SYNC, null, this, ProfileService.class));
+
+        User user = utils.getUser(this);
         if(user  != null) {
             if (user.getProfileStatus() == User.COMPLETE){
                 ((LookyApplication) getApplication()).loadMainActivity();

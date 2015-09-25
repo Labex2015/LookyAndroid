@@ -6,7 +6,7 @@ package labex.feevale.br.looky.service.utils;
 public final class GCMVariables {
 
     public static final String API_KEY = "";
-    public static final String PROJECT_NUMBER  = "1070934498727";
+    public static final String PROJECT_NUMBER  = "1079617689354";
 
     public static final int TYPE_REQUEST_HELP = 1;
     public static final int TYPE_RESPONSE_HELP = 2;

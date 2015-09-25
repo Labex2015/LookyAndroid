@@ -17,8 +17,6 @@ public class Interaction implements Serializable{
     private Date started;
     private Date closed;
 
-    private byte[] pictureAnotherUser;
-
     public Interaction() { }
 
     public Interaction(Long id, Long idRequestHelp,RequestHelp requestHelp,
@@ -79,14 +77,6 @@ public class Interaction implements Serializable{
 
     public void setClosed(Date closed) {
         this.closed = closed;
-    }
-
-    public byte[] getPictureAnotherUser() {
-        return pictureAnotherUser;
-    }
-
-    public void setPictureAnotherUser(byte[] pictureAnotherUser) {
-        this.pictureAnotherUser = pictureAnotherUser;
     }
 
     public String getRequest() {

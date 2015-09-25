@@ -33,7 +33,6 @@ import labex.feevale.br.looky.service.RequestHandler;
 import labex.feevale.br.looky.service.utils.TaskExtraAction;
 import labex.feevale.br.looky.utils.AppVariables;
 import labex.feevale.br.looky.utils.JsonUtils;
-import labex.feevale.br.looky.utils.L;
 import labex.feevale.br.looky.utils.MessageResponse;
 import labex.feevale.br.looky.utils.SharedPreferencesUtils;
 import labex.feevale.br.looky.view.BaseFragment;
@@ -235,6 +234,8 @@ public class SearchHelpFragment extends BaseFragment implements AdapterView.OnIt
         protected void close(List<UserProfile> userProfiles) {
             if(userProfiles != null)
                 adapter.setProfiles(userProfiles);
+            else
+                adapter.setProfiles(new ArrayList<UserProfile>());
             verifyPanel();
         }
     }

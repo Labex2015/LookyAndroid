@@ -80,7 +80,7 @@
 
 
     <!-- INTERACTIONS -->
-    <string name="no_interactions_message">Nenhuma interação. Que tal procurar alguém para ajudar?</string>
+    <string name="no_interactions_message">Nada por aqui!  =D</string>
     <string name="interactions_req_msg_dialog">Listando interações......</string>
     <string name="interactions_cancel_dialog">Cancelar Interação</string>
     <string name="interactions_cancel_msg_dialog">Deseja cancelar a interação com #_USER</string>
@@ -172,6 +172,15 @@
     <!-- GLOBAL HELP LIST -->
 
     <string name="you">VOCÊ</string>
+    <string name="dialog_req_global_question">Ajudar?</string>
+    <string name="dialog_req_global_question_remove">Remover pedido de ajuda?</string>
+    <string name="remove_global_help">Remover pedido de ajuda?</string>
+    <string name="remove_global_help_message">Voĉe está prestes a remover seu pedido de ajuda, assim que confirmar ninguém mais poderá ver seu pedido de ajuda.</string>
+    <string name="global_help_notify_user_sent">O usuário será notificado que você irá         ajudá-lo, entre em suas interações para falar com ele.</string>
+    <string name="answer_global_help">Conceder ajuda</string>
+    <string name="answer_global_help_message">Desculpe insistir, mas você está se comprometendo a ajudar alguém. Proceder?</string>
+    <string name="logout">Sair</string>
+    <string name="loading">Carregando...</string>
 
 
 </resources>

@@ -40,4 +40,6 @@
     <color name="font_reverse">#FBAE17</color>
     <color name="font_reverse2">#F5A403</color>
     <color name="divider_list_default">#8C8A85</color>
+    <color name="base_app_3">#FF0000</color>
+    <color name="base_app4">#550CE8</color>
 </resources>

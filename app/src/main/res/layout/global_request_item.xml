@@ -14,21 +14,18 @@
         android:layout_width="match_parent"
         android:layout_height="200dp"
         card_view:cardElevation="6dp">
-        <RelativeLayout
-            android:orientation="vertical"
+        <LinearLayout
+            android:orientation="horizontal"
             android:layout_width="match_parent"
             android:layout_height="match_parent">
-            <labex.feevale.br.looky.view.custom.RoundedImageView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
 
-                style="@style/default_image_item_list"
-                android:id="@+id/globalItemUserPicture"/>
             <LinearLayout
                 android:orientation="vertical"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                android:layout_below="@+id/globalItemUserPicture">
+                android:id="@+id/linearLayout6"
+                android:padding="8dp"
+                android:layout_weight="1">
                 <TextView
                     android:id="@+id/titleGlobalTextView"
                     android:text="TITLE"
@@ -48,29 +45,33 @@
                     android:layout_width="match_parent"
                     android:layout_height="match_parent" />
             </LinearLayout>
-
-            <TextView
+            <LinearLayout
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Medium Text"
-                android:id="@+id/globalItemUserName"
-                style="@style/font_name_header"
-                android:textColor="@color/base_app"
-                android:layout_alignBottom="@+id/globalItemUserPicture"
-                android:layout_toRightOf="@+id/globalItemUserPicture"
-                android:layout_toEndOf="@+id/globalItemUserPicture" />
+                android:orientation="vertical"
+                android:paddingRight="8dp"
+                android:paddingTop="8dp"
+                android:paddingBottom="8dp"
+                android:layout_gravity="center_vertical">
+                <labex.feevale.br.looky.view.custom.RoundedImageView
+                    android:layout_width="75dp"
+                    android:layout_height="75dp"
+                    style="@style/default_image_item_list"
+                    android:id="@+id/globalItemUserPicture"/>
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Medium Text"
+                    android:id="@+id/globalItemUserName"
+                    style="@style/font_name_sub"
+                    android:padding="0dp"
+                    android:textColor="@color/base_app"
+                    android:layout_gravity="center"
+                    android:layout_marginBottom="24dp" />
 
-            <ImageButton
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:id="@+id/globalDeleteItemButton"
-                android:padding="8dp"
-                android:src="@drawable/delete"
-                android:visibility="gone"
-                android:background="@android:color/transparent"
-                android:layout_alignTop="@+id/globalItemUserPicture"
-                android:layout_alignParentRight="true"
-                android:layout_alignParentEnd="true" />
-        </RelativeLayout>
+            </LinearLayout>
+
+
+        </LinearLayout>
     </android.support.v7.widget.CardView>
 </LinearLayout>

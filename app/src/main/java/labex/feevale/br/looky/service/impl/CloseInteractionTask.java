@@ -102,15 +102,15 @@ public class CloseInteractionTask extends AsyncTask<Void, Void, Void> implements
         private ExtraAction<MessageResponse> extraAction;
 
         protected CloseInteractionService(ExtraAction extraAction, Context context, String params) {
-            super(null, context, AppVariables.URL_CLOSE_INTERACTION.replace("#ID", idInteraction.toString())
-                    .replace(AppVariables.TAG_IDUSER, idUser.toString()), RequestHandler.PUT, params);
+            super(null, context, AppVariables.URL_CLOSE_INTERACTION.replace(AppVariables.TAG_IDUSER, idUser.toString())
+                    .replace("#ID", idInteraction.toString()), RequestHandler.PUT, params);
             this.extraAction = extraAction;
             this.context =  context;
         }
 
         protected CloseInteractionService(ExtraAction extraAction, Context context) {
-            super(null, context, AppVariables.URL_CLOSE_INTERACTION.replace("#ID", idInteraction.toString())
-                    .replace(AppVariables.TAG_IDUSER, idUser.toString()), RequestHandler.PUT);
+            super(null, context, AppVariables.URL_CLOSE_INTERACTION.replace(AppVariables.TAG_IDUSER, idUser.toString())
+                    .replace("#ID", idInteraction.toString()), RequestHandler.PUT);
             this.extraAction = extraAction;
             this.context =  context;
         }

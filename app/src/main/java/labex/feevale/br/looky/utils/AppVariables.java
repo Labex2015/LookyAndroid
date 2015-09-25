@@ -25,8 +25,8 @@ public class AppVariables {
     public static final String TAG_ID_REQUEST = "#ID_REQUEST";
     public static final String TAG_ID_HELPER = "#ID_HELPER";
 
-//    public static final String URL = "http://192.168.1.5:8793/";
-    public static final String URL = "http://52.26.130.5:8793/";
+    public static final String URL = "http://192.168.1.5:8793/";
+//    public static final String URL = "http://52.26.130.5:8793/";
 
 
     public static final String USER_VERB = "user/";
@@ -44,18 +44,16 @@ public class AppVariables {
     public static final String REQUEST_USER_HELP = "user/#ID_USER/request/#ID_HELPER";
     //public static final String RESPONSE_USER_REQUEST = "response/#ID_USER/request/";
 
-    public static final String RESPONSE_USER_REQUEST = "response/user/#ID_USER/request/";
-    public static final String REGISTER_USER = "user";
-    public static final String LOGIN_USER = "user/login";
+    public static final String RESPOND_USER_REQUEST = URL+USER_VERB+TAG_IDUSER+"/respond";
+
 
     public static final String URL_INTERACTION = URL+"users/interaction/#ID_REQUEST/#ID_HELPER";
     public static final String URL_LIST_INTERACTIONS = URL+"user/#ID_USER/interactions";
     public static final String URL_LIST_PENDING_INTERACTIONS = URL+"user/#ID_USER/interactions/pending";
     public static final String URL_USER_EVALUATION = URL+"user/evaluations/#ID";
     public static final String URL_CLOSE_INTERACTION = URL+"user/#ID_USER/interaction/#ID";
-    public static final String URL_SEND_GLOBAL_REQUEST_HELP = URL+"user/request_help/global";
+    public static final String URL_USER_GLOBAL_REQUEST_HELP = URL+"user/request_help/global";
     public static final String URL_GLOBAL_REQUEST_HELP = URL+"request_help/global";
-
 
     //Params
 
@@ -65,7 +63,9 @@ public class AppVariables {
 
     public static final String SEARCH_HELP = URL + "/user/#ID/help/search:#PARAM/#SUBJECT/#POSITION/#MAX";
     public static final String URL_USER_PROFILE = URL + USER_VERB + TAG_IDUSER + "/profile";
+    public static final String URL_PROFILE = URL + USER_VERB + "profile/private";
     public static final String SUBJECTS =  URL+"subjects";
     public static final String URL_SIGN_IN_GOOGLE = URL + "user/signin/google";
     public static final String URL_SIGN_IN_FACEBOOK = URL+"user/signin/facebook";
+
 }

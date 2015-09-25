@@ -1,7 +1,6 @@
 package labex.feevale.br.looky.view.adapters;
 
 import android.app.Activity;
-import android.graphics.BitmapFactory;
 import android.support.v4.app.Fragment;
 import android.view.View;
 import android.view.ViewGroup;
@@ -9,6 +8,8 @@ import android.widget.AdapterView;
 import android.widget.BaseAdapter;
 import android.widget.TextView;
 import android.widget.Toast;
+
+import com.squareup.picasso.Picasso;
 
 import java.util.List;
 
@@ -62,14 +63,22 @@ public class InteractionsListAdapter extends BaseAdapter implements DialogAction
         view = activity.getLayoutInflater().inflate(R.layout.interaction_list_item, null);
 
         RoundedImageView picture = (RoundedImageView) view.findViewById(R.id.anotherUserPictureRoundedImage);
+
         TextView name = (TextView)view.findViewById(R.id.anotherUserTextView);
         TextView requestLabel = (TextView) view.findViewById(R.id.requestHelpLabelTextView);
 
         Interaction interaction = interactionList.get(i);
-        if(interaction.getPictureAnotherUser() != null)
-            picture.setImageBitmap(BitmapFactory.decodeByteArray(
-                    interaction.getPictureAnotherUser(), 0, interaction
-                            .getPictureAnotherUser().length));
+
+        String picturePath = interaction.getRequestHelp().getHelper().getId() != me.getId() ?
+                interaction.getRequestHelp().getHelper().getPicturePath() : interaction.getRequestHelp().getRequester().getPicturePath();
+        Picasso.with(activity)
+                .load(picturePath)
+                .placeholder(R.drawable.default_avatar)
+                .error(R.drawable.default_avatar)
+                .resize(150, 150)
+                .centerCrop().into(picture);
+
+
         String anotherName = interaction.getRequestHelp().getHelper().getId() != me.getId() ?
                 interaction.getRequestHelp().getHelper().getUsername() : interaction.getRequestHelp().getRequester().getUsername();
         name.setText(anotherName);

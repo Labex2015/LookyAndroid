@@ -1,6 +1,7 @@
 package labex.feevale.br.looky;
 
 import android.accounts.Account;
+import android.app.ProgressDialog;
 import android.content.DialogInterface;
 import android.content.Intent;
 import android.content.IntentSender;
@@ -8,7 +9,6 @@ import android.os.AsyncTask;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.view.View;
-import android.widget.ProgressBar;
 import android.widget.Toast;
 
 import com.facebook.CallbackManager;
@@ -56,20 +56,17 @@ public class LoginActivity extends AppCompatActivity implements  GoogleApiClient
                                                                  GoogleApiClient.OnConnectionFailedListener,
                                                                  View.OnClickListener, ResultCallback<People.LoadPeopleResult>,
                                                                  CallbackTask<User>{
-    /* Request code used to invoke sign in user interactions. */
     private static final int RC_SIGN_IN = 0;
     private static final int GOOGLE = 1;
-    /* Client used to interact with Google APIs. */
-    private GoogleApiClient mGoogleApiClient;
-    /* Is there a ConnectionResult resolution in progress? */
-    private boolean mIsResolving = false;
-    /* Should we automatically resolve ConnectionResults when possible? */
-    private boolean mShouldResolve = false;
 
-    private ProgressBar progressBar;
+    private GoogleApiClient mGoogleApiClient;
+    private boolean mIsResolving = false;
+    private boolean mShouldResolve = false;
 
     private LoginButton faceBookLoginButton;
     private CallbackManager callbackManager;
+
+    private ProgressDialog progressDialog;
 
     private User user;
     private int loginAction;
@@ -84,11 +81,10 @@ public class LoginActivity extends AppCompatActivity implements  GoogleApiClient
         setContentView(R.layout.login_activity);
         findViewById(R.id.signInButtonGoogle).setOnClickListener(this);
         faceBookLoginButton = (LoginButton)findViewById(R.id.signInFaceBookButton);
-        progressBar = (ProgressBar) findViewById(R.id.loginProgressBar);
 
         callbackManager = CallbackManager.Factory.create();
         faceBookLoginButton.setReadPermissions(Arrays.asList("public_profile", "user_friends", "email"));
-        faceBookLoginButton.registerCallback(callbackManager,facebookCallback());
+        faceBookLoginButton.registerCallback(callbackManager, facebookCallback());
     }
 
     @Override
@@ -117,13 +113,7 @@ public class LoginActivity extends AppCompatActivity implements  GoogleApiClient
     public void onClick(View view) {
         if (view.getId() == R.id.signInButtonGoogle) {
             onSignInGoogleClicked();
-        }/*else if (view.getId() == R.id.twitterSignInButton){
-            onSignInTwitterClicked();
-        }*/
-    }
-
-    private void onSignInTwitterClicked() {
-
+        }
     }
 
     private void onSignInGoogleClicked() {
@@ -141,6 +131,7 @@ public class LoginActivity extends AppCompatActivity implements  GoogleApiClient
     }
 
     private void startSecondPhase(User user) {
+        manageProgress(false);
         disconnectGoogle();
         new SharedPreferencesUtils().saveUser(this, user);
         ((LookyApplication)getApplicationContext()).loadSecondPhaseLogin();
@@ -149,6 +140,7 @@ public class LoginActivity extends AppCompatActivity implements  GoogleApiClient
 
     @Override
     public void error(final MessageResponse response) {
+        manageProgress(false);
         new SharedPreferencesUtils().clear(LoginActivity.this);
         showMessage(false, response != null ? response.getMsg() : null);
     }
@@ -158,18 +150,11 @@ public class LoginActivity extends AppCompatActivity implements  GoogleApiClient
         Toast.makeText(this, result, Toast.LENGTH_LONG).show();
     }
 
-    private void showProgressing(Boolean show) {
-        if (show)
-            progressBar.setVisibility(View.VISIBLE);
-        else
-            progressBar.setVisibility(View.INVISIBLE);
-    }
-
     private void showMessage(final Boolean show, final String message) {
         this.runOnUiThread(new Runnable() {
             @Override
             public void run() {
-                showProgressing(show);
+                manageProgress(false);
                 if (message != null)
                     Toast.makeText(getApplicationContext(), message, Toast.LENGTH_LONG).show();
             }
@@ -181,29 +166,18 @@ public class LoginActivity extends AppCompatActivity implements  GoogleApiClient
     }
 
     private void finishMainActivity() {
+        manageProgress(false);
+        new SharedPreferencesUtils().saveUser(this, user);
         ((LookyApplication)getApplicationContext()).loadMainActivity();
         disconnectGoogle();
         finish();
     }
 
-    /** TWITTER CONFIGURATION*/
-    /*class TwitterCallback extends com.twitter.sdk.android.core.Callback<TwitterSession>{
-        @Override
-        public void success(Result<TwitterSession> result) {
-            L.output(result);
-        }
-
-        @Override
-        public void failure(TwitterException e) {
-            L.output(e);
-        }
-    }*/
-
-    /** TWITTER CONFIGURATION - END*/
 
     /** FACEBOOK CONFIGURATION*/
     private FacebookCallback<LoginResult> facebookCallback(){
         return new FacebookCallback<LoginResult>() {
+
             @Override
             public void onSuccess(final LoginResult loginResult) {
                 LoginManager.getInstance().logInWithReadPermissions(LoginActivity.this, Arrays.asList("public_profile", "user_friends"));
@@ -216,6 +190,8 @@ public class LoginActivity extends AppCompatActivity implements  GoogleApiClient
                         user.setPicturePath("http://graph.facebook.com/" + profile.getId() + "/picture?type=large");
                         user.setAccountID(profile.getId());
                         user.setToken(loginResult.getAccessToken().getToken());
+
+                        new SharedPreferencesUtils().saveToken(user.getToken(),LoginActivity.this);
                         new FacebookLoginTask(loginResult).execute();
                         facebookProfileTracker.stopTracking();
                     }
@@ -224,14 +200,10 @@ public class LoginActivity extends AppCompatActivity implements  GoogleApiClient
             }
 
             @Override
-            public void onCancel() {
-
-            }
+            public void onCancel() {}
 
             @Override
-            public void onError(FacebookException e) {
-
-            }
+            public void onError(FacebookException e) {}
         };
     }
 
@@ -246,7 +218,7 @@ public class LoginActivity extends AppCompatActivity implements  GoogleApiClient
 
         @Override
         protected void onPreExecute() {
-            showProgressing(true);
+            manageProgress(true);
         }
 
         @Override
@@ -264,6 +236,7 @@ public class LoginActivity extends AppCompatActivity implements  GoogleApiClient
                                     String name = jsonObject.getString("name");
                                     user.setUsername(name.replaceAll(" ", "").trim());
                                 }
+                                user.setDeviceKey(new SharedPreferencesUtils().getUserKey(LoginActivity.this));
                                 String param = new JsonUtils().userToJson(user);
                                 new SignInService(user,LoginActivity.this, AppVariables.URL_SIGN_IN_FACEBOOK,param,
                                   LoginActivity.this).makeRequest();
@@ -279,6 +252,11 @@ public class LoginActivity extends AppCompatActivity implements  GoogleApiClient
             request.executeAndWait();
             return null;
         }
+
+        @Override
+        protected void onPostExecute(Void aVoid) {
+            manageProgress(false);
+        }
     }
 
     /** FACEBOOK CONFIGURATION - END*/
@@ -291,6 +269,7 @@ public class LoginActivity extends AppCompatActivity implements  GoogleApiClient
         mShouldResolve = false;
         Person currentPerson = Plus.PeopleApi.getCurrentPerson(mGoogleApiClient);
         if (currentPerson != null) {
+
             user = new User();
             user.setAccountType(User.GOOGLE);
             user.setName(currentPerson.getDisplayName());
@@ -298,7 +277,6 @@ public class LoginActivity extends AppCompatActivity implements  GoogleApiClient
             user.setDescription(currentPerson.getAboutMe());
             user.setUsername(currentPerson.getNickname());
 
-            showProgressing(true);
             new GetIdTokenTask().execute();
         }else{
             error(new MessageResponse("Problemas ao listar usuário da conta",false));
@@ -325,10 +303,7 @@ public class LoginActivity extends AppCompatActivity implements  GoogleApiClient
             } else {
                 showErrorDialog(connectionResult);
             }
-        } /*else {
-            // Show the signed-out UI
-            //TODO: showSignedOutUI();
-        }*/
+        }
     }
 
     @Override
@@ -339,7 +314,7 @@ public class LoginActivity extends AppCompatActivity implements  GoogleApiClient
     @Override
     public void success(User user) {
         showMessage(false, null);
-        if(user.getDegree() != null && user.getSemester() > 0)
+        if(user.getDegreeID() > 0 && user.getSemester() > 0)
             finishMainActivity();
         else
             startSecondPhase(user);
@@ -376,13 +351,19 @@ public class LoginActivity extends AppCompatActivity implements  GoogleApiClient
 
         @Override
         protected Void doInBackground(Void... params) {
+            SharedPreferencesUtils utils = new SharedPreferencesUtils();
             String accountName = Plus.AccountApi.getAccountName(mGoogleApiClient);
             Account account = new Account(accountName, GoogleAuthUtil.GOOGLE_ACCOUNT_TYPE);
             String scopes = AppVariables.GOOGLE_SCOPE;
             try {
                 String ID =  GoogleAuthUtil.getToken(getApplicationContext(), account, scopes);
                 user.setToken(ID);
+
+                utils.saveToken(ID, LoginActivity.this);
+
+                user.setDeviceKey(utils.getUserKey(LoginActivity.this));
                 String param = new JsonUtils().UserToJson(user);
+
                 new SignInService(user,LoginActivity.this, AppVariables.URL_SIGN_IN_GOOGLE, param,
                                   LoginActivity.this).makeRequest();
             } catch (IOException e) {
@@ -398,5 +379,23 @@ public class LoginActivity extends AppCompatActivity implements  GoogleApiClient
     }
 
     /** GOOGLE CONFIGURATION - END */
+
+    public void manageProgress(final Boolean status){
+        runOnUiThread(new Runnable() {
+            @Override
+            public void run() {
+                if(progressDialog != null && progressDialog.isShowing() && !status){
+                    progressDialog.dismiss();
+                    progressDialog = null;
+                }else{
+                    if(status) {
+                        progressDialog = new ProgressDialog(LoginActivity.this);
+                        progressDialog.setMessage(getString(R.string.LOADING));
+                        progressDialog.show();
+                    }
+                }
+            }
+        });
+    }
 
 }

@@ -15,13 +15,10 @@ import android.widget.Toast;
 import com.squareup.picasso.Picasso;
 
 import java.util.ArrayList;
-import java.util.Date;
-import java.util.List;
 
 import labex.feevale.br.looky.MainActivity;
 import labex.feevale.br.looky.R;
-import labex.feevale.br.looky.model.Evaluation;
-import labex.feevale.br.looky.model.User;
+import labex.feevale.br.looky.model.Knowledge;
 import labex.feevale.br.looky.model.UserProfile;
 import labex.feevale.br.looky.view.BaseFragment;
 import labex.feevale.br.looky.view.adapters.KnowledgeListProfileAdapter;
@@ -61,7 +58,10 @@ public class UserProfileFragment extends BaseFragment {
         requestedTextView = (TextView)  header.findViewById(R.id.reqHelpProfileTextView);
         scoreTextView = (TextView)  header.findViewById(R.id.scoreProfileText);
         graduationTextView = (TextView)  header.findViewById(R.id.userGraduationProfileText);
+
         ratingBar = (RatingBar) header.findViewById(R.id.ratingScoreUserProfile);
+        ratingBar.setIsIndicator(false);
+
         picture = (RoundedImageView) header.findViewById(R.id.userProfileImageView);
 
         commentsButton = (ImageButton) header.findViewById(R.id.commentsImageButton);
@@ -95,12 +95,16 @@ public class UserProfileFragment extends BaseFragment {
     @Override
     public void onViewCreated(View view, Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
-        adapter = new KnowledgeListProfileAdapter(profile.knowledges, getActivity());
+        adapter = new KnowledgeListProfileAdapter(profile.knowledges != null ? profile.knowledges
+                                                  : new ArrayList<Knowledge>(), getActivity());
         knowledgesView.setAdapter(adapter);
 
-        if(profile.getPicturePath() != null && !profile.getPicturePath().isEmpty())
-            Picasso.with(getActivity()).load(profile.picturePath).resize(175,175)
-                    .centerCrop().into(picture);
+        Picasso.with(getActivity())
+                .load(profile.getPicturePath())
+                .placeholder(R.drawable.default_avatar)
+                .error(R.drawable.default_avatar)
+                .resize(175, 175)
+                .centerCrop().into(picture);
     }
 
     private void loadLayoutData(){

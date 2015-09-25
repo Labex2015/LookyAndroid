@@ -1,6 +1,5 @@
 package labex.feevale.br.looky.service;
 
-import android.accounts.NetworkErrorException;
 import android.content.Context;
 
 import org.apache.http.conn.ConnectTimeoutException;
@@ -13,8 +12,10 @@ import java.io.InputStreamReader;
 import java.net.ConnectException;
 import java.net.HttpURLConnection;
 import java.net.URL;
+import java.util.HashMap;
+import java.util.Iterator;
+import java.util.Map;
 
-import labex.feevale.br.looky.model.ServiceError;
 import labex.feevale.br.looky.utils.AppHelp;
 import labex.feevale.br.looky.utils.JsonUtils;
 import labex.feevale.br.looky.utils.L;
@@ -35,6 +36,11 @@ public abstract class RequestHandler<Entity> {
     public static final String TYPE_JSON = "application/json; charset=UTF-8";
     public static final String ENCODING_UTF = "UTF-8";
 
+    public static final String USER_PARAM = "user";
+    public static final String TOKEN_PARAM = "token";
+    public static final String ITEM_PARAM = "item";
+
+
     protected MessageResponse messageResponse = new MessageResponse();
     protected Entity entity;
     private JsonUtils<Entity> jsonUtils;
@@ -49,6 +55,9 @@ public abstract class RequestHandler<Entity> {
     private String methodConnection;
     private String params;
     private StringBuffer response;
+    private HashMap<String, String> headerParams;
+
+    private int statusResponse;
 
     protected RequestHandler(Entity entity, Context context, String URL, String methodConnection, String params) {
         this.entity = entity;
@@ -65,6 +74,12 @@ public abstract class RequestHandler<Entity> {
         this(entity, context, URL, methodConnection, null);
     }
 
+    protected RequestHandler(Entity entity, Context context, String URL, String methodConnection,
+                             String params, HashMap headerParams) {
+        this(entity, context, URL, methodConnection, params);
+        this.headerParams = headerParams;
+    }
+
     public void makeRequest() {
         java.net.URL url;
         try {
@@ -74,8 +89,12 @@ public abstract class RequestHandler<Entity> {
                 connection.setRequestMethod(methodConnection);
                 connection.setRequestProperty("Content-Type", TYPE_JSON);
                 connection.setConnectTimeout(TIMEOUT);
-                if(params != null)
+                if((methodConnection.equals(POST)|| methodConnection.equals(PUT))&& params != null)
                     configBody(params);
+
+                if(headerParams != null)
+                    processHeader();
+
                 processReturn();
                 postExecute(response != null ? response.toString() : null);
             }else{
@@ -96,6 +115,14 @@ public abstract class RequestHandler<Entity> {
         }
     }
 
+    private void processHeader() {
+        Iterator it = headerParams.entrySet().iterator();
+        while (it.hasNext()){
+            Map.Entry pair = (Map.Entry) it.next();
+            connection.setRequestProperty(pair.getKey().toString(), pair.getValue().toString());
+        }
+    }
+
     private void processReturn() throws IOException {
         InputStream is = null;
         BufferedReader rd = null;
@@ -111,6 +138,8 @@ public abstract class RequestHandler<Entity> {
                 }
             }
         } catch (IOException e) {
+            if(e instanceof ConnectException)
+                throw new IOException("Não foi possível conectar com o servidor.");
             throw new IOException("Erro ao efetuar leitura dos dados retornados");
         }finally {
             try {
@@ -154,7 +183,9 @@ public abstract class RequestHandler<Entity> {
                 messageResponse.setStatus(true);
                 return true;
             case HttpURLConnection.HTTP_NO_CONTENT:
+                messageResponse.setStatus(true);
                 messageResponse.setMsg("Nenhum conteúdo encontrado.");
+                statusResponse = statusCode;
                 break;
             case HttpURLConnection.HTTP_CONFLICT:
                 messageResponse.setMsg("Possível duplicidade.");
@@ -179,6 +210,9 @@ public abstract class RequestHandler<Entity> {
             case HttpURLConnection.HTTP_UNAVAILABLE:
                 messageResponse.setMsg("Problemas ao efetuar solicitação para o servidor.");
                 break;
+            case 422:
+                messageResponse.setMsg(connection.getResponseMessage());
+                break;
             case HttpURLConnection.HTTP_UNSUPPORTED_TYPE:
                 messageResponse.setMsg("Parâmetros de requisição inválido.");
                 break;
@@ -191,12 +225,15 @@ public abstract class RequestHandler<Entity> {
     }
 
     private void postExecute(String response) {
-        if(response != null) {
+        if(response != null && statusResponse != 204) {
             this.entity = postExecuteCore(response);
             messageResponse.setStatus(true);
             close(this.entity);
         }else
-            error(messageResponse);
+            if(messageResponse.getStatus())
+                close(null);
+            else
+                error(messageResponse);
     }
 
     protected Entity postExecuteCore(String response){

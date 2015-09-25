@@ -1,40 +1,86 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:orientation="vertical"
+    android:minWidth="300dp"
+    android:minHeight="300dp"
     android:layout_width="300dp"
     android:layout_height="300dp"
-    android:layout_gravity="center">
+    android:layout_gravity="center"
+    android:background="@drawable/panel_rectangle_white"
+    android:padding="16dp">
     <TextView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        style="@style/font_name_header"
+        android:text="TITLE"
         android:id="@+id/dialogTitleTextView"/>
     <View
         android:layout_width="fill_parent"
-        android:layout_height="1px"
+        android:layout_height="2px"
         android:background="@color/base_app"
         android:padding="8dp"/>
     <TextView
         android:layout_width="fill_parent"
         android:layout_height="fill_parent"
         android:layout_weight="1"
+        android:layout_margin="8dp"
         android:id="@+id/dialogMessageTextView" />
-    <LinearLayout
+
+    <TextView
         android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceLarge"
+        android:text=""
+        android:layout_margin="8dp"
+        android:id="@+id/dialogExtraTextView"
+        android:layout_gravity="center_horizontal" />
+
+    <LinearLayout
+        android:layout_width="fill_parent"
         android:layout_height="wrap_content"
         android:orientation="horizontal"
         android:layout_gravity="center_horizontal">
+
         <ImageButton
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:background="@null"
-            android:paddingRight="16dp"
-            android:src="@drawable/cancel_up"/>
+            android:layout_width="56dp"
+            android:layout_height="56dp"
+            android:layout_marginLeft="16dp"
+            android:background="@drawable/oval_with_animation_reverse"
+            android:id="@+id/dialogCancelButton"
+            android:visibility="gone"
+            android:src="@drawable/close_white" />
+
         <ImageButton
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:background="@null"
-            android:paddingLeft="16dp"
-            android:src="@drawable/ok_up"/>
+            android:layout_width="56dp"
+            android:layout_height="56dp"
+            android:layout_marginLeft="16dp"
+            android:background="@drawable/oval_with_animation"
+            android:id="@+id/dialogBackButton"
+            android:visibility="gone"
+            android:src="@drawable/back_white" />
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:background="@android:color/transparent"
+            />
+        <ImageButton
+            android:layout_width="56dp"
+            android:layout_height="56dp"
+            android:layout_marginRight="16dp"
+            android:background="@drawable/oval_with_animation"
+            android:id="@+id/dialogConfirmButton"
+            android:visibility="gone"
+            android:src="@drawable/check_white" />
+        <ImageButton
+            android:layout_width="56dp"
+            android:layout_height="56dp"
+            android:layout_marginRight="16dp"
+            android:background="@drawable/oval_with_animation_reverse"
+            android:id="@+id/dialogDeleteButton"
+            android:visibility="gone"
+            android:src="@drawable/delete_white" />
+
     </LinearLayout>
 
 

@@ -42,9 +42,8 @@ public class GlobalHelpAdapter extends RecyclerView.Adapter<GlobalHelpAdapter.Vi
         TextView title = (TextView)view.findViewById(R.id.titleGlobalTextView);
         TextView description = (TextView)view.findViewById(R.id.descriptionGlobalTextView);
         RoundedImageView picture =  (RoundedImageView)view.findViewById(R.id.globalItemUserPicture);
-        ImageButton deleteItem = (ImageButton) view.findViewById(R.id.globalDeleteItemButton);
 
-        return new ViewHolder(view,username,description,title,picture, deleteItem, listener);
+        return new ViewHolder(view,username,description,title,picture, null, listener);
     }
 
     @Override
@@ -53,15 +52,17 @@ public class GlobalHelpAdapter extends RecyclerView.Adapter<GlobalHelpAdapter.Vi
         holder.description.setText(getHelpList().get(position).description);
 
         if(user.getId() == getHelpList().get(position).user.getId()) {
-            holder.deleteItem.setVisibility(View.VISIBLE);
             holder.username.setText(R.string.you);
         }else{
             holder.username.setText(getHelpList().get(position).user.getUsername());
         }
         String url = getHelpList().get(position).user.getPicturePath();
-//        if(url  != null && !url.isEmpty())
-//            Picasso.with(activity).load(url).resize(100, 100)
-//                    .centerCrop().into(holder.picture);
+        Picasso.with(activity)
+                .load(url)
+                .placeholder(R.drawable.default_avatar)
+                .error(R.drawable.default_avatar)
+                .resize(100, 100)
+                .centerCrop().into(holder.picture);
     }
 
     @Override
@@ -88,9 +89,9 @@ public class GlobalHelpAdapter extends RecyclerView.Adapter<GlobalHelpAdapter.Vi
             this.description = description;
             this.picture = picture;
             this.title = title;
-            this.deleteItem = deleteItem;
+//            this.deleteItem = deleteItem;
             itemView.setOnClickListener(listener);
-            this.deleteItem.setOnClickListener(listener);
+//            this.deleteItem.setOnClickListener(listener);
         }
     }
 }

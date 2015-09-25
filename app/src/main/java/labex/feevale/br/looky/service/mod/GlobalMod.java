@@ -3,10 +3,7 @@ package labex.feevale.br.looky.service.mod;
 import android.os.Parcel;
 import android.os.Parcelable;
 
-import com.google.gson.annotations.Expose;
-
 import labex.feevale.br.looky.model.User;
-import labex.feevale.br.looky.utils.UserMock;
 
 /**
  * Created by grimmjowjack on 9/21/15.
